@@ -1,4 +1,4 @@
-angular.module("Server").constant("config", {
+angular.module("Pingce").constant("config", {
 	url: "http://",
 	imageUrl: "http://",
 	request: {
@@ -10,6 +10,13 @@ angular.module("Server").constant("config", {
 	},
 	common_params: {},
 	interceptor: [
-		"index"
+		"index",
+		"pingce",
+		"neimu",
+		"jiaju",
+		"contact",
+		"category",
+		"category_info",
+		"article"
 	]
 });

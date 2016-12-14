@@ -1,5 +1,5 @@
 // by dribehance <dribehance.kksdapp.com>
-angular.module("Server").directive('confirm', function() {
+angular.module("Pingce").directive('confirm', function() {
 	return {
 		restrict: 'E',
 		scope: {

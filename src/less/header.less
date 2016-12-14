@@ -1,17 +1,77 @@
+.gd {
+    width: 990px;
+    margin: auto auto;
+}
+
+.top-bar {
+    background-color: lighten(black, 95%);
+    border-bottom: 1px solid lighten(black, 90%);
+    .clearfix;
+}
+
+.splash {
+    display: inline-block;
+    margin: 0 15px;
+}
+
 .header {
-	position: relative;
-	padding: 15px 8px;
-	text-align: center;
-	border-bottom: 1px solid @gray-light;
-	overflow: hidden;
-	.clearfix();
-	.back-action {
-		position: absolute;
-		left: 0;
-		top: 1px;
-		padding: 15px 8px;
-	}
-	.heading {
-		display: block;
-	}
+    background-color: white;
+    border-bottom: 1px solid lighten(black, 90%);
+    .nav {
+    	padding: 0 0 15px 0;
+    	font-size: 16px;
+        >a {
+            display: inline-block;
+            &.active {
+                color: red;
+            }
+        }
+    }
+    .search-section	{
+    	position: relative;
+    	border: 1px solid lighten(black, 80%);
+    	background-color: lighten(black, 97%);
+    	cursor: pointer;
+    	.search-dropdown {
+    		display: inline-block;
+    		padding: 10px 20px;
+    		background-color: white;
+    		position: relative;
+    		text-align: center;
+    		&:before {
+    			content: "";
+    			position: absolute;
+    			right: 0;
+    			bottom: 0;
+    			display: inline-block;
+    			border-right:5px solid lighten(black, 30%);
+    			border-bottom: 5px solid lighten(black, 30%);
+    			border-top: 5px solid transparent;
+    			border-left: 5px solid transparent;
+    		}
+    	}
+    	.search-icon {
+    		display: inline-block;
+    		padding: 10px;
+    		font-family: FontAwesome;
+    		&:before {
+    			content: "\f002";
+    		}
+    	}
+    	input {
+    		.reset-input;
+    		padding: 10px;
+    		width: 400px;
+    		background-color: lighten(black, 97%);
+    	}
+    }
+    .logo {
+    	display: inline-block;
+        width: 130px;
+        height: 70px;
+        background-image: url("../images/logo.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
 }

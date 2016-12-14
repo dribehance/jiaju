@@ -1,6 +1,38 @@
+<div class="top-bar">
+	<div class="wrap">
+		24 小时热线： 0123456789  <span class="splash">/</span>  客服QQ：0123456789
+		<div class="pull-right">
+			<span class="hover">登录</span>
+			<span class="splash">/</span>
+			<span class="hover">注册</span>
+		</div>
+	</div>
+</div>
+<div class="gd">
+	<imageview data-rate="990/120"></imageview>
+</div>
 <div class="header">
-	<span class="back-action" ng-if="backAction=='on'" ng-click="back()">
-		<i class="fa fa-angle-left"></i>
-	</span>
-	<span class="heading">{{title}}</span>
+	<div class="wrap">
+		<div class="logo"></div>
+		<div class="pull-right">
+			<div class="nav">
+				<a ng-href="#/index" ng-class="{'active':active=='index'}">首页</a>
+				<span class="splash">/</span>
+				<a ng-href="#/pingce" ng-class="{'active':active=='pingce'}">家具评测</a>
+				<span class="splash">/</span>
+				<a ng-href="#/neimu" ng-class="{'active':active=='neimu'}">行业内幕</a>
+				<span class="splash">/</span>
+				<a ng-href="#/jiaju" ng-class="{'active':active=='jiaju'}">找家具</a>
+				<span class="splash">/</span>
+				<a ng-href="#/shequ" ng-class="{'active':active=='shequ'}">社区</a>
+				<span class="splash">/</span>
+				<a ng-href="#/contact" ng-class="{'active':active=='contact'}">联系我们</a>
+			</div>
+			<div class="search-section">
+				<div class="search-dropdown">分类</div>
+				<input type="text" placeholder="请输入关键字">
+				<div class="search-icon hover" ng-click="ajaxForm()"></div>
+			</div>
+		</div>
+	</div>
 </div>

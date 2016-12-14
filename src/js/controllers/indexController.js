@@ -1,4 +1,4 @@
 // by dribehance <dribehance.kksdapp.com>
-angular.module("Server").controller("indexController", function($scope, errorServices, toastServices, localStorageService, config) {
-
+angular.module("Pingce").controller("indexController", function($scope, errorServices, toastServices, localStorageService, config) {
+	$scope.banners = ["as", "dd"];
 })
