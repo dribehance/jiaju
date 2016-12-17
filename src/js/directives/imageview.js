@@ -3,10 +3,11 @@ angular.module("Pingce")
 		return {
 			restrict: 'E',
 			scope: {
-				src: "="
+				src: "=",
+				default: "=?",
 			},
 			controller: function($scope, $element, $attrs) {
-				$scope.bg_image = "../images/default.png";
+				$scope.default_image = $scope.default || "../images/default.png";
 				$scope.rate = parseFloat($scope.$eval($attrs.rate));
 				$scope.width = $element.parent().width() || $(window).width();
 				$scope.height = $scope.width / $scope.rate;
@@ -90,9 +91,9 @@ angular.module("Pingce")
 				}
 			},
 			template: function(element, attrs) {
-				var template = "<img ng-src='{{src}}' show-center-on-loaded err-src='../images/default.png'>";
+				var template = "<img ng-src='{{src}}' show-center-on-loaded err-src='{{default_image}}'>";
 				if ($(element).attr('center-only') == undefined) {
-					template = "<img ng-src='{{src}}' show-on-loaded err-src='../images/default.png'>"
+					template = "<img ng-src='{{src}}' show-on-loaded err-src='{{default_image}}'>"
 				}
 				return template;
 			},
@@ -102,7 +103,7 @@ angular.module("Pingce")
 					width: scope.width,
 					overflow: "hidden",
 					"text-align": "center",
-					"background-image": "url(" + scope.bg_image + ")",
+					"background-image": "url(" + scope.default_image + ")",
 					"background-position": "center center",
 					"background-repeat": "no-repeat",
 					"height": scope.height,

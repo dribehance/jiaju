@@ -1,8 +1,10 @@
 <dribehance-header active="'index'"></dribehance-header>
-<div class="wrap">
-    <banner class="banner" data-rate="990/480">
-        <imageview data-rate="990/480" src="banner" center-only ng-repeat="banner in banners" on-repeat-done></imageview>
+ <div style="overflow: hidden;">
+ 	<banner class="banner" data-rate="1920/550">
+        <imageview data-rate="1920/550" src="banner" center-only ng-repeat="banner in banners" on-repeat-done></imageview>
     </banner>
+ </div>
+<div class="wrap">
 	<div class="section-1">
 		<div class="section-header">
 			<span class="block">重点推荐</span>
@@ -10,7 +12,7 @@
 		</div>
 		<div class="section-content">
 			<div ng-click="go('article')" class="hover">
-				<imageview data-rate="316/500" center-only src="1"></imageview>
+				<imageview data-rate="316/500" center-only src="'../images/about_bg.jpg'"></imageview>
 				<div class="summary">
 					<div class="title">松下电动洗碗机评测</div>
 					<span>洗碗机</span>
@@ -53,7 +55,7 @@
 		</div>
 		<div class="section-content">
 			<div>
-				<imageview data-rate="316/250" center-only src="1"></imageview>
+				<imageview data-rate="316/250" center-only src="'../images/signin_bg.jpg'"></imageview>
 				<div class="summary">
 					<div class="title">松下电动洗碗机评测</div>
 					<span>洗碗机</span>

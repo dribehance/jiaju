@@ -8,7 +8,7 @@ angular.module("Pingce", [
 	])
 	.config(function($routeProvider, $httpProvider, $locationProvider, localStorageServiceProvider, config) {
 		angular.forEach(config.interceptor, function(path) {
-			var controllername = path.replace(/_[a-z]/g, function(letter) {
+			var controllername = path.replace(/_([0-9]|[a-z])/g, function(letter) {
 				return letter.split("_")[1].toUpperCase();
 			});
 			controllername = controllername + "Controller";

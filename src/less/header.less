@@ -1,10 +1,37 @@
 .gd {
+    position: relative;
     width: 990px;
+    padding: 0 15px;
     margin: auto auto;
+    &:before {
+        content: "广告";
+        position: absolute;
+        left: 15px;
+        bottom: 0;
+        display: inline-block;
+        width: 40px;
+        line-height: 1.8;
+        text-align: center;
+        font-size: 12px;
+        color: white;
+        background-color: fade(black, 50%);
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        left: 16px;
+        bottom: 1px;
+        display: inline-block;
+        width: 36px;
+        height: 17px;
+        border:1px solid white;
+        line-height: 1.8;
+    }
 }
 
 .top-bar {
-    background-color: lighten(black, 95%);
+    color:white;
+    background-color: lighten(black, 20%);
     border-bottom: 1px solid lighten(black, 90%);
     .clearfix;
 }

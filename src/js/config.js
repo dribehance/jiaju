@@ -17,6 +17,27 @@ angular.module("Pingce").constant("config", {
 		"contact",
 		"category",
 		"category_info",
-		"article"
+		"article",
+		"signin",
+		"signup",
+		"forget",
+		"query_price",
+		"feedback",
+		"vs_1",
+		"vs_2",
+		"vs_3",
+		"vs_4",
+		"create_comment",
+		"me",
+		"supplier",
+		"distributor",
+		"comment",
+		"to_be_distributor",
+		"image_group",
+		"brand",
+		"serial",
+		"taofang",
+		"kongjian",
+		"product"
 	]
 });

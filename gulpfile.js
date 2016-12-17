@@ -59,6 +59,7 @@ var gulp = require('gulp'),
     connect = require('gulp-connect'),
     less = require('gulp-less'),
     uglify = require('gulp-uglify'),
+    imagemin = require('gulp-imagemin'),
     sourcemaps = require('gulp-sourcemaps'),
     cssmin = require('gulp-cssmin'),
     order = require('gulp-order'),
@@ -136,6 +137,7 @@ gulp.task('livereload', function() {
 
 gulp.task('images', function() {
     return gulp.src('src/images/**/*')
+        .pipe(imagemin())
         .pipe(gulp.dest(path.join(config.dest, 'images')));
 });
 

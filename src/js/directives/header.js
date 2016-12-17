@@ -1,5 +1,5 @@
 // by dribehance <dribehance.kksdapp.com>
-angular.module("Pingce").directive('dribehanceHeader', function() {
+angular.module("Pingce").directive('dribehanceHeader', function($rootScope) {
 	return {
 		restrict: 'E',
 		templateUrl: "templates/header.html",
@@ -9,6 +9,7 @@ angular.module("Pingce").directive('dribehanceHeader', function() {
 		},
 		link: function(scope, element, attrs) {
 			// function body
+			scope.go = $rootScope.go;
 		}
 	};
 });

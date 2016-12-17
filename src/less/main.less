@@ -123,7 +123,6 @@
     .box-shadow(0px 1px 3px fade(black, 10%));
     .condition-title {
         margin-bottom: 15px;
-        font-weight: bold;
         font-size: 18px;
     }
     .condition-list {
@@ -226,6 +225,7 @@
 .category-section {
     display: block;
     padding: 15px;
+    margin-bottom: 15px;
     background-color: white;
     .justify-layout;
     .category-title {
@@ -276,7 +276,7 @@
         }
     }
     .suppiler-list {
-    	overflow: hidden;
+        overflow: hidden;
         // border-top: 1px solid fade(black, 10%);
         // border-right: 1px solid fade(black, 10%);
         > a {
@@ -286,7 +286,7 @@
             height: 82px;
             border: 1px solid fade(black, 10%);
             &:nth-child(2n) {
-            	border-left: none;
+                border-left: none;
             }
         }
     }
@@ -295,7 +295,7 @@
 .category-info-section {
     margin-bottom: 15px;
     overflow: hidden;
-    border:1px solid fade(black, 10%);
+    border: 1px solid fade(black, 10%);
     .info-image {
         float: left;
         width: 65%;
@@ -333,3 +333,773 @@
         }
     }
 }
+
+.signin-section {
+    position: relative;
+    height: 480px;
+    overflow: hidden;
+    img.section-bg {
+        position: relative;
+        left: 50%;
+        width: 1920px;
+        margin-left: -960px;
+        // margin-top: -250px;
+    }
+    .signin-form-wrap {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        right: 0;
+        width: 990px;
+        margin: auto auto;
+        z-index: 1;
+    }
+    .signin-form {
+        display: block;
+        width: 350px;
+        margin: 20px 0;
+        padding: 30px 15px;
+        background-color: fade(white, 50%);
+        input {
+            .reset-input;
+            padding: 15px;
+            margin-bottom: 15px;
+            width: 100%;
+            border: 1px solid fade(black, 20%);
+        }
+        .signin-btn {
+            .reset-input;
+            padding: 15px;
+            margin-top: 15px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            border: none;
+            background-color: #f5a503;
+        }
+        .sms-input {
+            overflow: hidden;
+            > * {
+                float: left;
+                width: 50%;
+            }
+            button {
+                .reset-input;
+                padding: 13px;
+                text-align: center;
+                color: white;
+                border: none;
+                background-color: #f5a503;
+            }
+        }
+    }
+}
+
+.tool {
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    width: 74px;
+    z-index: 1000;
+    > * {
+        display: block;
+        height: 74px;
+        margin-bottom: 1px;
+    }
+    .tool_1 {
+        background-image: url("../images/tool_1.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .tool_2 {
+        background-image: url("../images/tool_2.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .tool_3 {
+        background-image: url("../images/tool_3.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .tool_4 {
+        background-image: url("../images/tool_4.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
+
+.vs-section {
+    display: block;
+    background-color: white;
+    font-size: 16px;
+    overflow: hidden;
+    > .col {
+        float: left;
+        width: 20%;
+        border-right: 1px solid fade(black, 10%);
+    }
+    .vs-nav-item {
+        display: block;
+        height: 49px;
+        line-height: 49px;
+        text-align: center;
+        border-bottom: 1px solid fade(black, 10%);
+        cursor: pointer;
+        &.active {
+            color: white;
+            background-color: #3498db;
+        }
+    }
+    .vs-cell {
+        display: block;
+        height: 49px;
+        line-height: 49px;
+        text-align: center;
+        border-bottom: 1px solid fade(black, 10%);
+        &.active {
+            color: white;
+            background-color: #3498db;
+        }
+    }
+    .vs-comment-item {
+        padding: 8px;
+        line-height: 1.5;
+        font-size: 14px;
+        border-bottom: 1px solid fade(black, 10%);
+        .comment-name {
+            color: #3498db;
+            font-weight: bold;
+        }
+        .comment-meta {
+            padding-bottom: 8px;
+            text-align: center;
+            font-size: 12px;
+        }
+        .comment-content {
+            height: 60px;
+            overflow: hidden;
+        }
+    }
+    .more-comment {
+        padding: 15px;
+        text-align: center;
+        color: #3498db;
+        cursor: pointer;
+        background-color: fade(black, 10%);
+    }
+    .vs-slash-nav {
+        position: relative;
+        width: 100%;
+        height: 196px;
+        border-bottom: 1px solid fade(black, 10%);
+        background-image: url("../images/slash.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        span:first-child {
+            position: absolute;
+            right: 15px;
+            top: 30px;
+        }
+        span:last-child {
+            position: absolute;
+            left: 15px;
+            bottom: 30px;
+        }
+        &.small {
+            height: 98px;
+        }
+    }
+    .vs-row-head {
+        display: block;
+        text-align: center;
+        vertical-align: middle;
+        border-bottom: 1px solid fade(black, 10%);
+        &.apperance {
+            height: 717px;
+            line-height: 717px;
+        }
+        &.zaoxing {
+            height: 896px;
+            line-height: 896px;
+        }
+        &.biaocheng {
+            height: 896px;
+            line-height: 896px;
+        }
+        &.gongyi {
+            height: 896px;
+            line-height: 896px;
+        }
+        &.gongneng {
+            height: 1076px;
+            line-height: 1076px;
+        }
+        &.comment {
+            height: 357px;
+            line-height: 357px;
+        }
+    }
+    .vs-image {
+        display: block;
+        text-align: center;
+        border-bottom: 1px solid fade(black, 10%);
+        .image-title {
+            display: block;
+            padding: 0 8px;
+            height: 34px;
+            line-height: 34px;
+        }
+    }
+    .vs-select {
+        position: relative;
+        select {
+            .reset-input;
+            padding: 0 15px;
+            height: 49px;
+            line-height: 49px;
+            width: 100%;
+            border-bottom: 1px solid fade(black, 10%);
+        }
+        &:before {
+            content: "\f107";
+            font-family: FontAwesome;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+        }
+    }
+}
+
+// create_comment
+.comment-section-1 {
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+    overflow: hidden;
+    .box-shadow(0px 1px 3px fade(black,
+    10%));
+    .vs-label {
+        float: left;
+        padding: 0 15px;
+        height: 49px;
+        line-height: 49px;
+        width: 110px;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .vs-select {
+        position: relative;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        float: left;
+        width: 193px;
+        select {
+            .reset-input;
+            padding: 0 15px;
+            height: 49px;
+            line-height: 49px;
+            width: 100%;
+            border: 1px solid fade(black, 10%);
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        &:before {
+            content: "\f107";
+            font-family: FontAwesome;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+        }
+    }
+    .vs-input {
+        position: relative;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        float: left;
+        width: 193px;
+        input {
+            .reset-input;
+            padding: 0 15px;
+            height: 49px;
+            line-height: 49px;
+            width: 100%;
+            border: 1px solid fade(black, 10%);
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.comment-section-2 {
+    margin-bottom: 15px;
+    background-color: white;
+    .box-shadow(0px 1px 3px fade(black,
+    10%));
+    overflow: hidden;
+    .row_1 {
+        overflow: hidden;
+        border-left: 1px solid fade(black, 10%);
+        border-bottom: 1px solid fade(black, 10%);
+    }
+    .head-cell-1 {
+        height: 60px;
+        width: 200px;
+        float: left;
+        text-indent: 30px;
+        line-height: 60px;
+        border-right: 1px solid fade(black, 10%);
+        background-color: fade(black, 10%);
+    }
+    .head-cell-2 {
+        height: 60px;
+        width: 300px;
+        float: left;
+        border-right: 1px solid fade(black, 10%);
+        background-color: fade(black, 10%);
+        .head-cell-row {
+            display: block;
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 1px solid fade(black, 10%);
+            font-size: 14px;
+            &:first-child {
+                span {
+                    display: inline-block;
+                    padding: 0 5px;
+                }
+            }
+            &:last-child {
+                border-bottom: none;
+                span {
+                    display: block;
+                    float: left;
+                    width: 59px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .head-cell-3 {
+        height: 60px;
+        width: 459px;
+        float: left;
+        line-height: 60px;
+        background-color: fade(black, 10%);
+    }
+    .cell-1 {
+        display: block;
+        float: left;
+        height: 49px;
+        line-height: 49px;
+        width: 200px;
+        text-indent: 30px;
+        border-right: 1px solid fade(black, 10%);
+    }
+    .cell-2 {
+        display: block;
+        float: left;
+        height: 49px;
+        line-height: 49px;
+        width: 60px;
+        text-align: center;
+        border-right: 1px solid fade(black, 10%);
+    }
+    .cell-3 {
+        display: block;
+        float: left;
+        height: 49px;
+        line-height: 49px;
+        width: 459px;
+        text-indent: 30px;
+        border-right: 1px solid fade(black, 10%);
+    }
+    .cell-4 {
+        display: block;
+        float: left;
+        width: 759px;
+        border-right: 1px solid fade(black, 10%);
+        .cell-41 {
+            display: block;
+            float: left;
+            height: 49px;
+            line-height: 49px;
+            width: 150px;
+            text-indent: 12px;
+        }
+        input {
+            .reset-input;
+            float: left;
+            height: 49px;
+            line-height: 49px;
+            width: 100%;
+            text-indent: 30px;
+        }
+        textarea {
+            .reset-input;
+            padding-top: 15px;
+            height: 100px;
+            width: 100%;
+            text-indent: 30px;
+        }
+    }
+    .cell-5 {
+        display: block;
+        float: left;
+        width: 200px;
+        height: 100px;
+        text-indent: 30px;
+        line-height: 100px;
+        border-right: 1px solid fade(black, 10%);
+    }
+}
+
+.comment-section-3 {
+    padding: 15px;
+    background-color: fade(black, 10%);
+    .comment-btn {
+        .reset-input;
+        float: right;
+        padding: 15px;
+        border-radius: 3px;
+        text-align: center;
+        color: white;
+        border: none;
+        background-color: #f5a503;
+    }
+}
+
+.consult-section {
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+    overflow: hidden;
+    .box-shadow(0px 1px 3px fade(black,
+    10%));
+    .vs-label {
+        float: left;
+        padding: 0 15px;
+        height: 49px;
+        line-height: 49px;
+        width: 110px;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .vs-input {
+        position: relative;
+        margin-right: 15px;
+        float: left;
+        width: 400px;
+        input {
+            .reset-input;
+            padding: 0 15px;
+            height: 49px;
+            line-height: 49px;
+            width: 100%;
+            border: 1px solid fade(black, 10%);
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.consult-btn {
+    .reset-input;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    border: none;
+    background-color: #f5a503;
+}
+
+.feedback-section {
+    padding: 15px;
+    background-color: white;
+    textarea {
+        .reset-input;
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 15px;
+        border: 1px solid fade(black, 10%);
+    }
+}
+
+.me-section {
+    position: relative;
+    padding-top: 336px;
+    width: 990px;
+    margin: auto auto;
+    background-color: white;
+    background-image: url("../images/me_bg.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    .avatar {
+        position: absolute;
+        display: inline-block;
+        left: 144px;
+        top: 200px;
+        width: 144px;
+        height: 144px;
+    }
+    .me-nav {
+        padding: 20px 15px 15px 15px;
+    }
+}
+
+.comment-section-4 {
+    position: relative;
+    padding-left: 300px;
+    background-color: white;
+    .comment-left {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 300px;
+        border-right: 1px solid fade(black, 10%);
+        font-size: 14px;
+    }
+    .table {
+        display: block;
+        width: 280px;
+        margin: 20px auto;
+        overflow: hidden;
+        border-top: 1px solid fade(black, 10%);
+        border-left: 1px solid fade(black, 10%);
+        .table-cell {
+            float: left;
+            width: 50%;
+            height: 40px;
+            line-height: 40px;
+            padding-left: 15px;
+            border-right: 1px solid fade(black, 10%);
+            border-bottom: 1px solid fade(black, 10%);
+        }
+    }
+    .comment-right {
+        padding: 15px;
+        line-height: 1.5;
+    }
+}
+
+.about-section {
+    .summary {
+        position: relative;
+        padding: 30px;
+        margin-top: 30px;
+        text-indent: 70px;
+        background-color: fade(black, 5%);
+        &:before {
+            content: "";
+            position: absolute;
+            width: 5px;
+            top: 30px;
+            bottom: 30px;
+            left: 50px;
+            background-color: fade(black, 20%);
+        }
+    }
+}
+
+.config-section {
+    margin-bottom: 15px;
+    overflow: hidden;
+    background-color: white;
+    .box-shadow(0px 1px 3px fade(black,
+    10%));
+    .image-section {
+        float: left;
+        width: 33.33%;
+    }
+    .setting-section {
+        float: left;
+        width: 33.33%;
+        height: 291px;
+        padding: 0 8px;
+        line-height: 1.8;
+        background-color: fade(black, 6%);
+    }
+    .info-section {
+        float: left;
+        width: 33.33%;
+        padding: 0 8px;
+    }
+    .info-table {
+        .clearfix;
+        margin: 15px auto;
+        text-indent: 8px;
+        border-left: 1px solid fade(black, 10%);
+        border-top: 1px solid fade(black, 10%);
+        .info-table-head {
+            overflow: hidden;
+            font-weight: bold;
+            background-color: fade(black, 10%);
+        }
+        .info-table-cell {
+            float: left;
+            width: 25%;
+            border-right: 1px solid fade(black, 10%);
+            border-bottom: 1px solid fade(black, 10%);
+        }
+    }
+    .summary {
+        height: 140px;
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+    .info-action >div {
+        float: left;
+        width: 50%;
+        border-right: 5px solid white;
+        &:last-child {
+            border-right: 0;
+        }
+    }
+}
+.compare-btn {
+    .reset-input;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    border: none;
+    background-color: #4ad9d9;
+}
+.image-group-section {
+    background-color: white;
+    overflow: hidden;
+    .box-shadow(0px 1px 3px fade(black,
+    10%));
+    .image-group-left {
+        position: relative;
+        width: 690px;
+        float: left;
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 50%;
+            z-index: 1;
+            cursor: url("../images/pre.cur"), auto;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 50%;
+            z-index: 1;
+            cursor: url("../images/next.cur"), auto;
+        }
+    }
+    .image-group-right {
+        width: 270px;
+        padding: 15px;
+        float: left;
+        font-size: 14px;
+    }
+    .recommand-section {
+        display: block;
+        overflow: hidden;
+        .recommand-item {
+            float: left;
+            width: 50%;
+            border-bottom: 4px solid white;
+            &:nth-child(2n) {
+                border-left: 2px solid white;
+            }
+            &:nth-child(2n+1) {
+                border-right: 2px solid white;
+            }
+            span {
+                display: inline-block;
+                padding-top: 8px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+.charater-index {
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+.brand-list {
+    display: block;
+    overflow: hidden;
+    .charater-section {
+        margin-bottom: 15px;
+        .box-shadow(0px 1px 3px fade(black, 10%));
+        .charater-title {
+            display: block;
+            padding: 15px;
+            color:@brand-primary;
+            background-color: fade(black, 2%);
+        }
+        .brand-item {
+            position: relative;
+            padding-left: 20%;
+            background-color: white;
+            overflow: hidden;
+            .brand-logo {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 20%;
+                border-bottom: 1px solid fade(black, 10%);
+                overflow: hidden;
+                .logo-text {
+                    position: absolute;
+                    left: 0;
+                    bottom: 15px;
+                    display: inline-block;
+                    padding: 6px 20px;
+                    background-color: fade(black, 50%);
+                    color: white;
+                }
+            }
+            .serial-section {
+                border-left: 1px solid fade(black, 10%);
+                .serial-title {
+                    display: block;
+                    padding: 15px;
+                    background-color: fade(black, 10%);
+                }
+                .taofang-item {
+                    float: left;
+                    width: 25%;
+                    padding: 15px;
+                    border-bottom: 1px solid fade(black, 10%);
+                    border-right: 1px solid fade(black, 10%);
+                }
+            }
+        }
+    }
+}
+
+.brand-section {
+    display: block;
+    margin-bottom: 15px;
+    background-color: white;
+    overflow: hidden;
+    .box-shadow(0px 1px 3px fade(black, 10%));
+    .brand-section-left {
+        float: left;
+        width: 25%;
+    }
+    .brand-section-right {
+        float: left;
+        width: 75%;
+        padding: 15px;
+    }
+}
+
