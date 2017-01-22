@@ -2,155 +2,59 @@
 <div class="wrap">
     <div class="category-info-section">
         <div class="info-image">
-            <imageview data-rate="623/337" center-only src=""></imageview>
+            <imageview data-rate="623/337" center-only src="staticImageUrl + category_info.images_01"></imageview>
         </div>
         <div class="info-text">
-            <div class="h1">桦木</div>
+            <div class="h1">{{category_info.title}}</div>
             <div class="summary">
-                桦木（学名：Betula）一般指桦木属约100种乔木和灌木的通称。单叶的边缘呈锯齿状或浅裂状，果实是小的翅果。桦木树皮平滑，含树脂，白色或杂色，有横走的皮孔，通常打横剥落成薄片，老树干的树皮厚而具深沟，开裂成不规则的片段。幼树短而纤细的枝条上举，呈窄塔形树冠。桦木的木材淡褐色至红褐色，用作地板、家具、纸浆、内部装饰材料、车船设备、胶合板等。耐寒、速生，对病虫害较有免疫力，用于重新造林、控制水土流失、防护覆盖或作保育树木。多要求湿润、肥沃的砂土或壤土，播种和嫁接繁殖。遍布于北半球寒冷地区。
+                {{category_info.introduce}}
             </div>
         </div>
     </div>
-    <div class="section-1">
+    <div class="section-1" ng-if="(category_info.HangyeInsiderImagesList|filter:{images_type:1}).length >0">
         <div class="section-header">
             <span class="block">整体、生成环境等图集</span>
             <span class="en">Image group</span>
         </div>
         <div class="category-section">
-            <a ng-href="#/image_group">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src=""></imageview>
-            </a>
-            <a ng-href="#/image_group">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src=""></imageview>
-            </a>
-            <a ng-href="#/image_group">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src="'../images/example_1.png'"></imageview>
-            </a>
-            <a ng-href="#/image_group">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src=""></imageview>
+            <a ng-href="#/image_group?type=1&id={{image.hangye_insider_images_id}}" ng-repeat="image in category_info.HangyeInsiderImagesList|filter:{images_type:1}">
+                <span class="category-title">{{image.title}}</span>
+                <imageview data-rate="200/112" center-only src="staticImageUrl + image.images_01"></imageview>
             </a>
         </div>
     </div>
-    <div class="section-1">
+    <div class="section-1" ng-if="(category_info.HangyeInsiderImagesList|filter:{images_type:2}).length >0">
         <div class="section-header">
             <span class="block">纹理细节图集、原材料成品图集</span>
             <span class="en">Image group</span>
         </div>
         <div class="category-section">
-            <a ng-href="#/image_group">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src=""></imageview>
-            </a>
-            <a ng-href="#/image_group">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src=""></imageview>
-            </a>
-            <a ng-href="#/image_group">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src="'../images/example_1.png'"></imageview>
-            </a>
-            <a ng-href="#/image_group">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src=""></imageview>
+            <a ng-href="#/image_group?type=1&id={{image.hangye_insider_images_id}}" ng-repeat="image in category_info.HangyeInsiderImagesList|filter:{images_type:2}">
+                <span class="category-title">{{image.title}}</span>
+                <imageview data-rate="200/112" center-only src="staticImageUrl + image.images_01"></imageview>
             </a>
         </div>
     </div>
-    <div class="section-1">
+    <div class="section-1" ng-if="(category_info.HangyeInsiderImagesList|filter:{images_type:3}).length >0">
         <div class="section-header">
             <span class="block">代表作品集</span>
             <span class="en">Image group</span>
         </div>
         <div class="category-section">
-            <a ng-href="#/image_group">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src=""></imageview>
-            </a>
-            <a ng-href="#/image_group">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src=""></imageview>
-            </a>
-            <a ng-href="#/image_group">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src="'../images/example_1.png'"></imageview>
-            </a>
-            <a ng-href="#/image_group">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src=""></imageview>
+            <a ng-href="#/image_group?type=1&id={{image.hangye_insider_images_id}}" ng-repeat="image in category_info.HangyeInsiderImagesList|filter:{images_type:3}">
+                <span class="category-title">{{image.title}}</span>
+                <imageview data-rate="200/112" center-only src="staticImageUrl + image.images_01"></imageview>
             </a>
         </div>
     </div>
-    <div class="supplier-section">
+    <div class="supplier-section" ng-if="supplier_list.length>0">
         <div class="section-header">
             <span class="block">供应商</span>
             <span class="en">Supplier</span>
         </div>
         <div class="suppiler-list">
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_1.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_2.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_3.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_4.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_5.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_6.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_6.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_1.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_2.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_3.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_4.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_5.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_6.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_6.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_1.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_2.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_3.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_4.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_5.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_6.png'"></imageview>
-            </a>
-            <a href="">
-                <imageview data-rate="160/82" center-only src="'../images/supplier_6.png'"></imageview>
+            <a ng-href="#/supplier?id={{supplier.hangye_insider_supplier_id}}&type=2" ng-repeat="supplier in supplier_list">
+                <imageview data-rate="160/82" center-only src="staticImageUrl + supplier.logo"></imageview>
             </a>
         </div>
     </div>

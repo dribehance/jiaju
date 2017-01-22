@@ -34,6 +34,12 @@
  			$rootScope.back = function() {
  				$window.history.back();
  			}
+ 			$rootScope.repeat_star = function(size) {
+ 				if (size) {
+ 					return new Array(size);
+ 				}
+ 				return [];
+ 			}
  			$rootScope.staticImageUrl = config.imageUrl;
  		}
  	}

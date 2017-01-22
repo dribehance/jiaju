@@ -1,108 +1,20 @@
 <dribehance-header active="'index'"></dribehance-header>
 <div class="wrap">
 	<div class="category-section">
-        <a>
-            <span class="category-title">Popular</span>
-            <imageview data-rate="200/112" center-only src=""></imageview>
-        </a>
-        <a>
-            <span class="category-title">Popular</span>
-            <imageview data-rate="200/112" center-only src=""></imageview>
-        </a>
-        <a>
-            <span class="category-title">Popular</span>
-            <imageview data-rate="200/112" center-only src="'../images/example_1.png'"></imageview>
-        </a>
-        <a>
-            <span class="category-title">Popular</span>
-            <imageview data-rate="200/112" center-only src=""></imageview>
-        </a>
-        <a>
-            <span class="category-title">Popular</span>
-            <imageview data-rate="200/112" center-only src=""></imageview>
-        </a>
-        <a>
-            <span class="category-title">Popular</span>
-            <imageview data-rate="200/112" center-only src="'../images/example_1.png'"></imageview>
-        </a>
-        <a>
-            <span class="category-title">Popular</span>
-            <imageview data-rate="200/112" center-only src=""></imageview>
-        </a>
-        <a>
-            <span class="category-title">Popular</span>
-            <imageview data-rate="200/112" center-only src="'../images/example_1.png'"></imageview>
+        <a ng-repeat="k in kongjian">
+            <span class="category-title">{{k.name}}</span>
+            <imageview data-rate="200/112" center-only src="staticImageUrl + k.images_01"></imageview>
         </a>
     </div>
-    <div class="section-1">
+    <div class="section-1" ng-repeat="k in kongjian">
         <div class="section-header">
-            <span class="block">沙发</span>
+            <span class="block">{{k.name}}</span>
             <span class="en">Image group</span>
         </div>
         <div class="category-section">
-            <a ng-href="#/product">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src=""></imageview>
-            </a>
-            <a ng-href="#/product">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src=""></imageview>
-            </a>
-            <a ng-href="#/product">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src="'../images/example_1.png'"></imageview>
-            </a>
-            <a ng-href="#/product">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src=""></imageview>
-            </a>
-        </div>
-    </div>
-    <div class="section-1">
-        <div class="section-header">
-            <span class="block">茶几</span>
-            <span class="en">Image group</span>
-        </div>
-        <div class="category-section">
-            <a ng-href="#/product">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src=""></imageview>
-            </a>
-            <a ng-href="#/product">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src=""></imageview>
-            </a>
-            <a ng-href="#/product">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src="'../images/example_1.png'"></imageview>
-            </a>
-            <a ng-href="#/product">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src=""></imageview>
-            </a>
-        </div>
-    </div>
-    <div class="section-1">
-        <div class="section-header">
-            <span class="block">电视柜</span>
-            <span class="en">Image group</span>
-        </div>
-        <div class="category-section">
-            <a ng-href="#/product">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src=""></imageview>
-            </a>
-            <a ng-href="#/product">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src=""></imageview>
-            </a>
-            <a ng-href="#/product">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src="'../images/example_1.png'"></imageview>
-            </a>
-            <a ng-href="#/product">
-                <span class="category-title">Popular</span>
-                <imageview data-rate="200/112" center-only src=""></imageview>
+            <a ng-href="#/product?id={{i.find_jiaju_brand_series_rooms_blank_single_images_id}}" ng-repeat="i in k.FindJiajuBrandSeriesRoomsBlankSingleImagesList">
+                <span class="category-title">{{i.name}}</span>
+                <imageview data-rate="200/112" center-only src="staticImageUrl+i.images_01"></imageview>
             </a>
         </div>
     </div>

@@ -1,0 +1,47 @@
+<dribehance-header active="'pingce'"></dribehance-header>
+<div class="wrap">
+    <div class="condition-section">
+        <div class="condition-title">按条件找评测文章，本站已收录1000评测</div>
+        <div class="condition-list" ng-if="(category_list | filter:{classify_type:1}).length>0">
+            <span class="title">按风格</span>
+            <span class="more hover" ng-click="more_type(1)" ng-if="(category_list | filter:{classify_type:1}).length>7">+ 更多</span>
+            <div class="hover" ng-click="reset_type(1)" ng-class="{'text-primary':query_category_type(1) == 0}">不限</div>
+            <div ng-repeat="category in category_list | filter:{classify_type:1} track by $index" ng-show="$index < size[0]" ng-class="{'text-primary':category.check}" ng-click="search_by_category(category)"> <i class="fa" ng-class="{'fa-check-square-o':category.check,'fa-square-o':!category.check}" aria-hidden="true"></i> {{category.name}}</div>
+        </div>
+        <div class="condition-list" ng-if="(category_list | filter:{classify_type:2}).length>0">
+            <span class="title">按材质</span>
+            <span class="more hover" ng-click="more_type(2)" ng-if="(category_list | filter:{classify_type:2}).length>7">+ 更多</span>
+            <div class="hover" ng-click="reset_type(2)" ng-class="{'text-primary':query_category_type(2)  == 0}">不限</div>
+            <div ng-repeat="category in category_list | filter:{classify_type:2} track by $index" ng-show="$index < size[1]" ng-class="{'text-primary':category.check}" ng-click="search_by_category(category)"> <i class="fa" ng-class="{'fa-check-square-o':category.check,'fa-square-o':!category.check}" aria-hidden="true"></i> {{category.name}}</div>
+        </div>
+        <div class="condition-list" ng-if="(category_list | filter:{classify_type:3}).length>0">
+            <span class="title">按空间</span>
+            <span class="more hover" ng-click="more_type(3)" ng-if="(category_list | filter:{classify_type:3}).length>7">+ 更多</span>
+            <div class="hover" ng-click="reset_type(3)" ng-class="{'text-primary':query_category_type(3)  == 0}">不限</div>
+            <div ng-repeat="category in category_list | filter:{classify_type:3} track by $index" ng-show="$index < size[2]" ng-class="{'text-primary':category.check}" ng-click="search_by_category(category)"> <i class="fa" ng-class="{'fa-check-square-o':category.check,'fa-square-o':!category.check}" aria-hidden="true"></i> {{category.name}}</div>
+        </div>
+    </div>
+    <div class="article-list">
+        <div class="article-layout hover" ng-repeat="article in articles" ng-click="go(article)">
+            <div class="big-cover">
+                <imageview data-rate="960/416" center-only src="staticImageUrl + article.images_01"></imageview>
+                <div class="article-title">
+                    {{article.title}}
+                </div>
+            </div>
+            <div class="image-group">
+                <p>评测图片</p>
+                <div ng-repeat="i in article.JiajuTestImagesList">
+                    <imageview data-rate="181/137" center-only src="staticImageUrl + i.images_01"></imageview>
+                </div>
+            </div>
+            <div class="video-wrap">
+                <p>评测视频</p>
+                <iframe height=498 width=510 src='{{trust_url(article.video_link)}}' frameborder=0 allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="load-more text-center" ng-if="articles.length==0">暂无相关评测文章</div>
+        <div class="load-more text-center hover" ng-click="loadMore()" ng-if="articles.length>0">{{page.message}}</div>
+    </div>
+</div>
+<dribehance-footer></dribehance-footer>

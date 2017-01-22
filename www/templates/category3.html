@@ -1,0 +1,21 @@
+<dribehance-header active="'neimu'"></dribehance-header>
+<div class="wrap">
+    <div class="category-section">
+        <a ng-href="#/category_info?id={{category.hangye_insider_classify03_id}}" ng-repeat="category in category_list">
+            <span class="category-title">{{category.name}}</span>
+            <imageview data-rate="200/112" center-only src="staticImageUrl + category.images_01"></imageview>
+        </a>
+    </div>
+    <div class="supplier-section" ng-if="supplier_list.length>0">
+        <div class="section-header">
+            <span class="block">供应商</span>
+            <span class="en">Supplier</span>
+        </div>
+        <div class="suppiler-list">
+            <a ng-href="#/supplier?id={{supplier.hangye_insider_classify03_supplier_id}}&type=1" ng-repeat="supplier in supplier_list">
+                <imageview data-rate="160/82" center-only src="staticImageUrl + supplier.logo"></imageview>
+            </a>
+        </div>
+    </div>
+</div>
+<dribehance-footer></dribehance-footer>

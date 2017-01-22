@@ -1,0 +1,39 @@
+<dribehance-header active="'index'"></dribehance-header>
+<div class="signin-section">
+    <img ng-src="../images/consult_bg.jpg" class="section-bg" alt="">
+</div>
+<div class="wrap">
+    <div class="province-section">
+        <div class="province-name" ng-click="change_province('全部')" ng-class="{'active':input.province == '全部'}">全部</div>
+        <div class="province-name" ng-repeat="p in provinces" ng-class="{'active':input.province == p}" ng-click="change_province(p)">{{p}}</div>
+        <div class="city-section" ng-if="cities.length>0">
+            <div class="city-name" ng-click="change_city('全部')" ng-class="{'active':input.city == '全部'}">全部</div>
+            <div class="city-name" ng-repeat="c in cities" ng-class="{'active':input.city == c}" ng-click="change_city(c)">{{c}}</div>
+        </div>
+    </div>
+    <div class="hover" ng-click="go('to_be_distributor')">
+        <imageview data-rate="960/69" src="'../images/apply_bg.png'" center-only></imageview>
+    </div>
+    <table class="distributors-table">
+        <tr ng-repeat="d in distributors">
+            <td>
+                <imageview data-rate="1000/618" src="staticImageUrl + d.logo" center-only></imageview>
+            </td>
+            <td>
+                <p>{{d.name}}</p>
+                <p>{{d.telephone}}</p>
+                <p>{{d.address}}</p>
+            </td>
+            <td>
+                <p>{{d.price}}</p>
+                <p><a href="#/distributor?id={{d.dealer_id}}" style="color:blue">促销活动链接</a></p>
+            </td>
+            <td>
+                <a href="#/query_price" class="ask-btn">询问报价</a>
+            </td>
+        </tr>
+    </table>
+    <div class="load-more text-center" ng-if="distributors.length==0">暂无相关经销商</div>
+    <div class="load-more text-center hover" ng-click="loadMore()" ng-if="distributors.length>0">{{page.message}}</div>
+</div>
+<dribehance-footer></dribehance-footer>

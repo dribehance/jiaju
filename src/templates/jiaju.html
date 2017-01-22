@@ -1,54 +1,30 @@
 <dribehance-header active="'jiaju'"></dribehance-header>
 <div class="wrap">
     <div class="condition-section">
-        <div class="condition-title">按条件找家具品牌，本站已入驻1180个品牌</div>
-        <div class="condition-list">
+        <div class="condition-title">按条件找家具，本站已收录1000家具</div>
+        <div class="condition-list" ng-if="(category_list | filter:{classify_type:1}).length>0">
             <span class="title">按风格</span>
-            <span class="more hover">+ 更多</span>
-            <div>不限</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
+            <span class="more hover" ng-click="more_type(1)" ng-if="(category_list | filter:{classify_type:1}).length>7">+ 更多</span>
+            <div class="hover" ng-click="reset_type(1)" ng-class="{'text-primary':query_category_type(1) == 0}">不限</div>
+            <div ng-repeat="category in category_list | filter:{classify_type:1} track by $index" ng-show="$index < size[0]" ng-class="{'text-primary':category.check}" ng-click="search_by_category(category)"> <i class="fa" ng-class="{'fa-check-square-o':category.check,'fa-square-o':!category.check}" aria-hidden="true"></i> {{category.name}}</div>
         </div>
-        <div class="condition-list">
+        <div class="condition-list" ng-if="(category_list | filter:{classify_type:2}).length>0">
             <span class="title">按材质</span>
-            <span class="more hover">+ 更多</span>
-            <div>不限</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
+            <span class="more hover" ng-click="more_type(2)" ng-if="(category_list | filter:{classify_type:2}).length>7">+ 更多</span>
+            <div class="hover" ng-click="reset_type(2)" ng-class="{'text-primary':query_category_type(2)  == 0}">不限</div>
+            <div ng-repeat="category in category_list | filter:{classify_type:2} track by $index" ng-show="$index < size[1]" ng-class="{'text-primary':category.check}" ng-click="search_by_category(category)"> <i class="fa" ng-class="{'fa-check-square-o':category.check,'fa-square-o':!category.check}" aria-hidden="true"></i> {{category.name}}</div>
         </div>
-        <div class="condition-list">
+        <div class="condition-list" ng-if="(category_list | filter:{classify_type:3}).length>0">
             <span class="title">按空间</span>
-            <span class="more hover">+ 更多</span>
-            <div>不限</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
+            <span class="more hover" ng-click="more_type(3)" ng-if="(category_list | filter:{classify_type:3}).length>7">+ 更多</span>
+            <div class="hover" ng-click="reset_type(3)" ng-class="{'text-primary':query_category_type(3)  == 0}">不限</div>
+            <div ng-repeat="category in category_list | filter:{classify_type:3} track by $index" ng-show="$index < size[2]" ng-class="{'text-primary':category.check}" ng-click="search_by_category(category)"> <i class="fa" ng-class="{'fa-check-square-o':category.check,'fa-square-o':!category.check}" aria-hidden="true"></i> {{category.name}}</div>
         </div>
-        <div class="condition-list">
+        <div class="condition-list" ng-if="(category_list | filter:{classify_type:4}).length>0">
             <span class="title">按分类</span>
-            <span class="more hover">+ 更多</span>
-            <div>不限</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
-            <div> <i class="fa fa-square-o" aria-hidden="true"></i> 现代风格</div>
+            <span class="more hover" ng-click="more_type(4)" ng-if="(category_list | filter:{classify_type:4}).length>7">+ 更多</span>
+            <div class="hover" ng-click="reset_type(4)" ng-class="{'text-primary':query_category_type(4)  == 0}">不限</div>
+            <div ng-repeat="category in category_list | filter:{classify_type:4} track by $index" ng-show="$index < size[2]" ng-class="{'text-primary':category.check}" ng-click="search_by_category(category)"> <i class="fa" ng-class="{'fa-check-square-o':category.check,'fa-square-o':!category.check}" aria-hidden="true"></i> {{category.name}}</div>
         </div>
     </div>
     <div class="charater-index ">
@@ -83,8 +59,8 @@
         </div>
     </div>
     <div class="brand-list">
-    	<div class="charater-section">
-    		<div class="charater-title">A</div>
+    	<div class="charater-section" ng-repeat="jiaju in jiaju_list">
+    		<div class="charater-title">{{A}}</div>
     		<div class="brand-item">
     			<div class="brand-logo hover" ng-click="go('brand')">
     				<imageview data-rate="1" center-only src="1"></imageview>
@@ -93,47 +69,6 @@
     			<div class="serial-section">
     				<div class="serial-title">传承</div>
     				<div class="taofang-item hover" ng-click="go('taofang')">
-    					<h4>套房</h4>
-    					<div>价格范围：50-100</div>
-    					<span class="text-primary">图库</span>
-    				</div>
-    				<div class="taofang-item">
-    					<h4>套房</h4>
-    					<div>价格范围：50-100</div>
-    					<span class="text-primary">图库</span>
-    				</div>
-    			</div>
-    		</div>
-    		<div class="brand-item">
-    			<div class="brand-logo">
-    				<imageview data-rate="1" center-only src="1"></imageview>
-    				<div class="logo-text">柏森</div>
-    			</div>
-    			<div class="serial-section">
-    				<div class="serial-title">传承</div>
-    				<div class="taofang-item">
-    					<h4>套房</h4>
-    					<div>价格范围：50-100</div>
-    					<span class="text-primary">图库</span>
-    				</div>
-    				<div class="taofang-item">
-    					<h4>套房</h4>
-    					<div>价格范围：50-100</div>
-    					<span class="text-primary">图库</span>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    	<div class="charater-section">
-    		<div class="charater-title">B</div>
-    		<div class="brand-item">
-    			<div class="brand-logo">
-    				<imageview data-rate="1" center-only src="1"></imageview>
-    				<div class="logo-text">柏森</div>
-    			</div>
-    			<div class="serial-section">
-    				<div class="serial-title">传承</div>
-    				<div class="taofang-item">
     					<h4>套房</h4>
     					<div>价格范围：50-100</div>
     					<span class="text-primary">图库</span>

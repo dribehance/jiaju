@@ -1,31 +1,40 @@
 <dribehance-header active="'index'"></dribehance-header>
-<div class="wrap">
+<div class="wrap" ng-if="type == 1">
     <div class="image-group-section">
         <div class="image-group-left">
-            <imageview data-rate="690/599" center-only src="1"></imageview>
+            <a class="prev" ng-if="image_group.prev_hangye_insider_images_id>0" ng-href="#/image_group?type=1&id={{image_group.prev_hangye_insider_images_id}}"></a>
+            <imageview data-rate="690/599" src="staticImageUrl + image_group.Result.HangyeInsiderImages.images_01"></imageview>
+            <a class="next" ng-if="image_group.next_hangye_insider_images_id>0" ng-href="#/image_group?type=1&id={{image_group.next_hangye_insider_images_id}}"></a>
         </div>
         <div class="image-group-right">
-            <p>整体、生成环境图集 ( xxx张)</p>
-            <p>纹理细节图集、原材料图集 （xxx张）</p>
-            <p>代表作品图集（xxx张）</p>
-            <p><b>猜你喜欢</b></p>
-            <div class="recommand-section">
-            	<div class="recommand-item">
-            		<imageview data-rate="1"></imageview>
-            		<span>柏森</span>
-            	</div>
-            	<div class="recommand-item">
-            		<imageview data-rate="1"></imageview>
-            		<span>柏森</span>
-            	</div>
-            	<div class="recommand-item">
-            		<imageview data-rate="1"></imageview>
-            		<span>柏森</span>
-            	</div>
-            	<div class="recommand-item">
-            		<imageview data-rate="1"></imageview>
-            		<span>柏森</span>
-            	</div>
+            <p ng-class="{'text-primary':image_group.Result.HangyeInsiderImages.images_type == '1'}">整体、生成环境图集 ( {{image_group.zhengti_count}}张)</p>
+            <p ng-class="{'text-primary':image_group.Result.HangyeInsiderImages.images_type == '2'}">纹理细节图集、原材料图集 （{{image_group.wenli_count}}张）</p>
+            <p ng-class="{'text-primary':image_group.Result.HangyeInsiderImages.images_type == '3'}">代表作品图集（{{image_group.daibiao_count}}张）</p>
+        </div>
+    </div>
+</div>
+<div class="wrap" ng-if="type == 2">
+    <div class="image-group-section">
+        <div class="image-group-left">
+            <a class="prev" ng-if="image_group.prev_fjiaju_single_images_id>0" ng-href="#/image_group?type=2&id={{image_group.prev_fjiaju_single_images_id}}"></a>
+            <imageview data-rate="690/599" src="staticImageUrl + image_group.Result.FDetailImages.images_01"></imageview>
+            <a class="next" ng-if="image_group.next_fjiaju_single_images_id>0" ng-href="#/image_group?type=2&id={{image_group.next_fjiaju_single_images_id}}"></a>
+        </div>
+        <div class="image-group-right">
+            <p ng-class="{'text-primary':image_group.Result.FDetailImages.images_type == '1'}">
+            整体外观 ( {{image_group.waiguan_count}}张)</p>
+            <p ng-class="{'text-primary':image_group.Result.FDetailImages.images_type == '2'}">
+            造型 （{{image_group.zaoxing_count}}张）</p>
+            <p ng-class="{'text-primary':image_group.Result.FDetailImages.images_type == '3'}">表层细节（{{image_group.biaoceng_count}}张）</p>
+            <p ng-class="{'text-primary':image_group.Result.FDetailImages.images_type == '4'}">
+            工艺细节（{{image_group.gongyi_count}}张）</p>
+            <p ng-class="{'text-primary':image_group.Result.FDetailImages.images_type == '5'}"> 功能细节（{{image_group.gongneng_count}}张）</p>
+            <p ng-if="image_group.Result.GuessLikeFBlankSingles.length>0"><b>猜你喜欢</b></p>
+            <div class="recommand-section" ng-if="image_group.Result.GuessLikeFBlankSingles.length>0">
+                <div class="recommand-item" ng-repeat="r in image_group.Result.GuessLikeFBlankSingles" ng-if="$index<4">
+                    <imageview data-rate="1" src="staticImageUrl + r.images_01" center-only></imageview>
+                    <span>{{r.name}}</span>
+                </div>
             </div>
         </div>
     </div>

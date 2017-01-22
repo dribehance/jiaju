@@ -1,7 +1,7 @@
 <dribehance-header active="'index'"></dribehance-header>
  <div style="overflow: hidden;">
  	<banner class="banner" data-rate="1920/550">
-        <imageview data-rate="1920/550" src="banner" center-only ng-repeat="banner in banners" on-repeat-done></imageview>
+        <imageview data-rate="1920/550" src="staticImageUrl + banner.images_01" center-only ng-repeat="banner in banners" on-repeat-done></imageview>
     </banner>
  </div>
 <div class="wrap">
@@ -11,41 +11,13 @@
 			<span class="en">Strong recommand</span>
 		</div>
 		<div class="section-content">
-			<div ng-click="go('article')" class="hover">
-				<imageview data-rate="316/500" center-only src="'../images/about_bg.jpg'"></imageview>
+			<a class="div block hover" ng-href="#/article?id={{hot.jiaju_test_id}}" ng-repeat="hot in hot_articles">
+				<imageview data-rate="316/500" center-only src="staticImageUrl + hot.images_01"></imageview>
 				<div class="summary">
-					<div class="title">松下电动洗碗机评测</div>
-					<span>洗碗机</span>
+					<div class="title">{{hot.title}}</div>
+					<span>{{hot.brand}}</span>
 				</div>
-			</div>
-			<div>
-				<imageview data-rate="316/250" center-only src="1"></imageview>
-				<div class="summary">
-					<div class="title">松下电动洗碗机评测</div>
-					<span>洗碗机</span>
-				</div>
-			</div>
-			<div>
-				<imageview data-rate="316/250" center-only src="1"></imageview>
-				<div class="summary">
-					<div class="title">松下电动洗碗机评测</div>
-					<span>洗碗机</span>
-				</div>
-			</div>
-			<div>
-				<imageview data-rate="316/250" center-only src="1"></imageview>
-				<div class="summary">
-					<div class="title">松下电动洗碗机评测</div>
-					<span>洗碗机</span>
-				</div>
-			</div>
-			<div>
-				<imageview data-rate="316/250" center-only src="1"></imageview>
-				<div class="summary">
-					<div class="title">松下电动洗碗机评测</div>
-					<span>洗碗机</span>
-				</div>
-			</div>
+			</a>
 		</div>
 	</div>
 	<div class="section-2">
@@ -54,41 +26,13 @@
 			<span class="en">Most popular</span>
 		</div>
 		<div class="section-content">
-			<div>
-				<imageview data-rate="316/250" center-only src="'../images/signin_bg.jpg'"></imageview>
+			<a class="div block hover" ng-href="#/article?id={{focus.jiaju_test_id}}" ng-repeat="focus in focus_articles">
+				<imageview data-rate="316/250" center-only src="staticImageUrl + focus.images_01"></imageview>
 				<div class="summary">
-					<div class="title">松下电动洗碗机评测</div>
-					<span>洗碗机</span>
+					<div class="title">{{focus.title}}</div>
+					<span>{{focus.brand}}</span>
 				</div>
-			</div>
-			<div>
-				<imageview data-rate="316/250" center-only src="1"></imageview>
-				<div class="summary">
-					<div class="title">松下电动洗碗机评测</div>
-					<span>洗碗机</span>
-				</div>
-			</div>
-			<div>
-				<imageview data-rate="316/250" center-only src="1"></imageview>
-				<div class="summary">
-					<div class="title">松下电动洗碗机评测</div>
-					<span>洗碗机</span>
-				</div>
-			</div>
-			<div>
-				<imageview data-rate="316/250" center-only src="1"></imageview>
-				<div class="summary">
-					<div class="title">松下电动洗碗机评测</div>
-					<span>洗碗机</span>
-				</div>
-			</div>
-			<div>
-				<imageview data-rate="316/250" center-only src="1"></imageview>
-				<div class="summary">
-					<div class="title">松下电动洗碗机评测</div>
-					<span>洗碗机</span>
-				</div>
-			</div>
+			</a>
 		</div>
 	</div>
 </div>

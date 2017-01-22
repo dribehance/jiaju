@@ -27,7 +27,7 @@ angular.module("Pingce").factory("tokenInterceptor", function($location, $q, loc
 			if (response.data.code == config.request.TOKEN_INVALID) {
 				console.log("TOKEN_INVALID")
 				localStorageService.remove("token");
-				$location.path("/signIn").replace();
+				$location.path("/signin").replace();
 				return defer.promise;
 			} else {
 				return response;

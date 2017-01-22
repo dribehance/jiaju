@@ -1,5 +1,5 @@
 // by dribehance <dribehance.kksdapp.com>
-angular.module("Pingce").factory("apiServices", function($http) {
+angular.module("Pingce").factory("apiServices", function($http, localStorageService) {
 	return {
 		_get: function(request) {
 			return function(input) {
@@ -10,6 +10,7 @@ angular.module("Pingce").factory("apiServices", function($http) {
 					// by dribehance <dribehance.kksdapp.com>
 					url: request.url,
 					method: "GET",
+					cache: request.cache === undefined ? true : request.cache,
 					params: angular.extend({}, request, input)
 				}).then(function(data) {
 					return data.data;
@@ -25,6 +26,7 @@ angular.module("Pingce").factory("apiServices", function($http) {
 					// by dribehance <dribehance.kksdapp.com>
 					url: request.url,
 					method: "POST",
+					cache: request.cache === undefined ? true : request.cache,
 					headers: {
 						'Content-Type': 'application/x-www-form-urlencoded'
 					},

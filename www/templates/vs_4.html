@@ -61,656 +61,468 @@
 			</div>
         </div>
         <!-- 第二列 -->
-        <div class="col">
+        <div class="col" ng-controller="commentColController">
         	<div class="vs-image">
                 <imageview data-rate="192/196" default="'../images/vs_image_1.png'"></imageview>
             </div>
             <div class="vs-select">
-                <select name="" id="">
-                    <option value="请选择">请选择</option>
+                <select name="brand" id="brand" ng-model="input.brand" ng-options="brand as brand.name for brand in brand_list" required>
+                    <option value="">请选择</option>
                 </select>
             </div>
             <div class="vs-select">
-                <select name="" id="">
-                    <option value="请选择">请选择</option>
+                <select name="serial" id="serial" ng-model="input.serial" ng-options="serial as serial.name for serial in serial_list" required>
+                    <option value="">请选择</option>
                 </select>
             </div>
             <div class="vs-select">
-                <select name="" id="">
-                    <option value="请选择">请选择</option>
+                <select name="taofang" id="taofang" ng-model="input.taofang" ng-options="taofang as taofang.name for taofang in taofang_list" required>
+                    <option value="">请选择</option>
                 </select>
             </div>
             <div class="vs-select">
-                <select name="" id="">
-                    <option value="请选择">请选择</option>
+                <select name="single" id="single" ng-model="input.single" ng-options="single as single.name for single in single_list" required>
+                    <option value="">请选择</option>
                 </select>
             </div>
         	<div class="vs-cell text-primary">
-				<i class="fa fa-star"></i> 
-				<i class="fa fa-star"></i> 
-				<i class="fa fa-star"></i> 
-				<i class="fa fa-star"></i> 
-				<i class="fa fa-star"></i> 
-				3.85
+				<i class="fa fa-star text-primary" ng-repeat="s in repeat_star(product.total_score) track by $index"></i>
 			</div>
-			<div class="vs-cell">
-				材质
+			<div class="vs-cell" ng-mouseover="hover(1)" ng-class="{'hover-row':hover_cell == '1'}">
+				{{product.caizhi_total_score}}
 			</div>
-			<div class="vs-cell">
-				使用功能
+			<div class="vs-cell" ng-mouseover="hover(2)" ng-class="{'hover-row':hover_cell == '2'}">
+				{{product.gongneng_total_score}}
 			</div>
-			<div class="vs-cell">
-				外观
+			<div class="vs-cell" ng-mouseover="hover(3)" ng-class="{'hover-row':hover_cell == '3'}">
+				{{product.waiguan_total_score}}
 			</div>
-			<div class="vs-cell">
-				工艺
+			<div class="vs-cell" ng-mouseover="hover(4)" ng-class="{'hover-row':hover_cell == '4'}">
+				{{product.gongyi_total_score}}
 			</div>
-			<div class="vs-cell">
-				涂装
+			<div class="vs-cell" ng-mouseover="hover(5)" ng-class="{'hover-row':hover_cell == '5'}">
+				{{product.tuzhuang_total_score}}
 			</div>
-			<div class="vs-cell">
-				环保
+			<div class="vs-cell" ng-mouseover="hover(6)" ng-class="{'hover-row':hover_cell == '6'}">
+				{{product.huanbao_total_score}}
 			</div>
-			<div class="vs-cell">
-				性价比
+			<div class="vs-cell" ng-mouseover="hover(7)" ng-class="{'hover-row':hover_cell == '7'}">
+				{{product.xingjiabi_total_score}}
 			</div>
-			<div class="vs-cell">
-				经销商满意度
+			<div class="vs-cell" ng-mouseover="hover(8)" ng-class="{'hover-row':hover_cell == '8'}">
+				{{product.manyidu_total_score}}
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_manyi}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment" ng-click="go('comment')">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_not_manyi}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_waiguan}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_gongyi}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_tuzhuang}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_huanbao}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_xingjiabi}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
-			</div>
+			</a>
         </div>
         <!-- 第三列 -->
-        <div class="col">
+        <div class="col" ng-controller="commentColController">
         	<div class="vs-image">
                 <imageview data-rate="192/196" default="'../images/vs_image_1.png'"></imageview>
             </div>
             <div class="vs-select">
-                <select name="" id="">
-                    <option value="请选择">请选择</option>
+                <select name="brand" id="brand" ng-model="input.brand" ng-options="brand as brand.name for brand in brand_list" required>
+                    <option value="">请选择</option>
                 </select>
             </div>
             <div class="vs-select">
-                <select name="" id="">
-                    <option value="请选择">请选择</option>
+                <select name="serial" id="serial" ng-model="input.serial" ng-options="serial as serial.name for serial in serial_list" required>
+                    <option value="">请选择</option>
                 </select>
             </div>
             <div class="vs-select">
-                <select name="" id="">
-                    <option value="请选择">请选择</option>
+                <select name="taofang" id="taofang" ng-model="input.taofang" ng-options="taofang as taofang.name for taofang in taofang_list" required>
+                    <option value="">请选择</option>
                 </select>
             </div>
             <div class="vs-select">
-                <select name="" id="">
-                    <option value="请选择">请选择</option>
+                <select name="single" id="single" ng-model="input.single" ng-options="single as single.name for single in single_list" required>
+                    <option value="">请选择</option>
                 </select>
             </div>
         	<div class="vs-cell text-primary">
-				<i class="fa fa-star"></i> 
-				<i class="fa fa-star"></i> 
-				<i class="fa fa-star"></i> 
-				<i class="fa fa-star"></i> 
-				<i class="fa fa-star"></i> 
-				3.85
+				<i class="fa fa-star text-primary" ng-repeat="s in repeat_star(product.total_score) track by $index"></i>
 			</div>
-			<div class="vs-cell">
-				材质
+			<div class="vs-cell" ng-mouseover="hover(1)" ng-class="{'hover-row':hover_cell == '1'}">
+				{{product.caizhi_total_score}}
 			</div>
-			<div class="vs-cell">
-				使用功能
+			<div class="vs-cell" ng-mouseover="hover(2)" ng-class="{'hover-row':hover_cell == '2'}">
+				{{product.gongneng_total_score}}
 			</div>
-			<div class="vs-cell">
-				外观
+			<div class="vs-cell" ng-mouseover="hover(3)" ng-class="{'hover-row':hover_cell == '3'}">
+				{{product.waiguan_total_score}}
 			</div>
-			<div class="vs-cell">
-				工艺
+			<div class="vs-cell" ng-mouseover="hover(4)" ng-class="{'hover-row':hover_cell == '4'}">
+				{{product.gongyi_total_score}}
 			</div>
-			<div class="vs-cell">
-				涂装
+			<div class="vs-cell" ng-mouseover="hover(5)" ng-class="{'hover-row':hover_cell == '5'}">
+				{{product.tuzhuang_total_score}}
 			</div>
-			<div class="vs-cell">
-				环保
+			<div class="vs-cell" ng-mouseover="hover(6)" ng-class="{'hover-row':hover_cell == '6'}">
+				{{product.huanbao_total_score}}
 			</div>
-			<div class="vs-cell">
-				性价比
+			<div class="vs-cell" ng-mouseover="hover(7)" ng-class="{'hover-row':hover_cell == '7'}">
+				{{product.xingjiabi_total_score}}
 			</div>
-			<div class="vs-cell">
-				经销商满意度
+			<div class="vs-cell" ng-mouseover="hover(8)" ng-class="{'hover-row':hover_cell == '8'}">
+				{{product.manyidu_total_score}}
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_manyi}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_not_manyi}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_waiguan}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_gongyi}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_tuzhuang}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_huanbao}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_xingjiabi}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
-			</div>
+			</a>
         </div>
         <!-- 第四列 -->
-        <div class="col">
+        <div class="col" ng-controller="commentColController">
         	<div class="vs-image">
                 <imageview data-rate="192/196" default="'../images/vs_image_1.png'"></imageview>
             </div>
             <div class="vs-select">
-                <select name="" id="">
-                    <option value="请选择">请选择</option>
+                <select name="brand" id="brand" ng-model="input.brand" ng-options="brand as brand.name for brand in brand_list" required>
+                    <option value="">请选择</option>
                 </select>
             </div>
             <div class="vs-select">
-                <select name="" id="">
-                    <option value="请选择">请选择</option>
+                <select name="serial" id="serial" ng-model="input.serial" ng-options="serial as serial.name for serial in serial_list" required>
+                    <option value="">请选择</option>
                 </select>
             </div>
             <div class="vs-select">
-                <select name="" id="">
-                    <option value="请选择">请选择</option>
+                <select name="taofang" id="taofang" ng-model="input.taofang" ng-options="taofang as taofang.name for taofang in taofang_list" required>
+                    <option value="">请选择</option>
                 </select>
             </div>
             <div class="vs-select">
-                <select name="" id="">
-                    <option value="请选择">请选择</option>
+                <select name="single" id="single" ng-model="input.single" ng-options="single as single.name for single in single_list" required>
+                    <option value="">请选择</option>
                 </select>
             </div>
         	<div class="vs-cell text-primary">
-				<i class="fa fa-star"></i> 
-				<i class="fa fa-star"></i> 
-				<i class="fa fa-star"></i> 
-				<i class="fa fa-star"></i> 
-				<i class="fa fa-star"></i> 
-				3.85
+				<i class="fa fa-star text-primary" ng-repeat="s in repeat_star(product.total_score) track by $index"></i>
 			</div>
-			<div class="vs-cell">
-				材质
+			<div class="vs-cell" ng-mouseover="hover(1)" ng-class="{'hover-row':hover_cell == '1'}">
+				{{product.caizhi_total_score}}
 			</div>
-			<div class="vs-cell">
-				使用功能
+			<div class="vs-cell" ng-mouseover="hover(2)" ng-class="{'hover-row':hover_cell == '2'}">
+				{{product.gongneng_total_score}}
 			</div>
-			<div class="vs-cell">
-				外观
+			<div class="vs-cell" ng-mouseover="hover(3)" ng-class="{'hover-row':hover_cell == '3'}">
+				{{product.waiguan_total_score}}
 			</div>
-			<div class="vs-cell">
-				工艺
+			<div class="vs-cell" ng-mouseover="hover(4)" ng-class="{'hover-row':hover_cell == '4'}">
+				{{product.gongyi_total_score}}
 			</div>
-			<div class="vs-cell">
-				涂装
+			<div class="vs-cell" ng-mouseover="hover(5)" ng-class="{'hover-row':hover_cell == '5'}">
+				{{product.tuzhuang_total_score}}
 			</div>
-			<div class="vs-cell">
-				环保
+			<div class="vs-cell" ng-mouseover="hover(6)" ng-class="{'hover-row':hover_cell == '6'}">
+				{{product.huanbao_total_score}}
 			</div>
-			<div class="vs-cell">
-				性价比
+			<div class="vs-cell" ng-mouseover="hover(7)" ng-class="{'hover-row':hover_cell == '7'}">
+				{{product.xingjiabi_total_score}}
 			</div>
-			<div class="vs-cell">
-				经销商满意度
+			<div class="vs-cell" ng-mouseover="hover(8)" ng-class="{'hover-row':hover_cell == '8'}">
+				{{product.manyidu_total_score}}
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_manyi}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_not_manyi}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_waiguan}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_gongyi}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_tuzhuang}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_huanbao}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_xingjiabi}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
-			</div>
+			</a>
         </div>
         <!-- 第五列 -->
-        <div class="col">
+        <div class="col" ng-controller="commentColController">
         	<div class="vs-image">
                 <imageview data-rate="192/196" default="'../images/vs_image_1.png'"></imageview>
             </div>
             <div class="vs-select">
-                <select name="" id="">
-                    <option value="请选择">请选择</option>
+                <select name="brand" id="brand" ng-model="input.brand" ng-options="brand as brand.name for brand in brand_list" required>
+                    <option value="">请选择</option>
                 </select>
             </div>
             <div class="vs-select">
-                <select name="" id="">
-                    <option value="请选择">请选择</option>
+                <select name="serial" id="serial" ng-model="input.serial" ng-options="serial as serial.name for serial in serial_list" required>
+                    <option value="">请选择</option>
                 </select>
             </div>
             <div class="vs-select">
-                <select name="" id="">
-                    <option value="请选择">请选择</option>
+                <select name="taofang" id="taofang" ng-model="input.taofang" ng-options="taofang as taofang.name for taofang in taofang_list" required>
+                    <option value="">请选择</option>
                 </select>
             </div>
             <div class="vs-select">
-                <select name="" id="">
-                    <option value="请选择">请选择</option>
+                <select name="single" id="single" ng-model="input.single" ng-options="single as single.name for single in single_list" required>
+                    <option value="">请选择</option>
                 </select>
             </div>
         	<div class="vs-cell text-primary">
-				<i class="fa fa-star"></i> 
-				<i class="fa fa-star"></i> 
-				<i class="fa fa-star"></i> 
-				<i class="fa fa-star"></i> 
-				<i class="fa fa-star"></i> 
-				3.85
+				<i class="fa fa-star text-primary" ng-repeat="s in repeat_star(product.total_score) track by $index"></i>
 			</div>
-			<div class="vs-cell">
-				材质
+			<div class="vs-cell" ng-mouseover="hover(1)" ng-class="{'hover-row':hover_cell == '1'}">
+				{{product.caizhi_total_score}}
 			</div>
-			<div class="vs-cell">
-				使用功能
+			<div class="vs-cell" ng-mouseover="hover(2)" ng-class="{'hover-row':hover_cell == '2'}">
+				{{product.gongneng_total_score}}
 			</div>
-			<div class="vs-cell">
-				外观
+			<div class="vs-cell" ng-mouseover="hover(3)" ng-class="{'hover-row':hover_cell == '3'}">
+				{{product.waiguan_total_score}}
 			</div>
-			<div class="vs-cell">
-				工艺
+			<div class="vs-cell" ng-mouseover="hover(4)" ng-class="{'hover-row':hover_cell == '4'}">
+				{{product.gongyi_total_score}}
 			</div>
-			<div class="vs-cell">
-				涂装
+			<div class="vs-cell" ng-mouseover="hover(5)" ng-class="{'hover-row':hover_cell == '5'}">
+				{{product.tuzhuang_total_score}}
 			</div>
-			<div class="vs-cell">
-				环保
+			<div class="vs-cell" ng-mouseover="hover(6)" ng-class="{'hover-row':hover_cell == '6'}">
+				{{product.huanbao_total_score}}
 			</div>
-			<div class="vs-cell">
-				性价比
+			<div class="vs-cell" ng-mouseover="hover(7)" ng-class="{'hover-row':hover_cell == '7'}">
+				{{product.xingjiabi_total_score}}
 			</div>
-			<div class="vs-cell">
-				经销商满意度
+			<div class="vs-cell" ng-mouseover="hover(8)" ng-class="{'hover-row':hover_cell == '8'}">
+				{{product.manyidu_total_score}}
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_manyi}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_not_manyi}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_waiguan}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_gongyi}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_tuzhuang}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_huanbao}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
+			</a>
+			<div class="vs-comment-list">
+				<div class="vs-comment-item" ng-repeat="comment in comments">
+					<div class="comment-meta"><span class="comment-name">{{comment.nickname}}</span> {{comment.post_time}} 发表</div>
+					<div class="comment-content">{{comment.use_xingjiabi}}</div>
+				</div>
 			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="vs-comment-item">
-				<div class="comment-meta"><span class="comment-name">Tiamo_x</span> 2016-10-24 发表</div>
-				<div class="comment-content">当然是颜值啦，第一眼就被Q3的外观所吸引，就是这么外协。全景天窗还有电尾门都...</div>
-			</div>
-			<div class="more-comment">
+			<a class="more-comment" ng-if="comments.length>0" href="#/comment?id={{input.single.find_jiaju_brand_series_rooms_blank_single_id}}">
 				更多评论
-			</div>
+			</a>
         </div>
     </div>
 </div>

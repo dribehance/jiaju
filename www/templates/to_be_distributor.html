@@ -2,17 +2,17 @@
 <div class="signin-section">
     <img ng-src="../images/dealer_bg.jpg" class="section-bg" alt="">
 </div>
-<div class="wrap">
+<form class="wrap" name="distributorForm" ng-submit="ajaxForm()">
 	<div class="consult-section">
 		<div class="clearfix">
             <div class="vs-label">
                 联系方式：
             </div>
             <div class="vs-input">
-                <input type="text" name="" placeholder="联系姓名">
+                <input type="text" name="name" ng-model="input.name" required placeholder="联系姓名">
             </div>
             <div class="vs-input">
-                <input type="text" name="" placeholder="联系电话">
+                <input type="text" name="telephone" ng-model="input.telephone" required placeholder="联系电话">
             </div>
         </div>
 	</div>
@@ -22,24 +22,20 @@
                 选择产品：
             </div>
             <div class="vs-select">
-                <select name="" id="">
-                    <option value="选择省份">选择省份</option>
-                </select>
+                <select name="province" id="province" ng-model="input.province" ng-options="p for p in provinces"></select>
             </div>
             <div class="vs-select">
-                <select name="" id="">
-                    <option value="选择城市">选择城市</option>
-                </select>
+                <select name="city" id="city" ng-model="input.city" ng-options="c for c in cities"></select>
             </div>
             <div class="vs-input">
-                <input type="text" name="" placeholder="经营品牌">
+                <input type="text" name="brand" ng-model="input.brand" required placeholder="经营品牌">
             </div>
             <div class="vs-input">
-                <input type="text" name="" placeholder="经营品牌所属商场">
+                <input type="text" name="mall" ng-model="input.mall" required placeholder="经营品牌所属商场">
             </div>
         </div>
         <p>尊敬的经销商您好，申请成为经销商后，可以给您提供展示的平台，能让更多的当地消费者看到您，帮助您成交，申请需要提供您的相关资料，请填写完成后提交，我们会有工作人员和您联系，核实相关信息。感谢您的支持和配合！</p>
-        <button class="consult-btn">提交申请</button>
+        <button class="consult-btn" type="submit" ng-disabled="distributorForm.$invalid">提交申请</button>
     </div>
-</div>
+</form>
 <dribehance-footer></dribehance-footer>

@@ -1,16 +1,20 @@
-<div class="top-bar">
+<div class="top-bar" id="top">
     <div class="wrap">
         24 小时热线： 0123456789 <span class="splash">/</span> 客服QQ：0123456789
         <div class="pull-right">
-            <span class="hover" ng-click="go('signin')">登录</span>
+            <span class="hover" ng-click="go('signin')" ng-if="!user">登录</span>
+            <span class="hover" ng-click="go('me')" ng-if="user">{{user.telephone}}</span>
             <span class="splash">/</span>
-            <span class="hover" ng-click="go('signup')">注册</span>
+            <span class="hover" ng-click="go('signup')" ng-if="!user">注册</span>
+            <span class="hover" ng-click="logout()" ng-if="user">退出</span>
         </div>
     </div>
 </div>
-<div class="header">
-    <div class="gd">
-        <imageview data-rate="1000/60" center-only src="'http://img1.adm.focus.cn/1481855578_307_85.jpg'"></imageview>
+<div class="header" ng-controller="hfController">
+    <div style="overflow: hidden;" class="gd">
+        <banner class="banner" data-rate="1000/60">
+            <imageview data-rate="1000/60" src="staticImageUrl + ad.images_01" center-only ng-repeat="ad in ads|filter:{location_index:1}" on-repeat-done></imageview>
+        </banner>
     </div>
     <div class="wrap">
         <div class="logo"></div>
@@ -28,11 +32,16 @@
                 <span class="splash">/</span>
                 <a ng-href="#/contact" ng-class="{'active':active=='contact'}">联系我们</a>
             </div>
-            <div class="search-section">
-                <div class="search-dropdown">分类</div>
-                <input type="text" placeholder="请输入关键字">
-                <div class="search-icon hover" ng-click="ajaxForm()"></div>
-            </div>
+            <form class="search-section" ng-submit="ajaxForm()" name="searchForm">
+                <div class="search-dropdown">
+                    <select name="category" id="category" ng-model="input.category">
+                        <option value="category">分类</option>
+                        <option value="single">单品</option>
+                    </select>
+                </div>
+                <input type="text" ng-model="input.kw" required placeholder="请输入关键字">
+                <button class="search-icon hover" type="submit" ng-disabled="searchForm.$invalid"></button>
+            </form>
         </div>
     </div>
 </div>
