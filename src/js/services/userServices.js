@@ -71,7 +71,8 @@ angular.module("Pingce").factory("userServices", function($rootScope, $http, api
 		})),
 		// 家具列表
 		query_jiaju_list: apiServices._get(angular.extend({}, config.common_params, {
-			url: config.url + "/app/FindJiajuManage/findJiajuBrandList"
+			url: config.url + "/app/FindJiajuManage/findJiajuBrandList",
+			cache: false
 		})),
 		// 家具分类列表
 		query_jiaju_category_list: apiServices._get(angular.extend({}, config.common_params, {
@@ -187,6 +188,11 @@ angular.module("Pingce").factory("userServices", function($rootScope, $http, api
 		query_my_comment: apiServices._get(angular.extend({}, config.common_params, {
 			token: localStorageService.get("token"),
 			url: config.url + "/app/CommentManage/myCommentList"
+		})),
+		// 反馈
+		feedback: apiServices._get(angular.extend({}, config.common_params, {
+			token: localStorageService.get("token"),
+			url: config.url + "/app/UserCenter/feedback"
 		})),
 	}
 });

@@ -10,10 +10,12 @@
         <p>经销商问题答疑:请拨 4000-108-168（周一至周日8：30-17：30）</p>
         <p>入驻、评测服务答疑：请拨 4009-725-726（周一至周日8：30-17：30）</p>
         <p>广告申诉邮箱：ad-support@autohome.com.cn</p>
-        <div class="feedback-form">
-            <textarea name="" id="" cols="30" rows="10" placeholder="您宝贵的意见"></textarea>
-            <button class="consult-btn">提交反馈</button>
-        </div>
+        <form class="feedback-form" ng-submit="ajaxForm()" name="feedbackForm">
+            <input type="text" ng-model="input.name" name="name" required placeholder="你的名字">
+            <input type="text" ng-model="input.contact" name="contact" required placeholder="你的联系方式">
+            <textarea name="" id="" cols="30" rows="10" ng-model="input.content" name="content" required placeholder="您宝贵的意见"></textarea>
+            <button class="consult-btn" type="submit" ng-disabled="feedbackForm.$invalid">提交反馈</button>
+        </form>
     </div>
 </div>
 <dribehance-footer></dribehance-footer>

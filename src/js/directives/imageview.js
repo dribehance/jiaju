@@ -126,20 +126,20 @@ angular.module("Pingce")
 			restrict: "A",
 			require: "^imageview",
 			link: function(scope, element, attrs, ctrl) {
-				var target = $(element);
-				$timeout(function() {
-					ImgCache.isCached(target.attr('src'), function(path, success) {
-						if (success) {
-							// already cached
-							ImgCache.useCachedFile(target);
-						} else {
-							// not there, need to cache the image
-							ImgCache.cacheFile(target.attr('src'), function() {
-								ImgCache.useCachedFile(target);
-							});
-						}
-					});
-				}, 0)
+				// var target = $(element);
+				// $timeout(function() {
+				// 	ImgCache.isCached(target.attr('src'), function(path, success) {
+				// 		if (success) {
+				// 			// already cached
+				// 			ImgCache.useCachedFile(target);
+				// 		} else {
+				// 			// not there, need to cache the image
+				// 			ImgCache.cacheFile(target.attr('src'), function() {
+				// 				ImgCache.useCachedFile(target);
+				// 			});
+				// 		}
+				// 	});
+				// }, 0)
 				element.bind('load', ctrl.show_center_on_loaded);
 			}
 		}

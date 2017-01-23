@@ -846,7 +846,7 @@
 .feedback-section {
     padding: 15px;
     background-color: white;
-    textarea {
+    input,textarea {
         .reset-input;
         width: 100%;
         padding: 15px;
@@ -1083,6 +1083,11 @@
     padding: 15px;
     margin-bottom: 15px;
     background-color: white;
+    .index-wrap span {
+        display: inline-block;
+        margin: 5px;
+        cursor: pointer;
+    }
 }
 
 .brand-list {
@@ -1099,6 +1104,7 @@
         }
         .brand-item {
             position: relative;
+            min-height: 190px;
             padding-left: 20%;
             background-color: white;
             overflow: hidden;
@@ -1113,7 +1119,7 @@
                 .logo-text {
                     position: absolute;
                     left: 0;
-                    bottom: 15px;
+                    top: 15px;
                     display: inline-block;
                     padding: 6px 20px;
                     background-color: fade(black, 50%);
@@ -1122,6 +1128,7 @@
             }
             .serial-section {
                 border-left: 1px solid fade(black, 10%);
+                overflow: hidden;
                 .serial-title {
                     display: block;
                     padding: 15px;

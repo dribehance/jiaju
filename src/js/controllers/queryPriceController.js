@@ -107,7 +107,7 @@ angular.module("Pingce").controller("queryPriceController", function($scope, $ti
 			"find_jiaju_brand_series_rooms_blank_single_id": $scope.input.single.find_jiaju_brand_series_rooms_blank_single_id,
 			"province": $scope.input.province,
 			"city": $scope.input.city,
-			"dealer_id": $scope.input.distributor.dealer_id,
+			"dealer_id": ($scope.input.distributor && $scope.input.distributor.dealer_id) || "",
 			"building_area": $scope.input.building_area,
 			"building_house": $scope.input.building_house,
 			"price": $scope.input.price,
