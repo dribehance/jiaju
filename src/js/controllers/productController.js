@@ -3,6 +3,7 @@ angular.module("Pingce").controller("productController", function($scope, $rootS
 	if (!$routeParams.id) {
 		$rootScope.back();
 	}
+	$scope.product_id = $routeParams.id;
 	toastServices.show();
 	userServices.query_jiaju_product_by_id({
 		find_jiaju_brand_series_rooms_blank_single_id: $routeParams.id

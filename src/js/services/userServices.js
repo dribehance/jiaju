@@ -162,6 +162,10 @@ angular.module("Pingce").factory("userServices", function($rootScope, $http, api
 		query_single_comment_by_id: apiServices._get(angular.extend({}, config.common_params, {
 			url: config.url + "/app/FindJiajuManage/fBlankSingleCommmentList"
 		})),
+		// 单品评价
+		query_single_comment_by_id: apiServices._get(angular.extend({}, config.common_params, {
+			url: config.url + "/app/FindJiajuManage/fBlankSingleCommmentList"
+		})),
 		// 内幕图库
 		query_image_group_one_by_id: apiServices._get(angular.extend({}, config.common_params, {
 			url: config.url + "/app/HangyeInsiderManage/hangyeInsiderImgDetail"

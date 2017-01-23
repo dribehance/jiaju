@@ -1,80 +1,46 @@
 // by dribehance <dribehance.kksdapp.com>
 angular.module("Pingce").controller("hfController", function($scope, $rootScope, userServices, $location, $routeParams, errorServices, toastServices, localStorageService, config) {
-	var route = [{
-		"/index": 1
-	}, {
-		"/pingce": 2
-	}, {
-		"/article": 3
-	}, {
-		"/neimu": 4
-	}, {
-		"/category2": 5
-	}, {
-		"/category3": 6
-	}, {
-		"/category_info": 7
-	}, {
-		"/image_group": 8
-	}, {
-		"/jiaju": 9
-	}, {
-		"/brand": 10
-	}, {
-		"/serial": 11
-	}, {
-		"/taofang": 12
-	}, {
-		"/kongjian": 13
-	}, {
-		"/product": 14
-	}, {
-		"/vs_2": 15
-	}, {
-		"/vs_3": 16
-	}, {
-		"/vs_4": 17
-	}, {
-		"/vs_1": 18
-	}, {
-		"/comment": 19
-	}, {
-		"/create_comment": 20
-	}, {
-		"/query_price": 21
-	}, {
-		"/to_be_distributor": 22
-	}, {
-		"/distributors": 23
-	}, {
-		"/distributor": 24
-	}, {
-		"/supplier": 25
-	}, {
-		"/contact": 26
-	}, {
-		"/feedback": 27
-	}, {
-		"/search_category": 28
-	}, {
-		"/search_article": 29
-	}, {
-		"/image_group?type=2": 30
-	}, {
-		"/signin": 31
-	}, {
-		"/signup": 32
-	}, {
-		"/forget": 33
-	}, {
+	var route = {
+		"/index": 1,
+		"/pingce": 2,
+		"/article": 3,
+		"/neimu": 4,
+		"/category2": 5,
+		"/category3": 6,
+		"/category_info": 7,
+		"/image_group": 8,
+		"/jiaju": 9,
+		"/brand": 10,
+		"/serial": 11,
+		"/taofang": 12,
+		"/kongjian": 13,
+		"/product": 14,
+		"/vs_2": 15,
+		"/vs_3": 16,
+		"/vs_4": 17,
+		"/vs_1": 18,
+		"/comment": 19,
+		"/create_comment": 20,
+		"/query_price": 21,
+		"/to_be_distributor": 22,
+		"/distributors": 23,
+		"/distributor": 24,
+		"/supplier": 25,
+		"/contact": 26,
+		"/feedback": 27,
+		"/search_category": 28,
+		"/search_article": 29,
+		"/image_group?type=2": 30,
+		"/signin": 31,
+		"/signup": 32,
+		"/forget": 33,
 		"/me": 34
-	}];
+	};
 	var ad_location = route[$location.path()];
 	if (ad_location == 8 && $routeParams.type) {
 		ad_location = 30;
 	}
 	$scope.staticImageUrl = $rootScope.staticImageUrl;
-	console.log($scope.staticImageUrl)
 	userServices.query_banner({
 		location: ad_location,
 		banner_type: 2

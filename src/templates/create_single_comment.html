@@ -1,0 +1,389 @@
+<dribehance-header active="'index'"></dribehance-header>
+<form class="wrap" name="commentForm" ng-submit="ajaxForm()">
+    <div class="comment-section-1">
+        <div class="clearfix">
+            <div class="vs-label">
+                选择产品：
+            </div>
+            <div class="vs-select">
+                <select name="brand" id="brand" ng-model="input.brand" ng-options="brand as brand.name for brand in brand_list" required></select>
+            </div>
+            <div class="vs-select">
+                <select name="serial" id="serial" ng-model="input.serial" ng-options="serial as serial.name for serial in serial_list" required></select>
+            </div>
+            <div class="vs-select">
+                <select name="taofang" id="taofang" ng-model="input.taofang" ng-options="taofang as taofang.name for taofang in taofang_list" required></select>
+            </div>
+            <div class="vs-select">
+                <select name="single" id="single" ng-model="input.single" ng-options="single as single.name for single in single_list" required></select>
+            </div>
+        </div>
+        <div class="clearfix">
+            <div class="vs-label">
+                购买地点：
+            </div>
+            <div class="vs-select">
+                <select name="province" id="province" ng-model="input.province" ng-options="p for p in provinces"></select>
+            </div>
+            <div class="vs-select">
+                <select name="city" id="city" ng-model="input.city" ng-options="c for c in cities"></select>
+            </div>
+            <div class="vs-select">
+                <select name="distributor" id="distributor" ng-model="input.distributor" ng-options="d as d.name for d in distributors">
+                    <option value="">请选择经销商</option>
+                </select>
+            </div>
+        </div>
+        <div class="clearfix">
+            <div class="vs-label">
+                购买价格：
+            </div>
+            <div class="vs-input">
+                <input type="text" name="price" ng-model="input.price" required placeholder="请输入价格">
+            </div>
+            <div class="vs-select">
+                <select name="year" id="year" ng-model="input.year" ng-options="y for y in years"></select>
+            </div>
+            <div class="vs-select">
+                <select name="month" id="month" ng-model="input.month" ng-options="m for m in months"></select>
+            </div>
+        </div>
+    </div>
+    <div class="comment-section-2">
+        <div class="row_1">
+            <div class="head-cell-1">
+                评分项目
+            </div>
+            <div class="head-cell-2">
+                <div class="head-cell-row">
+                    <span class="pull-left">比较差</span>
+                    <span class="pull-right">非常棒</span>
+                </div>
+                <div class="head-cell-row">
+                    <span>1分</span>
+                    <span>2分</span>
+                    <span>3分</span>
+                    <span>4分</span>
+                    <span>5分</span>
+                </div>
+            </div>
+            <div class="head-cell-3"></div>
+        </div>
+        <div class="row_1">
+            <div class="cell-1">材质</div>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.caizhi_score" name="caizhi_score" value="1">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.caizhi_score == 1,'fa-circle':input.caizhi_score == 1}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.caizhi_score" name="caizhi_score" value="2">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.caizhi_score == 2,'fa-circle':input.caizhi_score == 2}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.caizhi_score" name="caizhi_score" value="3">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.caizhi_score == 3,'fa-circle':input.caizhi_score == 3}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.caizhi_score" name="caizhi_score" value="4">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.caizhi_score == 4,'fa-circle':input.caizhi_score == 4}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.caizhi_score" name="caizhi_score" value="5">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.caizhi_score == 5,'fa-circle':input.caizhi_score == 5}"></i>
+            </label>
+            <div class="cell-3">材质纹理是否美观</div>
+        </div>
+        <div class="row_1">
+            <div class="cell-1">使用功能</div>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.gongneng_score" name="gongneng_score" value="1">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.gongneng_score == 1,'fa-circle':input.gongneng_score == 1}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.gongneng_score" name="gongneng_score" value="2">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.gongneng_score == 2,'fa-circle':input.gongneng_score == 2}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.gongneng_score" name="gongneng_score" value="3">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.gongneng_score == 3,'fa-circle':input.gongneng_score == 3}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.gongneng_score" name="gongneng_score" value="4">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.gongneng_score == 4,'fa-circle':input.gongneng_score == 4}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.gongneng_score" name="gongneng_score" value="5">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.gongneng_score == 5,'fa-circle':input.gongneng_score == 5}"></i>
+            </label>
+            <div class="cell-3">日常使用是否便利家居生活，如是否方便打扫卫生</div>
+        </div>
+        <div class="row_1">
+            <div class="cell-1">外观</div>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.waiguan_score" name="waiguan_score" value="1">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.waiguan_score == 1,'fa-circle':input.waiguan_score == 1}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.waiguan_score" name="waiguan_score" value="2">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.waiguan_score == 2,'fa-circle':input.waiguan_score == 2}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.waiguan_score" name="waiguan_score" value="3">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.waiguan_score == 3,'fa-circle':input.waiguan_score == 3}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.waiguan_score" name="waiguan_score" value="4">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.waiguan_score == 4,'fa-circle':input.waiguan_score == 4}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.waiguan_score" name="waiguan_score" value="5">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.waiguan_score == 5,'fa-circle':input.waiguan_score == 5}"></i>
+            </label>
+            <div class="cell-3">产品风格、造型设计接受程度</div>
+        </div>
+        <div class="row_1">
+            <div class="cell-1">工艺</div>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.gongyi_score" name="gongyi_score" value="1">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.gongyi_score == 1,'fa-circle':input.gongyi_score == 1}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.gongyi_score" name="gongyi_score" value="2">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.gongyi_score == 2,'fa-circle':input.gongyi_score == 2}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.gongyi_score" name="gongyi_score" value="3">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.gongyi_score == 3,'fa-circle':input.gongyi_score == 3}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.gongyi_score" name="gongyi_score" value="4">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.gongyi_score == 4,'fa-circle':input.gongyi_score == 4}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.gongyi_score" name="gongyi_score" value="5">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.gongyi_score == 5,'fa-circle':input.gongyi_score == 5}"></i>
+            </label>
+            <div class="cell-3">是否有变形，非认为损坏等情况</div>
+        </div>
+        <div class="row_1">
+            <div class="cell-1">涂装</div>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.tuzhuang_score" name="tuzhuang_score" value="1">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.tuzhuang_score == 1,'fa-circle':input.tuzhuang_score == 1}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.tuzhuang_score" name="tuzhuang_score" value="2">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.tuzhuang_score == 2,'fa-circle':input.tuzhuang_score == 2}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.tuzhuang_score" name="tuzhuang_score" value="3">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.tuzhuang_score == 3,'fa-circle':input.tuzhuang_score == 3}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.tuzhuang_score" name="tuzhuang_score" value="4">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.tuzhuang_score == 4,'fa-circle':input.tuzhuang_score == 4}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.tuzhuang_score" name="tuzhuang_score" value="5">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.tuzhuang_score == 5,'fa-circle':input.tuzhuang_score == 5}"></i>
+            </label>
+            <div class="cell-3">抚摸家具表面触感是否细腻</div>
+        </div>
+        <div class="row_1">
+            <div class="cell-1">环保</div>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.huanbao_score" name="huanbao_score" value="1">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.huanbao_score == 1,'fa-circle':input.huanbao_score == 1}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.huanbao_score" name="huanbao_score" value="2">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.huanbao_score == 2,'fa-circle':input.huanbao_score == 2}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.huanbao_score" name="huanbao_score" value="3">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.huanbao_score == 3,'fa-circle':input.huanbao_score == 3}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.huanbao_score" name="huanbao_score" value="4">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.huanbao_score == 4,'fa-circle':input.huanbao_score == 4}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.huanbao_score" name="huanbao_score" value="5">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.huanbao_score == 5,'fa-circle':input.huanbao_score == 5}"></i>
+            </label>
+            <div class="cell-3">家具是否有异味或引起身体不适等</div>
+        </div>
+        <div class="row_1">
+            <div class="cell-1">性价比</div>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.xingjiabi_score" name="xingjiabi_score" value="1">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.xingjiabi_score == 1,'fa-circle':input.xingjiabi_score == 1}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.xingjiabi_score" name="xingjiabi_score" value="2">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.xingjiabi_score == 2,'fa-circle':input.xingjiabi_score == 2}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.xingjiabi_score" name="xingjiabi_score" value="3">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.xingjiabi_score == 3,'fa-circle':input.xingjiabi_score == 3}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.xingjiabi_score" name="xingjiabi_score" value="4">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.xingjiabi_score == 4,'fa-circle':input.xingjiabi_score == 4}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.xingjiabi_score" name="xingjiabi_score" value="5">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.xingjiabi_score == 5,'fa-circle':input.xingjiabi_score == 5}"></i>
+            </label>
+            <div class="cell-3">对家具总体配置、价格是否满意</div>
+        </div>
+        <div class="row_1">
+            <div class="cell-1">经销商购买满意度</div>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.manyidu_score" name="manyidu_score" value="1">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.manyidu_score == 1,'fa-circle':input.manyidu_score == 1}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.manyidu_score" name="manyidu_score" value="2">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.manyidu_score == 2,'fa-circle':input.manyidu_score == 2}"></i>
+            </label>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.manyidu_score" name="manyidu_score" value="3">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.manyidu_score == 3,'fa-circle':input.manyidu_score == 3}"></i>
+            </label>
+            <div class="cell-2">
+                <input type="radio" class="hide" ng-model="input.manyidu_score" name="manyidu_score" value="4">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.manyidu_score == 4,'fa-circle':input.manyidu_score == 4}"></i>
+            </div>
+            <label class="cell-2">
+                <input type="radio" class="hide" ng-model="input.manyidu_score" name="manyidu_score" value="5">
+                <i class="fa fa-circle-o" ng-class="{'text-primary':input.manyidu_score == 5,'fa-circle':input.manyidu_score == 5}"></i>
+            </label>
+            <div class="cell-3">购买家具及售后过程中对经销商服务质量是否满意</div>
+        </div>
+    </div>
+    <div class="comment-section-2">
+        <div class="row_1">
+            <div class="cell-1">购买目的</div>
+            <div class="cell-4">
+                <label class="cell-41">
+                	<input type="radio" class="hide" ng-model="input.buy_aim" name="buy_aim" value="1">
+                    <i class="fa fa-circle-o" ng-class="{'text-primary':input.buy_aim == 1,'fa-circle':input.buy_aim == 1}"></i> 新房装修
+                </label>
+                <label class="cell-41">
+                	<input type="radio" class="hide" ng-model="input.buy_aim" name="buy_aim" value="2">
+                    <i class="fa fa-circle-o" ng-class="{'text-primary':input.buy_aim == 2,'fa-circle':input.buy_aim == 2}"></i> 旧房升级
+                </label>
+                <label class="cell-41">
+                	<input type="radio" class="hide" ng-model="input.buy_aim" name="buy_aim" value="3">
+                    <i class="fa fa-circle-o" ng-class="{'text-primary':input.buy_aim == 3,'fa-circle':input.buy_aim == 3}"></i> 重装婚房
+                </label>
+                <label class="cell-41">
+                	<input type="radio" class="hide" ng-model="input.buy_aim" name="buy_aim" value="4">
+                    <i class="fa fa-circle-o" ng-class="{'text-primary':input.buy_aim == 4,'fa-circle':input.buy_aim == 4}"></i> 小孩出生
+                </label>
+                <label class="cell-41">
+                	<input type="radio" class="hide" ng-model="input.buy_aim" name="buy_aim" value="5">
+                    <i class="fa fa-circle-o" ng-class="{'text-primary':input.buy_aim == 5,'fa-circle':input.buy_aim == 5}"></i> 其他
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="comment-section-2">
+        <div class="row_1">
+            <div class="cell-1">使用感受</div>
+            <div class="cell-4"></div>
+        </div>
+        <div class="row_1">
+            <div class="cell-1">一句话描述 <span class="text-danger">*</span></div>
+            <div class="cell-4">
+                <input type="text" name="use_ganshou" ng-model="input.use_ganshou" required placeholder="一句话描述你的感受">
+            </div>
+        </div>
+        <div class="row_1">
+            <div class="cell-5">最满意的一点 <span class="text-danger">*</span></div>
+            <div class="cell-4">
+                <textarea name="use_manyi" ng-model="input.use_manyi" required placeholder="使用过程中最满意的一点"></textarea>
+            </div>
+        </div>
+        <div class="row_1">
+            <div class="cell-5">最不满意的一点 <span class="text-danger">*</span></div>
+            <div class="cell-4">
+                <textarea name="use_not_manyi" ng-model="input.use_not_manyi" required  placeholder="使用过程中最不满意的一点"></textarea>
+            </div>
+        </div>
+        <div class="row_1">
+            <div class="cell-5">最满意的一件 <span class="text-danger">*</span></div>
+            <div class="cell-4">
+                <textarea name="use_xilie_manyi" ng-model="input.use_xilie_manyi" required placeholder="本系列家具中最满意的一件及原因"></textarea>
+            </div>
+        </div>
+        <div class="row_1">
+            <div class="cell-5">不满意的一件 <span class="text-danger">*</span></div>
+            <div class="cell-4">
+                <textarea name="use_xilie_not_manyi" ng-model="input.use_xilie_not_manyi" required placeholder="本系列家具中最不满意的一件及原因"></textarea>
+            </div>
+        </div>
+        <div class="row_1">
+            <div class="cell-5">材质 <span class="text-danger">*</span></div>
+            <div class="cell-4">
+                <textarea name="use_caizhi" ng-model="input.use_caizhi" required placeholder="材质"></textarea>
+            </div>
+        </div>
+        <div class="row_1">
+            <div class="cell-5">使用功能 <span class="text-danger">*</span></div>
+            <div class="cell-4">
+                <textarea name="use_gongneng" ng-model="input.use_gongneng" required placeholder="使用功能"></textarea>
+            </div>
+        </div>
+        <div class="row_1">
+            <div class="cell-5">外观 <span class="text-danger">*</span></div>
+            <div class="cell-4">
+                <textarea name="use_waiguan" ng-model="input.use_waiguan" required placeholder="外观"></textarea>
+            </div>
+        </div>
+        <div class="row_1">
+            <div class="cell-5">工艺 <span class="text-danger">*</span></div>
+            <div class="cell-4">
+                <textarea name="use_gongyi" ng-model="input.use_gongyi" required placeholder="工艺"></textarea>
+            </div>
+        </div>
+        <div class="row_1">
+            <div class="cell-5">涂装 <span class="text-danger">*</span></div>
+            <div class="cell-4">
+                <textarea name="use_tuzhuang" ng-model="input.use_tuzhuang" required placeholder="涂装"></textarea>
+            </div>
+        </div>
+        <div class="row_1">
+            <div class="cell-5">环保 <span class="text-danger">*</span></div>
+            <div class="cell-4">
+                <textarea name="use_huanbao" ng-model="input.use_huanbao" required placeholder="环保"></textarea>
+            </div>
+        </div>
+        <div class="row_1">
+            <div class="cell-5">性价比 <span class="text-danger">*</span></div>
+            <div class="cell-4">
+                <textarea name="use_xingjiabi" ng-model="input.use_xingjiabi" required placeholder="性价比"></textarea>
+            </div>
+        </div>
+        <div class="row_1">
+            <div class="cell-5">其他描述 <span class="text-danger">*</span></div>
+            <div class="cell-4">
+                <textarea name="use_qita" ng-model="input.use_qita" required placeholder="其他描述"></textarea>
+            </div>
+        </div>
+        <div class="row_1">
+            <div class="cell-5">最终选择原因 <span class="text-danger">*</span></div>
+            <div class="cell-4">
+                <textarea name="use_ben_xilie" ng-model="input.use_ben_xilie" required placeholder="为何最终选择本系列家具"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="comment-section-3">
+        <button class="comment-btn" type="submit" ng-disabled="commentForm.$invalid">发表评价</button>
+        <p>根据平时使用家具的体会，对家具各方面的表现做出评价。</p>
+        <p>优秀评价必备条件：每项都细心填写，不留空白；</p>
+        <p>优秀评价奖励说明：xxxxxxxxxxxxxxxxxxxxxxx</p>
+    </div>
+</form>
+<dribehance-footer></dribehance-footer>

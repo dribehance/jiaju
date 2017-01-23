@@ -3,6 +3,7 @@ angular.module("Pingce").controller("serialController", function($scope, $rootSc
 	if (!$routeParams.id) {
 		$rootScope.back();
 	}
+	$scope.serial_id = $routeParams.id;
 	toastServices.show();
 	userServices.query_jiaju_serial_by_id({
 		find_jiaju_brand_series_id: $routeParams.id

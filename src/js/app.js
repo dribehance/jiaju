@@ -18,7 +18,7 @@ angular.module("Pingce", [
 				controller: controllername,
 				resolve: {
 					user: function($q, $location, localStorageService) {
-						var resolve_path = ["me", "create_comment"],
+						var resolve_path = ["me", "create_serial_comment", "create_single_comment"],
 							defer = $q.defer();
 						if (resolve_path.includes(path) && !localStorageService.get("token")) {
 							defer.reject();

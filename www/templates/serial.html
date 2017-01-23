@@ -22,7 +22,7 @@
             </div>
             <div class="info-action">
                 <div class="hover compare-btn">加入对比</div>
-                <div class="hover consult-btn" ng-click="go('comment')">评价（50）</div>
+                <a class="hover consult-btn" ng-href="#/serial_comment?id={{serial_id}}">评价（{{serial.comment_count||"0"}}）</a>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
         <div class="category-section">
             <a ng-href="#/taofang?id={{i.find_jiaju_brand_series_rooms_id}}" ng-repeat="i in s.FindJiajuBrandSeriesRoomsImages">
                 <span class="category-title">{{i.name}}</span>
-                <imageview data-rate="200/112" center-only src="i.images_01"></imageview>
+                <imageview data-rate="200/112" center-only src="staticImageUrl+i.images_01"></imageview>
             </a>
         </div>
     </div>

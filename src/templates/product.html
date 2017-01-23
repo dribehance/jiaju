@@ -28,7 +28,7 @@
             </div>
             <div class="info-action">
                 <div class="hover compare-btn">加入对比</div>
-                <div class="hover consult-btn" ng-click="go('comment')">评价（50）</div>
+                <a class="hover consult-btn" ng-href="#/single_comment?id={{product_id}}">评价（{{product.comment_count}}）</a>
             </div>
         </div>
     </div>
