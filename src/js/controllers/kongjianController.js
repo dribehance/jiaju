@@ -3,6 +3,7 @@ angular.module("Pingce").controller("kongjianController", function($scope, $root
 	if (!$routeParams.id) {
 		$rootScope.back();
 	}
+	localStorageService.set("kongjian_id", $routeParams.id);
 	toastServices.show();
 	userServices.query_jiaju_kongjian_by_id({
 		find_jiaju_brand_series_rooms_blank_id: $routeParams.id

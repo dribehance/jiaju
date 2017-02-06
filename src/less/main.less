@@ -286,14 +286,20 @@
         overflow: hidden;
         // border-top: 1px solid fade(black, 10%);
         // border-right: 1px solid fade(black, 10%);
+        
         > a {
-            display: block;
+            display: inline-block;
             float: left;
-            width: 16.66%;
-            height: 82px;
-            border: 1px solid fade(black, 10%);
-            &:nth-child(2n) {
-                border-left: none;
+            margin-right: 12px;
+            width: 220px;
+            padding: 8px;
+            margin-bottom: 15px;
+            background-color: white;
+            border-radius: 8px;
+            .box-shadow(0px 2px 2px 1px fade(black, 10%));
+            imageview {
+                display: inline-block;
+                border-radius: 5px;
             }
         }
     }
@@ -310,6 +316,7 @@
     .info-text {
         float: left;
         width: 35%;
+        min-height: 328px;
         padding: 15px;
         background-color: white;
         .h1 {
@@ -320,8 +327,11 @@
         .summary {
             color: fade(black, 50%);
             line-height: 2;
-            height: 250px;
+            height: 200px;
             overflow: hidden;
+            &.auto {
+                height: auto;
+            }
         }
     }
 }
@@ -413,7 +423,7 @@
     bottom: 100px;
     right: 100px;
     width: 74px;
-    z-index: 1000;
+    // z-index: 1000;
     > * {
         display: block;
         height: 74px;
@@ -959,7 +969,7 @@
 .config-section {
     margin-bottom: 15px;
     overflow: hidden;
-    background-color: white;
+    // background-color: white;
     .box-shadow(0px 1px 3px fade(black,
     10%));
     .image-section {
@@ -969,7 +979,7 @@
     .setting-section {
         float: left;
         width: 33.33%;
-        height: 291px;
+        height: 322px;
         padding: 0 8px;
         line-height: 1.8;
         background-color: fade(black, 6%);
@@ -978,6 +988,8 @@
         float: left;
         width: 33.33%;
         padding: 0 8px;
+        background-color: white;
+        min-height: 291px;
     }
     .info-table {
         .clearfix;
@@ -998,9 +1010,16 @@
         }
     }
     .summary {
-        height: 140px;
-        margin-bottom: 15px;
+        height: 122px;
+        // margin-bottom: 15px;
         overflow: hidden;
+        &.auto {
+            height: auto;
+        }
+    }
+    .more-text {
+        display: block;
+        margin: 8px;
     }
     .info-action >div {
         float: left;
@@ -1014,6 +1033,7 @@
 .compare-btn {
     .reset-input;
     padding: 15px;
+    display: block;
     text-align: center;
     color: white;
     border: none;
@@ -1208,4 +1228,15 @@
 }
 .load-more {
     padding: 15px;
+}
+.apply-btn {
+    display: block;
+    padding: 8px 15px;
+    margin-top: 15px;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    background-color: #2d3e50;
 }

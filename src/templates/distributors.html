@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="hover" ng-click="go('to_be_distributor')">
-        <imageview data-rate="960/69" src="'../images/apply_bg.png'" center-only></imageview>
+        <span class="apply-btn">申请成为经销商</span>
     </div>
     <table class="distributors-table">
         <tr ng-repeat="d in distributors">
@@ -20,12 +20,12 @@
                 <imageview data-rate="1000/618" src="staticImageUrl + d.logo" center-only></imageview>
             </td>
             <td>
-                <p>{{d.name}}</p>
-                <p>{{d.telephone}}</p>
-                <p>{{d.address}}</p>
+                <p>经销商：{{d.name}}</p>
+                <p>联系电话：{{d.telephone}}</p>
+                <p>地址：{{d.province+d.city+d.area+d.short_area}}</p>
             </td>
             <td>
-                <p>{{d.price}}</p>
+                <p>均价：{{d.price}}</p>
                 <p><a href="#/distributor?id={{d.dealer_id}}" style="color:blue">促销活动链接</a></p>
             </td>
             <td>

@@ -15,4 +15,11 @@ angular.module("Pingce").controller("supplierController", function($scope, $root
 			errorServices.autoHide(data.message);
 		}
 	})
+	$scope.preview = function() {
+		$scope.auto_height = !$scope.auto_height;
+	}
+	$scope.query_charater_length = function(c) {
+		if (!c) return;
+		return c.length;
+	}
 })

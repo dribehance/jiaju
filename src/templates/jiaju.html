@@ -43,7 +43,7 @@
     			</a>
     			<div class="serial-section" ng-repeat="serial in brand.fSeriesRooms">
     				<div class="serial-title">{{serial.name}}</div>
-    				<a class="taofang-item hover" ng-href="#/taofang?id={{taofang.find_jiaju_brand_series_rooms_id}}" ng-repeat="taofang in serial.fSeriesRooms">
+    				<a class="taofang-item hover" ng-href="#/serial?id={{serial.find_jiaju_brand_series_id}}" ng-repeat="taofang in serial.fSeriesRooms">
     					<h4>{{taofang.name}}</h4>
     					<div>价格范围：{{taofang.price_range}}</div>
     					<span class="text-primary">图库</span>

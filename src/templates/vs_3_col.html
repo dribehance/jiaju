@@ -1,0 +1,56 @@
+<div class="vs-image">
+    <imageview data-rate="192/196" default="'../images/vs_image_1.png'" src="staticImageUrl + product.images_01" center-only></imageview>
+</div>
+<div class="vs-select">
+    <select name="brand" id="brand" ng-model="input.brand" ng-options="brand as brand.name for brand in brand_list" required>
+        <option value="">请选择</option>
+    </select>
+</div>
+<div class="vs-select">
+    <select name="serial" id="serial" ng-model="input.serial" ng-options="serial as serial.name for serial in serial_list" required>
+        <option value="">请选择</option>
+    </select>
+</div>
+<div class="vs-select">
+    <select name="taofang" id="taofang" ng-model="input.taofang" ng-options="taofang as taofang.name for taofang in taofang_list" required>
+        <option value="">请选择</option>
+    </select>
+</div>
+<div class="vs-select">
+    <select name="single" id="single" ng-model="input.single" ng-options="single as single.name for single in single_list" required>
+        <option value="">请选择</option>
+    </select>
+</div>
+<div class="vs-cell" ng-mouseover="hover(1)" ng-class="{'hover-row':hover_cell == '1'}">
+    {{product.model_code}}
+</div>
+<div class="vs-cell" ng-mouseover="hover(2)" ng-class="{'hover-row':hover_cell == '2'}">
+    {{product.magnitude}}
+</div>
+<div class="vs-cell" ng-mouseover="hover(3)" ng-class="{'hover-row':hover_cell == '3'}">
+    {{product.single_color}}
+</div>
+<div class="vs-cell" ng-mouseover="hover(4)" ng-class="{'hover-row':hover_cell == '4'}">
+    {{product.fengge_name}}
+</div>
+<div class="vs-cell" ng-mouseover="hover(5)" ng-class="{'hover-row':hover_cell == '5'}">
+    {{product.caizhi_name}}
+</div>
+<div class="vs-cell" ng-mouseover="hover(6)" ng-class="{'hover-row':hover_cell == '6'}">
+    {{product.link_structure}}
+</div>
+<div class="vs-cell" ng-mouseover="hover(7)" ng-class="{'hover-row':hover_cell == '7'}">
+    {{product.coating_process}}
+</div>
+<div class="vs-cell" ng-mouseover="hover(8)" ng-class="{'hover-row':hover_cell == '8'}">
+    {{product.decoration_craft}}
+</div>
+<div class="vs-cell" ng-mouseover="hover(9)" ng-class="{'hover-row':hover_cell == '9'}">
+    {{product.suitable_space}}
+</div>
+<div class="vs-cell" ng-mouseover="hover(10)" ng-class="{'hover-row':hover_cell == '10'}">
+    {{product.official_price}}
+</div>
+<div class="vs-cell" ng-mouseover="hover(11)" ng-class="{'hover-row':hover_cell == '11'}">
+    {{product.dealer_price}}
+</div>

@@ -2,13 +2,15 @@
 <div class="wrap">
     <div class="category-info-section">
         <div class="info-image">
-            <imageview data-rate="623/337" center-only src="staticImageUrl + supplier.images_01"></imageview>
+            <imageview data-rate="623/328" center-only src="staticImageUrl + supplier.images_01"></imageview>
         </div>
         <div class="info-text">
             <div class="h1">{{supplier.name}}</div>
-            <div class="summary">
+            <div class="summary" ng-class="{'auto':auto_height}">
                 {{supplier.content}}
             </div>
+            <span class="btn btn-warning full-width" ng-click="preview()" ng-if="!auto_height && query_charater_length(supplier.content) > 120">+点击查看更多</span>
+            <span class="btn btn-warning full-width" ng-click="preview()" ng-if="auto_height && query_charater_length(supplier.content) > 120">- 收起</span>
         </div>
     </div>
     <div class="section-1" ng-if="(supplier.HangyeSupplierImagesList|filter:{images_type:1}).length>0">

@@ -1,6 +1,6 @@
 <div class="tool" ng-controller="toolController">
-	<a ng-href="#/query_price" class="tool_1"></a>
-	<a ng-href="#/vs_1" class="tool_2"></a>
+	<a ng-href="#/distributors" class="tool_1" ng-if="!index"></a>
+	<a ng-click="compare()" class="hover tool_2" ng-if="show_compare_btn"></a>
 	<a ng-href="#/feedback" class="tool_3"></a>
 	<a class="tool_4 hover" ng-click="top()"></a>
 </div>

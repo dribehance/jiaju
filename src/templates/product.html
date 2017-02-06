@@ -2,7 +2,7 @@
 <div class="wrap">
 	<div class="config-section">
         <div class="image-section">
-            <imageview data-rate="343/311" center-only src="staticImageUrl + product.images_01"></imageview>
+            <imageview data-rate="343/345" center-only src="staticImageUrl + product.images_01"></imageview>
         </div>
         <div class="setting-section">
             <h2>参数配置</h2>
@@ -12,22 +12,25 @@
             </div>
             <div class="clearfix">
                 <span class="pull-left" style="vertical-align: middle;">尺寸： {{product.magnitude}}</span>
-                <span class="pull-right" style="vertical-align: middle;"><a href="#/{{product}}">查看经销商</a></span>
+                <span class="pull-right" style="vertical-align: middle;"><a href="{{product.dealer_url}}">查看经销商</a></span>
             </div>
             <div>颜色： {{product.single_color}}</div>
-            <div>风格： <a href="#" style="color: blue">{{product.fengge_name}}</a></div>
-            <div>材质： <a href="#" style="color:blue">{{product.caizhi_name}}</a></div>
-            <div>连接结构： <a href="#" style="color: blue">{{product.link_structure}}</a></div>
-            <div>涂装工艺： <a href="#" style="color:blue">{{product.coating_process}}</a></div>
+            <div>风格： <a href="{{product.fengge_url}}" style="color: blue">{{product.fengge_name}}</a></div>
+            <div>材质： <a href="{{product.caizhi_url}}" style="color:blue">{{product.caizhi_name}}</a></div>
+            <div>连接结构： <a href="{{product.link_structure_url}}" style="color: blue">{{product.link_structure}}</a></div>
+            <div>涂装工艺： <a href="{{product.coating_process_url}}" style="color:blue">{{product.coating_process}}</a></div>
+            <div>装饰工艺： <a href="{{product.decoration_craft_url}}" style="color:blue">{{product.decoration_craft}}</a></div>
             <div>适合空间： {{product.suitable_space}}</div>
         </div>
         <div class="info-section">
             <h2>{{product.name}}</h2>
-            <div class="summary">
+            <div class="summary" ng-class="{'auto':auto_height}">
                 {{product.introduce}}
             </div>
+            <div class="hover text-center more-text" ng-click="preview()" ng-if="!auto_height && query_charater_length(product.introduce) > 120">+查看更多</div>
+            <div class="hover text-center more-text" ng-click="preview()" ng-if="auto_height && query_charater_length(product.introduce) > 120">- 收起</div>
             <div class="info-action">
-                <div class="hover compare-btn">加入对比</div>
+                <div class="hover compare-btn" ng-click="add_to_compare()">加入对比</div>
                 <a class="hover consult-btn" ng-href="#/single_comment?id={{product_id}}">评价（{{product.comment_count}}）</a>
             </div>
         </div>

@@ -3,6 +3,7 @@ angular.module("Pingce").controller("taofangController", function($scope, $rootS
 	if (!$routeParams.id) {
 		$rootScope.back();
 	}
+	localStorageService.set("taofang_id", $routeParams.id);
 	toastServices.show();
 	userServices.query_jiaju_taofang_by_id({
 		find_jiaju_brand_series_rooms_id: $routeParams.id
@@ -14,4 +15,11 @@ angular.module("Pingce").controller("taofangController", function($scope, $rootS
 			errorServices.autoHide(data.message);
 		}
 	})
+	$scope.preview = function() {
+		$scope.auto_height = !$scope.auto_height;
+	}
+	$scope.query_charater_length = function(c) {
+		if (!c) return;
+		return c.length;
+	}
 })

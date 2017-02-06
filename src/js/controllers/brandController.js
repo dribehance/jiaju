@@ -3,6 +3,7 @@ angular.module("Pingce").controller("brandController", function($scope, $rootSco
 	if (!$routeParams.id) {
 		$rootScope.back();
 	}
+	localStorageService.set("brand_id", $routeParams.id);
 	toastServices.show();
 	userServices.query_jiaju_brand_by_id({
 		find_jiaju_brand_id: $routeParams.id
