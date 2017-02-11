@@ -1,6 +1,8 @@
 <div style="overflow: hidden;" class="gd" ng-controller="hfController" ng-if="(ads|filter:{location_index:2}).length > 0">
         <banner class="banner" data-rate="1000/60">
-            <imageview data-rate="1000/60" src="staticImageUrl + ad.images_01" center-only ng-repeat="ad in ads|filter:{location_index:2}" on-repeat-done></imageview>
+            <a ng-href="{{ad.goto_url}}" class="block" target="_blank" ng-repeat="ad in ads|filter:{location_index:2}" on-repeat-done>
+                <imageview data-rate="1000/60" src="staticImageUrl + ad.images_01" center-only ></imageview>
+            </a>
         </banner>
     </div>
 <div class="footer">
@@ -11,12 +13,12 @@
                     友情链接
                 </div>
                 <div class="link-section-list">
-                    <a class="block" href="http://www.baidu.com">IT168</a>
-                    <a class="block" href="http://www.baidu.com">泡泡网</a>
-                    <a class="block" href="http://www.baidu.com">二手汽车之家</a>
-                    <a class="block" href="http://www.baidu.com">IT168</a>
-                    <a class="block" href="http://www.baidu.com">泡泡网</a>
-                    <a class="block" href="http://www.baidu.com">二手汽车之家</a>
+                    <a class="block" target="_blank" ng-href="http://www.baidu.com">IT168</a>
+                    <a class="block" target="_blank" ng-href="http://www.baidu.com">泡泡网</a>
+                    <a class="block" target="_blank" ng-href="http://www.baidu.com">二手汽车之家</a>
+                    <a class="block" target="_blank" ng-href="http://www.baidu.com">IT168</a>
+                    <a class="block" target="_blank" ng-href="http://www.baidu.com">泡泡网</a>
+                    <a class="block" target="_blank" ng-href="http://www.baidu.com">二手汽车之家</a>
                 </div>
             </div>
             <div class="link-section">

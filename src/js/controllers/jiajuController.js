@@ -58,6 +58,11 @@ angular.module("Pingce").controller("jiajuController", function($scope, $routePa
 			}).map(function(_f) {
 				return _f.find_jiaju_classify_id
 			}).join("#"),
+			feilei_classify_ids: select_category.filter(function(f) {
+				return f.classify_type == 4
+			}).map(function(_f) {
+				return _f.find_jiaju_classify_id
+			}).join("#"),
 		}).then(function(data) {
 			toastServices.hide()
 			if (data.code == config.request.SUCCESS && data.status == config.response.SUCCESS) {

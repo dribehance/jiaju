@@ -2,7 +2,7 @@
 <div class="wrap">
 	<div class="config-section">
         <div class="image-section">
-            <imageview data-rate="343/345" center-only src="staticImageUrl + product.images_01"></imageview>
+            <imageview data-rate="343/345"src="staticImageUrl + product.images_01"></imageview>
         </div>
         <div class="setting-section">
             <h2>参数配置</h2>
@@ -12,26 +12,24 @@
             </div>
             <div class="clearfix">
                 <span class="pull-left" style="vertical-align: middle;">尺寸： {{product.magnitude}}</span>
-                <span class="pull-right" style="vertical-align: middle;"><a href="{{product.dealer_url}}">查看经销商</a></span>
+                <span class="pull-right" style="vertical-align: middle;"><a target="_blank" ng-href="{{product.dealer_url}}">查看经销商</a></span>
             </div>
             <div>颜色： {{product.single_color}}</div>
-            <div>风格： <a href="{{product.fengge_url}}" style="color: blue">{{product.fengge_name}}</a></div>
-            <div>材质： <a href="{{product.caizhi_url}}" style="color:blue">{{product.caizhi_name}}</a></div>
-            <div>连接结构： <a href="{{product.link_structure_url}}" style="color: blue">{{product.link_structure}}</a></div>
-            <div>涂装工艺： <a href="{{product.coating_process_url}}" style="color:blue">{{product.coating_process}}</a></div>
-            <div>装饰工艺： <a href="{{product.decoration_craft_url}}" style="color:blue">{{product.decoration_craft}}</a></div>
+            <div>风格： <a target="_blank" ng-href="{{product.fengge_url}}" style="color: blue">{{product.fengge_name}}</a></div>
+            <div>材质： <a target="_blank" ng-href="{{product.caizhi_url}}" style="color:blue">{{product.caizhi_name}}</a></div>
+            <div>连接结构： <a target="_blank" ng-href="{{product.link_structure_url}}" style="color: blue">{{product.link_structure}}</a></div>
+            <div>涂装工艺： <a target="_blank" ng-href="{{product.coating_process_url}}" style="color:blue">{{product.coating_process}}</a></div>
+            <div>装饰工艺： <a target="_blank" ng-href="{{product.decoration_craft_url}}" style="color:blue">{{product.decoration_craft}}</a></div>
             <div>适合空间： {{product.suitable_space}}</div>
         </div>
         <div class="info-section">
             <h2>{{product.name}}</h2>
-            <div class="summary" ng-class="{'auto':auto_height}">
-                {{product.introduce}}
-            </div>
+            <div class="summary" ng-class="{'auto':auto_height}" ng-bind-html="parse_html(product.introduce)"></div>
             <div class="hover text-center more-text" ng-click="preview()" ng-if="!auto_height && query_charater_length(product.introduce) > 120">+查看更多</div>
             <div class="hover text-center more-text" ng-click="preview()" ng-if="auto_height && query_charater_length(product.introduce) > 120">- 收起</div>
             <div class="info-action">
                 <div class="hover compare-btn" ng-click="add_to_compare()">加入对比</div>
-                <a class="hover consult-btn" ng-href="#/single_comment?id={{product_id}}">评价（{{product.comment_count}}）</a>
+                <a class="hover consult-btn" target="_blank" ng-href="#/single_comment?id={{product_id}}">评价（{{product.comment_count}}）</a>
             </div>
         </div>
     </div>
@@ -41,7 +39,7 @@
             <span class="en">Image group</span>
         </div>
         <div class="category-section">
-            <a ng-href="#/image_group?type=2&id={{p.find_jiaju_brand_series_rooms_blank_single_detail_images_id}}" ng-repeat="p in product.FindJiajuBrandSeriesRoomsBlankSingleDetailImagesList|filter:{images_type:1}">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{p.find_jiaju_brand_series_rooms_blank_single_detail_images_id}}" ng-repeat="p in product.FindJiajuBrandSeriesRoomsBlankSingleDetailImagesList|filter:{images_type:1}">
                 <span class="category-title">{{p.name}}</span>
                 <imageview data-rate="200/112" center-only src="staticImageUrl+p.images_01"></imageview>
             </a>
@@ -53,7 +51,7 @@
             <span class="en">Image group</span>
         </div>
         <div class="category-section">
-            <a ng-href="#/image_group?type=2&id={{p.find_jiaju_brand_series_rooms_blank_single_detail_images_id}}" ng-repeat="p in product.FindJiajuBrandSeriesRoomsBlankSingleDetailImagesList|filter:{images_type:2}">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{p.find_jiaju_brand_series_rooms_blank_single_detail_images_id}}" ng-repeat="p in product.FindJiajuBrandSeriesRoomsBlankSingleDetailImagesList|filter:{images_type:2}">
                 <span class="category-title">{{p.name}}</span>
                 <imageview data-rate="200/112" center-only src="staticImageUrl+p.images_01"></imageview>
             </a>
@@ -65,7 +63,7 @@
             <span class="en">Image group</span>
         </div>
         <div class="category-section">
-            <a ng-href="#/image_group?type=2&id={{p.find_jiaju_brand_series_rooms_blank_single_detail_images_id}}" ng-repeat="p in product.FindJiajuBrandSeriesRoomsBlankSingleDetailImagesList|filter:{images_type:3}">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{p.find_jiaju_brand_series_rooms_blank_single_detail_images_id}}" ng-repeat="p in product.FindJiajuBrandSeriesRoomsBlankSingleDetailImagesList|filter:{images_type:3}">
                 <span class="category-title">{{p.name}}</span>
                 <imageview data-rate="200/112" center-only src="staticImageUrl+p.images_01"></imageview>
             </a>
@@ -77,7 +75,7 @@
             <span class="en">Image group</span>
         </div>
         <div class="category-section">
-            <a ng-href="#/image_group?type=2&id={{p.find_jiaju_brand_series_rooms_blank_single_detail_images_id}}" ng-repeat="p in product.FindJiajuBrandSeriesRoomsBlankSingleDetailImagesList|filter:{images_type:4}">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{p.find_jiaju_brand_series_rooms_blank_single_detail_images_id}}" ng-repeat="p in product.FindJiajuBrandSeriesRoomsBlankSingleDetailImagesList|filter:{images_type:4}">
                 <span class="category-title">{{p.name}}</span>
                 <imageview data-rate="200/112" center-only src="staticImageUrl+p.images_01"></imageview>
             </a>
@@ -89,7 +87,7 @@
             <span class="en">Image group</span>
         </div>
         <div class="category-section">
-            <a ng-href="#/image_group?type=2&id={{p.find_jiaju_brand_series_rooms_blank_single_detail_images_id}}" ng-repeat="p in product.FindJiajuBrandSeriesRoomsBlankSingleDetailImagesList|filter:{images_type:5}">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{p.find_jiaju_brand_series_rooms_blank_single_detail_images_id}}" ng-repeat="p in product.FindJiajuBrandSeriesRoomsBlankSingleDetailImagesList|filter:{images_type:5}">
                 <span class="category-title">{{p.name}}</span>
                 <imageview data-rate="200/112" center-only src="staticImageUrl+p.images_01"></imageview>
             </a>

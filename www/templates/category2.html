@@ -1,7 +1,7 @@
 <dribehance-header active="'neimu'"></dribehance-header>
 <div class="wrap">
     <div class="category-section" ng-if="category_list.length > 0">
-        <a ng-href="#/category3?id={{category.hangye_insider_classify02_id}}" ng-repeat="category in category_list">
+        <a target="_blank" ng-href="#/category3?id={{category.hangye_insider_classify02_id}}" ng-repeat="category in category_list">
             <span class="category-title">{{category.name}}</span>
             <imageview data-rate="200/112" center-only src="staticImageUrl + category.images_01"></imageview>
         </a>

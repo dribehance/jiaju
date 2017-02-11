@@ -19,7 +19,7 @@
             <span class="en">Supplier product</span>
         </div>
         <div class="category-section">
-            <a ng-href="#/image_group" ng-repeat="s in supplier.HangyeSupplierImagesList|filter:{images_type:1}">
+            <a target="_blank" ng-href="#/image_group" ng-repeat="s in supplier.HangyeSupplierImagesList|filter:{images_type:1}">
                 <span class="category-title">{{s.name}}</span>
                 <imageview data-rate="200/112" center-only src="staticImageUrl + s.images_01"></imageview>
             </a>
@@ -31,7 +31,7 @@
             <span class="en">Honor</span>
         </div>
         <div class="category-section">
-            <a ng-href="#/image_group" ng-repeat="s in supplier.HangyeSupplierImagesList|filter:{images_type:2}">
+            <a target="_blank" ng-href="#/image_group" ng-repeat="s in supplier.HangyeSupplierImagesList|filter:{images_type:2}">
                 <span class="category-title">{{s.name}}</span>
                 <imageview data-rate="200/112" center-only src="staticImageUrl + s.images_01"></imageview>
             </a>

@@ -28,29 +28,31 @@
         </div>
     </div>
     <div class="charater-index ">
-    	<p><b>按品牌字母查找</b></p>
+        <p><b>按品牌字母查找</b></p>
         <div class="index-wrap">
             <span ng-repeat="(key, jiaju) in jiaju_list" ng-click="jump_index(key)">{{key}}</span>
         </div>
     </div>
     <div class="brand-list">
-    	<div class="charater-section" ng-repeat="(key, jiaju) in jiaju_list">
-    		<div class="charater-title" id="{{key}}">{{key}}</div>
-    		<div class="brand-item" ng-repeat="brand in jiaju">
-    			<a class="brand-logo hover" ng-href="#/brand?id={{brand.find_jiaju_brand_id}}">
-    				<imageview data-rate="1" center-only src="staticImageUrl + brand.images_01"></imageview>
-    				<div class="logo-text">{{brand.name}}</div>
-    			</a>
-    			<div class="serial-section" ng-repeat="serial in brand.fSeriesRooms">
-    				<div class="serial-title">{{serial.name}}</div>
-    				<a class="taofang-item hover" ng-href="#/serial?id={{serial.find_jiaju_brand_series_id}}" ng-repeat="taofang in serial.fSeriesRooms">
-    					<h4>{{taofang.name}}</h4>
-    					<div>价格范围：{{taofang.price_range}}</div>
-    					<span class="text-primary">图库</span>
-    				</a>
-    			</div>
-    		</div>
-    	</div>
+        <div class="charater-section" ng-repeat="(key, jiaju) in jiaju_list">
+            <div class="charater-title" id="{{key}}">{{key}}</div>
+            <div class="brand-item" ng-repeat="brand in jiaju">
+                <div class="brand-logo hover">
+                    <a target="_blank" class="block" style="padding:15px;" ng-href="#/brand?id={{brand.find_jiaju_brand_id}}">
+                        <imageview data-rate="1" center-only src="staticImageUrl + brand.images_01"></imageview>
+                        <div class="text-center">{{brand.name}}</div>
+                    </a>
+                </div>
+                <div class="serial-section" ng-repeat="serial in brand.fSeriesRooms">
+                    <div class="serial-title">{{serial.name}}</div>
+                    <a class="taofang-item hover" target="_blank" ng-href="#/serial?id={{serial.find_jiaju_brand_series_id}}" ng-repeat="taofang in serial.fSeriesRooms">
+                        <h4>{{taofang.name}}</h4>
+                        <div style="color:gray"><small>价格范围：{{taofang.price_range}}</small></div>
+                        <span class="text-primary">图库</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <dribehance-footer></dribehance-footer>

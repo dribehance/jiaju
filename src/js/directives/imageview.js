@@ -68,18 +68,22 @@ angular.module("Pingce")
 					var image_loaded = $(e.target),
 						image_loaded_width = image_loaded.width(),
 						image_loaded_height = image_loaded.height(),
+						ml = (parseFloat($scope.width) - parseFloat(image_loaded_width)) / 2,
+						mt = (parseFloat($scope.height) - parseFloat(image_loaded_height)) / 2,
 						actural_rate = parseFloat(image_loaded_width) / parseFloat(image_loaded_height);
 					if (actural_rate < $scope.rate) {
 						image_loaded.css({
 							"display": "inline-block",
 							"height": "100%",
-							"width": "auto"
+							"width": "auto",
+							"margin-left": ml
 						})
 					} else {
 						image_loaded.css({
 							"display": "inline-block",
 							"height": "auto",
-							"width": "100%"
+							"width": "100%",
+							"margin-top": mt
 						})
 					}
 					image_loaded.parent().css({
@@ -126,20 +130,6 @@ angular.module("Pingce")
 			restrict: "A",
 			require: "^imageview",
 			link: function(scope, element, attrs, ctrl) {
-				// var target = $(element);
-				// $timeout(function() {
-				// 	ImgCache.isCached(target.attr('src'), function(path, success) {
-				// 		if (success) {
-				// 			// already cached
-				// 			ImgCache.useCachedFile(target);
-				// 		} else {
-				// 			// not there, need to cache the image
-				// 			ImgCache.cacheFile(target.attr('src'), function() {
-				// 				ImgCache.useCachedFile(target);
-				// 			});
-				// 		}
-				// 	});
-				// }, 0)
 				element.bind('load', ctrl.show_center_on_loaded);
 			}
 		}

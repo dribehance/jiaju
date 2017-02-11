@@ -6,13 +6,11 @@
 		</div>
 		<div class="brand-section-right">
 			<h1>{{brand.name}}</h1>
-			<div class="summary">
-				{{brand.introduce}}
-			</div>
+			<div class="summary" ng-bind-html="parse_html(brand.introduce)"></div>
 		</div>
 	</div>
 	<div class="category-section" ng-if="brand.FindJiajuBrandSeriesList.length>0">
-        <a ng-href="#/serial?id={{b.find_jiaju_brand_series_id}}" ng-repeat="b in brand.FindJiajuBrandSeriesList" >
+        <a target="_blank" ng-href="#/serial?id={{b.find_jiaju_brand_series_id}}" ng-repeat="b in brand.FindJiajuBrandSeriesList" >
             <span class="category-title">{{b.name}}</span>
             <imageview data-rate="200/112" center-only src="staticImageUrl + b.images_01"></imageview>
         </a>

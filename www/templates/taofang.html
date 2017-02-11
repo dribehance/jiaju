@@ -2,38 +2,36 @@
 <div class="wrap">
 	<div class="config-section">
         <div class="image-section">
-            <imageview data-rate="343/345" center-only src="staticImageUrl+taofang.images_01"></imageview>
+            <imageview data-rate="343/345" src="staticImageUrl+taofang.images_01"></imageview>
         </div>
         <div class="setting-section">
             <h2>参数配置</h2>
             <div>套房上市时间： {{taofang.rooms_market_time}}</div>
             <div>颜色： {{taofang.series_color}}</div>
-            <div>风格： <a href="{{taofang.fengge_url}}" style="color: blue">{{taofang.fengge_name}}</a></div>
-            <div>材质： <a href="{{taofang.caizhi_url}}" style="color:blue">{{taofang.caizhi_name}}</a></div>
+            <div>风格： <a target="_blank" ng-href="{{taofang.fengge_url}}" style="color: blue">{{taofang.fengge_name}}</a></div>
+            <div>材质： <a target="_blank" ng-href="{{taofang.caizhi_url}}" style="color:blue">{{taofang.caizhi_name}}</a></div>
             <div>本套房共有家具： {{taofang.single_count}}件</div>
         </div>
         <div class="info-section">
             <h2>{{taofang.name}}</h2>
-            <div class="summary" ng-class="{'auto':auto_height}">
-                {{taofang.introduce}}
-            </div>
+            <div class="summary" ng-class="{'auto':auto_height}" ng-bind-html="parse_html(taofang.introduce)"></div>
             <div class="hover btn btn-warning text-center more-text" ng-click="preview()" ng-if="!auto_height && query_charater_length(taofang.introduce) > 120">+查看更多</div>
             <div class="hover btn btn-warning text-center more-text" ng-click="preview()" ng-if="auto_height && query_charater_length(taofang.introduce) > 120">- 收起</div>
         </div>
     </div>
 	<div class="category-section">
-        <a ng-repeat="t in taofang.FindJiajuBrandSeriesRoomsBlankList">
+        <a ng-repeat="t in taofang.FindJiajuBrandSeriesRoomsBlankList" class="hover" ng-click="jump_index(t.find_jiaju_brand_series_rooms_blank_id)">
             <span class="category-title">{{t.name}}</span>
             <imageview data-rate="200/112" center-only src="staticImageUrl + t.images_01"></imageview>
         </a>
     </div>
-    <div class="section-1" ng-repeat="t in taofang.FindJiajuBrandSeriesRoomsBlankList">
+    <div class="section-1" ng-repeat="t in taofang.FindJiajuBrandSeriesRoomsBlankList" id="{{t.find_jiaju_brand_series_rooms_blank_id}}">
         <div class="section-header">
             <span class="block">{{t.name}}</span>
             <span class="en">Image group</span>
         </div>
         <div class="category-section">
-            <a ng-href="#/kongjian?id={{t.find_jiaju_brand_series_rooms_blank_id}}" ng-repeat="i in t.FindJiajuBrandSeriesRoomsBlankImages">
+            <a target="_blank" ng-href="#/kongjian?id={{t.find_jiaju_brand_series_rooms_blank_id}}" ng-repeat="i in t.FindJiajuBrandSeriesRoomsBlankImages">
                 <span class="category-title">{{i.name}}</span>
                 <imageview data-rate="200/112" center-only src="staticImageUrl+i.images_01"></imageview>
             </a>

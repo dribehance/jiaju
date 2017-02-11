@@ -11,7 +11,7 @@
 			<span class="en">Strong recommand</span>
 		</div>
 		<div class="section-content">
-			<a class="div block hover" ng-href="#/article?id={{hot.jiaju_test_id}}" ng-repeat="hot in hot_articles">
+			<a class="div block hover" target="_blank" ng-href="#/article?id={{hot.jiaju_test_id}}" ng-repeat="hot in hot_articles">
 				<imageview data-rate="316/500" center-only src="staticImageUrl + hot.images_01"></imageview>
 				<div class="summary">
 					<div class="title">{{hot.title}}</div>
@@ -26,7 +26,7 @@
 			<span class="en">Most popular</span>
 		</div>
 		<div class="section-content">
-			<a class="div block hover" ng-href="#/article?id={{focus.jiaju_test_id}}" ng-repeat="focus in focus_articles">
+			<a class="div block hover" target="_blank" ng-href="#/article?id={{focus.jiaju_test_id}}" ng-repeat="focus in focus_articles">
 				<imageview data-rate="316/250" center-only src="staticImageUrl + focus.images_01"></imageview>
 				<div class="summary">
 					<div class="title">{{focus.title}}</div>

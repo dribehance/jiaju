@@ -13,7 +13,9 @@
 <div class="header" ng-controller="hfController">
     <div style="overflow: hidden;" class="gd" ng-if="(ads|filter:{location_index:1}).length > 0">
         <banner class="banner" data-rate="1000/60">
-            <imageview data-rate="1000/60" src="staticImageUrl + ad.images_01" center-only ng-repeat="ad in ads|filter:{location_index:1}" on-repeat-done></imageview>
+            <a ng-href="{{ad.goto_url}}" class="block" target="_blank" ng-repeat="ad in ads|filter:{location_index:1}" on-repeat-done>
+                <imageview data-rate="1000/60" src="staticImageUrl + ad.images_01" center-only ></imageview>
+            </a>
         </banner>
     </div>
     <div class="wrap">

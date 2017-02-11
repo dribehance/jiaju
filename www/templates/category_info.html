@@ -6,9 +6,7 @@
         </div>
         <div class="info-text">
             <div class="h1">{{category_info.title}}</div>
-            <div class="summary" ng-class="{'auto':auto_height}">
-                {{category_info.introduce}}
-            </div>
+            <div class="summary" ng-class="{'auto':auto_height}" ng-bind-html="parse_html(category_info.introduce)"></div>
             <span class="btn btn-warning full-width" ng-click="preview()" ng-if="!auto_height && query_charater_length(category_info.introduce) > 120">+点击查看更多</span>
             <span class="btn btn-warning full-width" ng-click="preview()" ng-if="auto_height && query_charater_length(category_info.introduce) > 120">- 收起</span>
         </div>
@@ -19,7 +17,7 @@
             <span class="en">Image group</span>
         </div>
         <div class="category-section">
-            <a ng-href="#/image_group?type=1&id={{image.hangye_insider_images_id}}" ng-repeat="image in category_info.HangyeInsiderImagesList|filter:{images_type:1}">
+            <a target="_blank" ng-href="#/image_group?type=1&id={{image.hangye_insider_images_id}}" ng-repeat="image in category_info.HangyeInsiderImagesList|filter:{images_type:1}">
                 <span class="category-title">{{image.title}}</span>
                 <imageview data-rate="200/112" center-only src="staticImageUrl + image.images_01"></imageview>
             </a>
@@ -31,7 +29,7 @@
             <span class="en">Image group</span>
         </div>
         <div class="category-section">
-            <a ng-href="#/image_group?type=1&id={{image.hangye_insider_images_id}}" ng-repeat="image in category_info.HangyeInsiderImagesList|filter:{images_type:2}">
+            <a target="_blank" ng-href="#/image_group?type=1&id={{image.hangye_insider_images_id}}" ng-repeat="image in category_info.HangyeInsiderImagesList|filter:{images_type:2}">
                 <span class="category-title">{{image.title}}</span>
                 <imageview data-rate="200/112" center-only src="staticImageUrl + image.images_01"></imageview>
             </a>
@@ -43,7 +41,7 @@
             <span class="en">Image group</span>
         </div>
         <div class="category-section">
-            <a ng-href="#/image_group?type=1&id={{image.hangye_insider_images_id}}" ng-repeat="image in category_info.HangyeInsiderImagesList|filter:{images_type:3}">
+            <a target="_blank" ng-href="#/image_group?type=1&id={{image.hangye_insider_images_id}}" ng-repeat="image in category_info.HangyeInsiderImagesList|filter:{images_type:3}">
                 <span class="category-title">{{image.title}}</span>
                 <imageview data-rate="200/112" center-only src="staticImageUrl + image.images_01"></imageview>
             </a>
@@ -55,7 +53,7 @@
             <span class="en">Supplier</span>
         </div>
         <div class="suppiler-list">
-            <a ng-href="#/supplier?id={{supplier.hangye_insider_supplier_id}}&type=2" ng-repeat="supplier in supplier_list">
+            <a target="_blank" ng-href="#/supplier?id={{supplier.hangye_insider_supplier_id}}&type=2" ng-repeat="supplier in supplier_list">
                 <imageview data-rate="160/82" center-only src="staticImageUrl + supplier.logo"></imageview>
             </a>
         </div>

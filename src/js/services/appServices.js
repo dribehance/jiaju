@@ -1,6 +1,6 @@
  // by dribehance <dribehance.kksdapp.com>
  // EventHandle
- angular.module("Pingce").factory("appServices", function($rootScope, $window, $location, errorServices, toastServices, config) {
+ angular.module("Pingce").factory("appServices", function($rootScope, $sce, $anchorScroll, $window, $location, errorServices, toastServices, config) {
  	var routeChangeStart = function(e) {
  		// do something white routechangestart,eg:
  		// toastServices.show();
@@ -39,6 +39,15 @@
  					return new Array(size);
  				}
  				return [];
+ 			}
+ 			$rootScope.parse_html = function(html) {
+ 				if (!html) return;
+ 				html = html.replace(/\n/g, "<br>");
+ 				return $sce.trustAsHtml(html);
+ 			}
+ 			$rootScope.jump_index = function(index) {
+ 				$location.hash(index);
+ 				$anchorScroll();
  			}
  			$rootScope.staticImageUrl = config.imageUrl;
  		}

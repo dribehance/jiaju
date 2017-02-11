@@ -2,7 +2,7 @@
 <div class="wrap">
 	<div class="config-section">
         <div class="image-section">
-            <imageview data-rate="343/345" center-only src="staticImageUrl+serial.images_01"></imageview>
+            <imageview data-rate="343/345" src="staticImageUrl+serial.images_01"></imageview>
         </div>
         <div class="setting-section">
             <h2>参数配置</h2>
@@ -10,37 +10,35 @@
             <div>厂房面积： {{serial.c_area}}</div>
             <div>产品产地： {{serial.place_address}}</div>
             <div>颜色： {{serial.series_color}}</div>
-            <div>风格： <a href="{{serial.fengge_url}}" style="color: blue">{{serial.fengge_name}}</a></div>
-            <div>材质： <a href="{{serial.caizhi_url}}" style="color:blue">{{serial.caizhi_name}}</a></div>
+            <div>风格： <a target="_blank" ng-href="{{serial.fengge_url}}" style="color: blue">{{serial.fengge_name}}</a></div>
+            <div>材质： <a target="_blank" ng-href="{{serial.caizhi_url}}" style="color:blue">{{serial.caizhi_name}}</a></div>
             <div>本系列共有套房： {{serial.taofang_count}}个</div>
             <div>本系列共有家具： {{serial.single_count}}件</div>
         </div>
         <div class="info-section">
             <h2>{{serial.name}}</h2>
-            <div class="summary" ng-class="{'auto':auto_height}">
-                {{serial.introduce}}
-            </div>
+            <div class="summary" ng-class="{'auto':auto_height}" ng-bind-html="parse_html(serial.introduce)"></div>
             <div class="hover text-center more-text" ng-click="preview()" ng-if="!auto_height && query_charater_length(serial.introduce) > 120">+查看更多</div>
             <div class="hover text-center more-text" ng-click="preview()" ng-if="auto_height && query_charater_length(serial.introduce) > 120">- 收起</div>
             <div class="info-action">
                 <div class="hover compare-btn" ng-click="add_to_compare()">加入对比</div>
-                <a class="hover consult-btn" ng-href="#/serial_comment?id={{serial_id}}">评价（{{serial.comment_count||"0"}}）</a>
+                <a class="hover consult-btn" target="_blank" ng-href="#/serial_comment?id={{serial_id}}">评价（{{serial.comment_count||"0"}}）</a>
             </div>
         </div>
     </div>
 	<div class="category-section">
-        <a ng-repeat="s in serial.FindJiajuBrandSeriesRoomsList">
+        <a ng-repeat="s in serial.FindJiajuBrandSeriesRoomsList" class="hover" ng-click="jump_index(s.find_jiaju_brand_series_rooms_id)">
             <span class="category-title">{{s.name}}</span>
             <imageview data-rate="200/112" center-only src="staticImageUrl+s.images_01"></imageview>
         </a>
     </div>
-    <div class="section-1" ng-repeat="s in serial.FindJiajuBrandSeriesRoomsList">
+    <div class="section-1" ng-repeat="s in serial.FindJiajuBrandSeriesRoomsList" id="{{s.find_jiaju_brand_series_rooms_id}}">
         <div class="section-header">
             <span class="block">{{s.name}}</span>
             <span class="en">Image group</span>
         </div>
         <div class="category-section">
-            <a ng-href="#/taofang?id={{i.find_jiaju_brand_series_rooms_id}}" ng-repeat="i in s.FindJiajuBrandSeriesRoomsImages">
+            <a target="_blank" ng-href="#/taofang?id={{i.find_jiaju_brand_series_rooms_id}}" ng-repeat="i in s.FindJiajuBrandSeriesRoomsImages">
                 <span class="category-title">{{i.name}}</span>
                 <imageview data-rate="200/112" center-only src="staticImageUrl+i.images_01"></imageview>
             </a>
