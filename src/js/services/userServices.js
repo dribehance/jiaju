@@ -194,5 +194,8 @@ angular.module("Pingce").factory("userServices", function($rootScope, $http, api
 			token: localStorageService.get("token"),
 			url: config.url + "/app/UserCenter/feedback"
 		})),
+		search_jiaju: apiServices._get(angular.extend({}, config.common_params, {
+			url: config.url + "/app/FindJiajuManage/findJiajuBrandSearch"
+		})),
 	}
 });

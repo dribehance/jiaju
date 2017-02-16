@@ -1,0 +1,29 @@
+<dribehance-header active="'neimu'"></dribehance-header>
+<div class="wrap">
+    <div class="category-section" ng-if="search_result.length > 0">
+        <a target="_blank" ng-href="#/brand?id={{result.find_id}}" ng-repeat="result in search_result|filter:{type:'1'}">
+            <span class="category-title">{{result.name}}</span>
+            <imageview data-rate="200/112" center-only src="staticImageUrl + result.images_01"></imageview>
+        </a>
+        <a target="_blank" ng-href="#/serial?id={{result.find_id}}" ng-repeat="result in search_result|filter:{type:'2'}">
+            <span class="category-title">{{result.name}}</span>
+            <imageview data-rate="200/112" center-only src="staticImageUrl + result.images_01"></imageview>
+        </a>
+        <a target="_blank" ng-href="#/kongjian?id={{result.find_id}}" ng-repeat="result in search_result|filter:{type:'3'}">
+            <span class="category-title">{{result.name}}</span>
+            <imageview data-rate="200/112" center-only src="staticImageUrl + result.images_01"></imageview>
+        </a>
+        <a target="_blank" ng-href="#/taofang?id={{result.find_id}}" ng-repeat="result in search_result|filter:{type:'4'}">
+            <span class="category-title">{{result.name}}</span>
+            <imageview data-rate="200/112" center-only src="staticImageUrl + result.images_01"></imageview>
+        </a>
+        <a target="_blank" ng-href="#/product?id={{result.find_id}}" ng-repeat="result in search_result|filter:{type:'5'}">
+            <span class="category-title">{{result.name}}</span>
+            <imageview data-rate="200/112" center-only src="staticImageUrl + result.images_01"></imageview>
+        </a>
+    </div>
+    <div class="bg-white" style="padding:15px;margin: 0" ng-if="search_result.length == 0">
+        <h1 class="text-center">找不到相关记录</h1>
+    </div>
+</div>
+<dribehance-footer></dribehance-footer>

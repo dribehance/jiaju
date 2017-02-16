@@ -36,7 +36,7 @@
  			}
  			$rootScope.repeat_star = function(size) {
  				if (size) {
- 					return new Array(size);
+ 					return new Array(parseFloat(size));
  				}
  				return [];
  			}

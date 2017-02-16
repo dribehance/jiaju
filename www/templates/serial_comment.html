@@ -17,11 +17,12 @@
         </div>
         <div class="info-section">
         	<h2>{{serial.name}}</h2>
-        	<a class="pull-right hover consult-btn" target="_blank" ng-href="#/create_serial_comment">发表评价（{{serial.comment_count}}）</a>
+        	<a class="pull-right hover consult-btn" target="_blank" ng-href="#/create_serial_comment?brand_id={{serial.find_jiaju_brand_id}}&serial_id={{serial.find_jiaju_brand_series_id}}">发表评价（{{serial.comment_count}}）</a>
         	<!-- <div>柏森 - 传承 - 客厅</div> -->
         	<div>综合评分 {{serial.total_score}}分</div>
         	<div>
         		<i class="fa fa-star text-primary" ng-repeat="s in repeat_star(serial.total_score) track by $index"></i>
+                
         	</div>
         	<div class="info-table">
         		<div class="info-table-head">
@@ -57,6 +58,12 @@
     </div>
     <div class="comment-section-4" ng-repeat="comment in comments">
         <div class="comment-left">
+            <div class="comment-user">
+                <div class="comment-avatar">
+                    <imageview data-rate="1" center-only src="staticImageUrl + comment.images_01"></imageview>
+                </div>
+                {{comment.user.telephone}}
+            </div>
             <div class="table">
                 <div class="table-row">
                     <div class="table-cell">

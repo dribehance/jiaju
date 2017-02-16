@@ -54,16 +54,32 @@ angular.module("Pingce").controller("hfController", function($scope, $rootScope,
 	});
 	// search form
 	$scope.input = {};
-	$scope.input.category = "category";
+	$scope.input.category = $routeParams.type || "neimu";
 	if ($location.path().indexOf("search_article") > 0) {
-		$scope.input.category = "single";
+		$scope.input.category = "article";
 	}
 	$scope.input.kw = $routeParams.kw;
 	$scope.ajaxForm = function() {
-		if ($scope.input.category == "category") {
-			$location.path("search_category").search("kw", $scope.input.kw);
+		if ($scope.input.category == "article") {
+			$location.path("search_article").search({
+				"kw": $scope.input.kw,
+				"type": "article"
+			});
 			return;
 		}
-		$location.path("search_article").search("kw", $scope.input.kw);
+		if ($scope.input.category == "neimu") {
+			$location.path("search_category").search({
+				"kw": $scope.input.kw,
+				"type": "neimu"
+			});
+			return;
+		}
+		if ($scope.input.category == "jiaju") {
+			$location.path("search_jiaju").search({
+				"kw": $scope.input.kw,
+				"type": "jiaju"
+			});
+			return;
+		}
 	}
 });

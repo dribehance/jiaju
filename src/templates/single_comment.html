@@ -10,17 +10,17 @@
             <div>厂房面积： {{serial.c_area}}</div>
             <div>产品产地： {{serial.place_address}}</div>
             <div>颜色： {{serial.series_color}}</div>
-            <div>风格： <a target="_blank" ng-href="#" style="color: blue">{{serial.fengge_name}}</a></div>
-            <div>材质： <a target="_blank" ng-href="#" style="color:blue">{{serial.caizhi_name}}</a></div>
+            <div>风格： <a target="_blank" ng-href="{{serial.fengge_name_url}}" style="color: blue">{{serial.fengge_name}}</a></div>
+            <div>材质： <a target="_blank" ng-href="{{serial.caizhi_name_url}}" style="color:blue">{{serial.caizhi_name}}</a></div>
             <div>本系列共有套房： {{serial.taofang_count}}个</div>
             <div>本系列共有家具： {{serial.single_count}}件</div>
         </div>
         <div class="info-section">
         	<h2>{{serial.name}}</h2>
-        	<a class="pull-right hover consult-btn" target="_blank" ng-href="#/create_single_comment">发表评价（{{serial.comment_count}}）</a>
+        	<a class="pull-right hover consult-btn" target="_blank" ng-href="#/create_single_comment?brand_id={{serial.find_jiaju_brand_id}}&serial_id={{serial.find_jiaju_brand_series_id}}&taofang_id={{serial.find_jiaju_brand_series_rooms_blank_id}}&single_id={{serial.find_jiaju_brand_series_rooms_blank_single_id}}">发表评价（{{serial.comment_count}}）</a>
         	<!-- <div>柏森 - 传承 - 客厅</div> -->
         	<div>综合评分 {{serial.total_score}}分</div>
-        	<div>
+        	<div style="min-height: 15px;">
         		<i class="fa fa-star text-primary" ng-repeat="s in repeat_star(serial.total_score) track by $index"></i>
         	</div>
         	<div class="info-table">

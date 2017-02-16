@@ -43,6 +43,7 @@ angular.module("Pingce").constant("config", {
 		"feedback",
 		"search_category",
 		"search_article",
+		"search_jiaju",
 		"signin",
 		"signup",
 		"forget",

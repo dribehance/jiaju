@@ -1,5 +1,5 @@
 // by dribehance <dribehance.kksdapp.com>
-angular.module("Pingce").controller("createSingleCommentController", function($scope, $timeout, $location, userServices, errorServices, toastServices, localStorageService, config) {
+angular.module("Pingce").controller("createSingleCommentController", function($scope, $timeout, $routeParams, $location, userServices, errorServices, toastServices, localStorageService, config) {
 	$scope.input = {};
 	toastServices.show();
 	userServices.query_brand_list().then(function(data) {
@@ -7,6 +7,11 @@ angular.module("Pingce").controller("createSingleCommentController", function($s
 		if (data.code == config.request.SUCCESS && data.status == config.response.SUCCESS) {
 			$scope.brand_list = data.Result.FindJiajuBrandList;
 			$scope.input.brand = $scope.brand_list[0];
+			angular.forEach($scope.brand_list, function(v, k) {
+				if (v.find_jiaju_brand_id == $routeParams.brand_id) {
+					$scope.input.brand = v;
+				}
+			})
 		} else {
 			errorServices.autoHide(data.message);
 		}
@@ -18,6 +23,11 @@ angular.module("Pingce").controller("createSingleCommentController", function($s
 			if (data.code == config.request.SUCCESS && data.status == config.response.SUCCESS) {
 				$scope.serial_list = data.Result.FindJiajuBrandSeriesList;
 				$scope.input.serial = $scope.serial_list[0];
+				angular.forEach($scope.serial_list, function(v, k) {
+					if (v.find_jiaju_brand_series_id == $routeParams.serial_id) {
+						$scope.input.serial = v;
+					}
+				})
 			} else {
 				errorServices.autoHide(data.message);
 			}
@@ -30,6 +40,11 @@ angular.module("Pingce").controller("createSingleCommentController", function($s
 			if (data.code == config.request.SUCCESS && data.status == config.response.SUCCESS) {
 				$scope.taofang_list = data.Result.FSeriesRoomsList;
 				$scope.input.taofang = $scope.taofang_list[0];
+				angular.forEach($scope.taofang_list, function(v, k) {
+					if (v.find_jiaju_brand_series_rooms_blank_id == $routeParams.taofang_id) {
+						$scope.input.taofang = v;
+					}
+				})
 			} else {
 				errorServices.autoHide(data.message);
 			}
@@ -42,6 +57,11 @@ angular.module("Pingce").controller("createSingleCommentController", function($s
 			if (data.code == config.request.SUCCESS && data.status == config.response.SUCCESS) {
 				$scope.single_list = data.Result.FBlankSinglesList;
 				$scope.input.single = $scope.single_list[0];
+				angular.forEach($scope.single_list, function(v, k) {
+					if (v.find_jiaju_brand_series_rooms_blank_single_id == $routeParams.single_id) {
+						$scope.input.single = v;
+					}
+				})
 			} else {
 				errorServices.autoHide(data.message);
 			}

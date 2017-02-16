@@ -1,7 +1,9 @@
 <dribehance-header active="'index'"></dribehance-header>
  <div style="overflow: hidden;">
  	<banner class="banner" data-rate="1920/550">
-        <imageview data-rate="1920/550" src="staticImageUrl + banner.images_01" center-only ng-repeat="banner in banners" on-repeat-done></imageview>
+ 		<a ng-href="{{banner.goto_url}}" target="_blank" class="block" ng-repeat="banner in banners" on-repeat-done>
+ 			<imageview data-rate="1920/550" src="staticImageUrl + banner.images_01" center-only ></imageview>
+ 		</a>
     </banner>
  </div>
 <div class="wrap">
