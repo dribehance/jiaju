@@ -37,6 +37,15 @@ angular.module("Pingce").factory("userServices", function($rootScope, $http, api
 			token: localStorageService.get("token"),
 			cache: false
 		})),
+		// update user basic information
+		update_basicinfo: apiServices._get(angular.extend({}, config.common_params, {
+			url: config.url + "/app/UserCenter/UpdateOther",
+			token: localStorageService.get("token"),
+		})),
+		update_password: apiServices._get(angular.extend({}, config.common_params, {
+			url: config.url + "/app/UserCenter/SetPassword",
+			token: localStorageService.get("token"),
+		})),
 		// query user basic information
 		query_banner: apiServices._get(angular.extend({}, config.common_params, {
 			url: config.url + "/app/HomeManage/bannerList",

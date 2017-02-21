@@ -1,5 +1,6 @@
 <div class="me-section">
     <div class="avatar" flow-init="{singleFile:true}" flow-btn ng-controller="uploadAvatarController">
+        <span class="label-btn">点击修改头像</span>
         <imageview data-rate="1" src="staticImageUrl + user.images_01" center-only ng-if="user.images_01"></imageview>
         <div class="progress progress-striped" ng-if="$flow.files[0].isUploading()">
             <div class="progress-bar" ng-style="{width: ($flow.files[0].progress() * 100) + '%'}">
@@ -8,132 +9,159 @@
         </div>
     </div>
     <div class="me-nav">
-        <a>我的口碑</a>
+        <a>个人中心</a>
         <span class="splash">/</span>
         <a target="_blank" ng-href="#/index">家具首页</a>
     </div>
 </div>
 <div class="wrap">
-    <div class="comment-section-4" ng-repeat="comment in comments">
-        <div class="comment-left">
-            <div class="table">
-                <div class="table-row">
-                    <div class="table-cell">
-                        产品
+    <div class="me-account-section">
+        <div class="me-left">
+            <a class="me-left-item" ng-href="#/basic_info">
+                基本信息
+            </a>
+            <!-- <a class="me-left-item" ng-href="#/setting">
+                绑定设置
+            </a> -->
+            <a class="me-left-item" ng-href="#/modify_password">
+                修改密码
+            </a>
+            <!-- <a class="me-left-item" ng-href="#/update_avatar">
+                 修改头像
+            </a>-->
+            <a class="me-left-item active" ng-href="#/me">
+                我的口碑
+            </a>
+        </div>
+        <div class="me-right">
+            <div class="comment-section-4" ng-repeat="comment in comments">
+                <div class="comment-left">
+                    <div class="comment-user">
+                        <div class="comment-avatar">
+                            <imageview data-rate="1" center-only src="staticImageUrl + comment.user.images_01"></imageview>
+                        </div>
+                        {{comment.user.telephone}}
                     </div>
-                    <div class="table-cell">
-                        {{comment.product_name}}
+                    <div class="table">
+                        <div class="table-row">
+                            <div class="table-cell">
+                                产品
+                            </div>
+                            <div class="table-cell">
+                                {{comment.product_name}}
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">
+                                购买价格
+                            </div>
+                            <div class="table-cell">
+                                {{comment.price}}
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">
+                                购买时间
+                            </div>
+                            <div class="table-cell">
+                                {{comment.year+comment.month}}
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">
+                                购买地点
+                            </div>
+                            <div class="table-cell">
+                                {{comment.province + comment.city}}
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">
+                                经销商
+                            </div>
+                            <div class="table-cell">
+                                {{comment.dealer_name}}
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">
+                                购买目的
+                            </div>
+                            <div class="table-cell">
+                                {{parse_aim(comment.buy_aim)}}
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">
+                                使用功能
+                            </div>
+                            <div class="table-cell star-cell">
+                                <i class="fa fa-star text-primary" ng-repeat="s in repeat_star(comment.gongneng_score) track by $index"></i>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">
+                                外观
+                            </div>
+                            <div class="table-cell star-cell">
+                                <i class="fa fa-star text-primary" ng-repeat="s in repeat_star(comment.waiguan_score) track by $index"></i>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">
+                                工艺
+                            </div>
+                            <div class="table-cell star-cell">
+                                <i class="fa fa-star text-primary" ng-repeat="s in repeat_star(comment.gongyi_score) track by $index"></i>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">
+                                涂装
+                            </div>
+                            <div class="table-cell star-cell">
+                                <i class="fa fa-star text-primary" ng-repeat="s in repeat_star(comment.tuzhuang_score) track by $index"></i>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">
+                                环保
+                            </div>
+                            <div class="table-cell star-cell">
+                                <i class="fa fa-star text-primary" ng-repeat="s in repeat_star(comment.huanbao_score) track by $index"></i>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">
+                                性价比
+                            </div>
+                            <div class="table-cell star-cell">
+                                <i class="fa fa-star text-primary" ng-repeat="s in repeat_star(comment.xingjiabi_score) track by $index"></i>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell">
+                                经销商满意度
+                            </div>
+                            <div class="table-cell star-cell">
+                                <i class="fa fa-star text-primary" ng-repeat="s in repeat_star(comment.manyidu_score) track by $index"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="table-row">
-                    <div class="table-cell">
-                        购买价格
-                    </div>
-                    <div class="table-cell">
-                        {{comment.price}}
-                    </div>
-                </div>
-                <div class="table-row">
-                    <div class="table-cell">
-                        购买时间
-                    </div>
-                    <div class="table-cell">
-                        {{comment.year+comment.month}}
-                    </div>
-                </div>
-                <div class="table-row">
-                    <div class="table-cell">
-                        购买地点
-                    </div>
-                    <div class="table-cell">
-                        {{comment.province + comment.city}}
-                    </div>
-                </div>
-                <div class="table-row">
-                    <div class="table-cell">
-                        经销商
-                    </div>
-                    <div class="table-cell">
-                        {{comment.dealer_name}}
-                    </div>
-                </div>
-                <div class="table-row">
-                    <div class="table-cell">
-                        购买目的
-                    </div>
-                    <div class="table-cell">
-                        {{parse_aim(comment.buy_aim)}}
-                    </div>
-                </div>
-                <div class="table-row">
-                    <div class="table-cell">
-                        使用功能
-                    </div>
-                    <div class="table-cell star-cell">
-                        <i class="fa fa-star text-primary" ng-repeat="s in repeat_star(comment.gongneng_score) track by $index"></i> 
-                    </div>
-                </div>
-                <div class="table-row">
-                    <div class="table-cell">
-                        外观
-                    </div>
-                    <div class="table-cell star-cell">
-                        <i class="fa fa-star text-primary" ng-repeat="s in repeat_star(comment.waiguan_score) track by $index"></i> 
-                    </div>
-                </div>
-                <div class="table-row">
-                    <div class="table-cell">
-                        工艺
-                    </div>
-                    <div class="table-cell star-cell">
-                        <i class="fa fa-star text-primary" ng-repeat="s in repeat_star(comment.gongyi_score) track by $index"></i>  
-                    </div>
-                </div>
-                <div class="table-row">
-                    <div class="table-cell">
-                        涂装
-                    </div>
-                    <div class="table-cell star-cell">
-                        <i class="fa fa-star text-primary" ng-repeat="s in repeat_star(comment.tuzhuang_score) track by $index"></i> 
-                    </div>
-                </div>
-                <div class="table-row">
-                    <div class="table-cell">
-                        环保
-                    </div>
-                    <div class="table-cell star-cell">
-                        <i class="fa fa-star text-primary" ng-repeat="s in repeat_star(comment.huanbao_score) track by $index"></i> 
-                    </div>
-                </div>
-                <div class="table-row">
-                    <div class="table-cell">
-                        性价比
-                    </div>
-                    <div class="table-cell star-cell">
-                        <i class="fa fa-star text-primary" ng-repeat="s in repeat_star(comment.xingjiabi_score) track by $index"></i> 
-                    </div>
-                </div>
-                <div class="table-row">
-                    <div class="table-cell">
-                        经销商满意度
-                    </div>
-                    <div class="table-cell star-cell">
-                        <i class="fa fa-star text-primary" ng-repeat="s in repeat_star(comment.manyidu_score) track by $index"></i>
-                    </div>
+                <div class="comment-right">
+                    <div class="comment-item"><b>【最满意的一点】</b>{{comment.use_manyi}} </div>
+                    <div class="comment-item"><b>【最不满意的一点】</b>{{comment.use_not_manyi}} </div>
+                    <div class="comment-item"><b>【外观】</b>{{comment.use_waiguan}} </div>
+                    <div class="comment-item"><b>【工艺】</b>{{comment.use_gongyi}} </div>
+                    <div class="comment-item"><b>【涂装】</b>{{comment.use_tuzhuang}} </div>
+                    <div class="comment-item"><b>【环保】</b>{{comment.use_huanbao}} </div>
+                    <div class="comment-item"><b>【性价比】</b>{{comment.use_xingjiabi}} </div>
                 </div>
             </div>
-        </div>
-        <div class="comment-right">
-            <div class="comment-item"><b>【最满意的一点】</b>{{comment.use_manyi}} </div>
-            <div class="comment-item"><b>【最不满意的一点】</b>{{comment.use_not_manyi}} </div>
-            <div class="comment-item"><b>【外观】</b>{{comment.use_waiguan}} </div>
-            <div class="comment-item"><b>【工艺】</b>{{comment.use_gongyi}} </div>
-            <div class="comment-item"><b>【涂装】</b>{{comment.use_tuzhuang}} </div>
-            <div class="comment-item"><b>【环保】</b>{{comment.use_huanbao}} </div>
-            <div class="comment-item"><b>【性价比】</b>{{comment.use_xingjiabi}} </div>
+            <div class="load-more text-center" ng-if="comments.length==0">暂无相关评论</div>
+            <div class="load-more text-center hover" ng-click="loadMore()" ng-if="comments.length>0">{{page.message}}</div>
         </div>
     </div>
-    <div class="load-more text-center" ng-if="comments.length==0">暂无相关评论</div>
-    <div class="load-more text-center hover" ng-click="loadMore()" ng-if="comments.length>0">{{page.message}}</div>
 </div>
 <dribehance-footer></dribehance-footer>

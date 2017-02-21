@@ -57,6 +57,12 @@
     </div>
     <div class="comment-section-4" ng-repeat="comment in comments">
         <div class="comment-left">
+            <div class="comment-user">
+                <div class="comment-avatar">
+                    <imageview data-rate="1" center-only src="staticImageUrl + comment.user.images_01"></imageview>
+                </div>
+                {{comment.user.telephone}}
+            </div>
             <div class="table">
                 <div class="table-row">
                     <div class="table-cell">

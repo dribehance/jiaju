@@ -48,5 +48,8 @@ angular.module("Pingce").constant("config", {
 		"signup",
 		"forget",
 		"me",
+		"modify_password",
+		"setting",
+		"basic_info"
 	]
 });

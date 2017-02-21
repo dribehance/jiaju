@@ -9,6 +9,7 @@ angular.module("Pingce").directive('banner', function() {
 				autoplay: true,
 				items: 1,
 				nav: true,
+				loop: true
 			}
 			options = angular.extend({}, options, scope.$eval($(element).attr('data-options')));
 			var rate = parseFloat(scope.$eval($(element).attr('data-rate')));

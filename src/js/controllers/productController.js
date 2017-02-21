@@ -34,7 +34,7 @@ angular.module("Pingce").controller("productController", function($scope, $rootS
 			product_compare_list.push(temp);
 		}
 		localStorageService.set("product_compare_list", product_compare_list);
-		errorServices.autoHide("已经加入对比");
+		errorServices.autoHide("已经加入对比，请点击页面右侧的产品对比查看");
 	}
 	$scope.preview = function() {
 		$scope.auto_height = !$scope.auto_height;

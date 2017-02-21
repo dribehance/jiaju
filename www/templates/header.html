@@ -3,7 +3,7 @@
         24 小时热线： 0123456789 <span class="splash">/</span> 客服QQ：0123456789
         <div class="pull-right">
             <span class="hover" ng-click="go('signin')" ng-if="!user">登录</span>
-            <span class="hover" ng-click="go('me')" ng-if="user">{{user.telephone}}</span>
+            <span class="hover" ng-click="go('basic_info')" ng-if="user">{{user.nickname||user.telephone}}</span>
             <span class="splash">/</span>
             <span class="hover" ng-click="go('signup')" ng-if="!user">注册</span>
             <span class="hover" ng-click="logout()" ng-if="user">退出</span>
@@ -37,6 +37,7 @@
             <form class="search-section" ng-submit="ajaxForm()" name="searchForm">
                 <div class="search-dropdown">
                     <select name="category" id="category" ng-model="input.category">
+                        <option value="">请选择</option>
                         <option value="article">文章</option>
                         <option value="neimu">内幕</option>
                         <option value="jiaju">家具</option>

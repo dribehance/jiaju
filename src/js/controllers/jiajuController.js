@@ -28,7 +28,7 @@ angular.module("Pingce").controller("jiajuController", function($scope, $routePa
 			}
 		});
 	}
-	$scope.size = [7, 7, 7];
+	$scope.size = [7, 7, 7, 7];
 	$scope.more_type = function(type) {
 		if ($scope.size[type - 1] == 1000) {
 			$scope.size[type - 1] = 7;

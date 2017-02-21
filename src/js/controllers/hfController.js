@@ -54,12 +54,16 @@ angular.module("Pingce").controller("hfController", function($scope, $rootScope,
 	});
 	// search form
 	$scope.input = {};
-	$scope.input.category = $routeParams.type || "neimu";
+	$scope.input.category = $routeParams.type;
 	if ($location.path().indexOf("search_article") > 0) {
 		$scope.input.category = "article";
 	}
 	$scope.input.kw = $routeParams.kw;
 	$scope.ajaxForm = function() {
+		if (!$scope.input.category) {
+			errorServices.autoHide("请先选择分类，再进行搜索");
+			return;
+		}
 		if ($scope.input.category == "article") {
 			$location.path("search_article").search({
 				"kw": $scope.input.kw,

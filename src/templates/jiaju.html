@@ -24,7 +24,7 @@
             <span class="title">按分类</span>
             <span class="more hover" ng-click="more_type(4)" ng-if="(category_list | filter:{classify_type:4}).length>7">+ 更多</span>
             <div class="hover" ng-click="reset_type(4)" ng-class="{'text-primary':query_category_type(4)  == 0}">不限</div>
-            <div ng-repeat="category in category_list | filter:{classify_type:4} track by $index" ng-show="$index < size[2]" ng-class="{'text-primary':category.check}" ng-click="search_by_category(category)"> <i class="fa" ng-class="{'fa-check-square-o':category.check,'fa-square-o':!category.check}" aria-hidden="true"></i> {{category.name}}</div>
+            <div ng-repeat="category in category_list | filter:{classify_type:4} track by $index" ng-show="$index < size[3]" ng-class="{'text-primary':category.check}" ng-click="search_by_category(category)"> <i class="fa" ng-class="{'fa-check-square-o':category.check,'fa-square-o':!category.check}" aria-hidden="true"></i> {{category.name}}</div>
         </div>
     </div>
     <div class="charater-index ">

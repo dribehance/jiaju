@@ -1,41 +1,41 @@
 <dribehance-header active="'index'"></dribehance-header>
- <div style="overflow: hidden;">
- 	<banner class="banner" data-rate="1920/550">
- 		<a ng-href="{{banner.goto_url}}" target="_blank" class="block" ng-repeat="banner in banners" on-repeat-done>
- 			<imageview data-rate="1920/550" src="staticImageUrl + banner.images_01" center-only ></imageview>
- 		</a>
-    </banner>
- </div>
 <div class="wrap">
-	<div class="section-1">
-		<div class="section-header">
-			<span class="block">重点推荐</span>
-			<span class="en">Strong recommand</span>
-		</div>
-		<div class="section-content">
-			<a class="div block hover" target="_blank" ng-href="#/article?id={{hot.jiaju_test_id}}" ng-repeat="hot in hot_articles">
-				<imageview data-rate="316/500" center-only src="staticImageUrl + hot.images_01"></imageview>
-				<div class="summary">
-					<div class="title">{{hot.title}}</div>
-					<span>{{hot.brand}}</span>
-				</div>
-			</a>
-		</div>
-	</div>
-	<div class="section-2">
-		<div class="section-header">
-			<span class="block">最新热门</span>
-			<span class="en">Most popular</span>
-		</div>
-		<div class="section-content">
-			<a class="div block hover" target="_blank" ng-href="#/article?id={{focus.jiaju_test_id}}" ng-repeat="focus in focus_articles">
-				<imageview data-rate="316/250" center-only src="staticImageUrl + focus.images_01"></imageview>
-				<div class="summary">
-					<div class="title">{{focus.title}}</div>
-					<span>{{focus.brand}}</span>
-				</div>
-			</a>
-		</div>
-	</div>
+    <div style="overflow: hidden;">
+        <banner class="banner" data-rate="1200/550">
+            <a ng-href="{{banner.goto_url}}" target="_blank" class="block" ng-repeat="banner in banners" on-repeat-done>
+                <imageview data-rate="1200/550" src="staticImageUrl + banner.images_01" center-only></imageview>
+            </a>
+        </banner>
+    </div>
+    <div class="section-1">
+        <div class="section-header">
+            <span class="block">重点推荐</span>
+            <span class="en">Strong recommand</span>
+        </div>
+        <div class="section-content">
+            <a class="div block hover" target="_blank" ng-href="#/article?id={{hot.jiaju_test_id}}" ng-repeat="hot in hot_articles">
+                <imageview data-rate="316/500" center-only src="staticImageUrl + hot.images_01"></imageview>
+                <div class="summary">
+                    <div class="title">{{hot.title}}</div>
+                    <span>{{hot.brand}}</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="section-2">
+        <div class="section-header">
+            <span class="block">最新热门</span>
+            <span class="en">Most popular</span>
+        </div>
+        <div class="section-content">
+            <a class="div block hover" target="_blank" ng-href="#/article?id={{focus.jiaju_test_id}}" ng-repeat="focus in focus_articles">
+                <imageview data-rate="316/250" center-only src="staticImageUrl + focus.images_01"></imageview>
+                <div class="summary">
+                    <div class="title">{{focus.title}}</div>
+                    <span>{{focus.brand}}</span>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>
 <dribehance-footer></dribehance-footer>

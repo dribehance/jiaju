@@ -53,106 +53,202 @@
                 </select>
             </div>
             <!-- 造型 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.waiguan_zm_f_detail_images_id}}" ng-if="images.waiguan_zm_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_zm"></imageview>
                 <span class="image-title">正面</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.waiguan_zm_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_zm"></imageview>
+                <span class="image-title">正面</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.waiguan_bm_f_detail_images_id}}" ng-if="images.waiguan_bm_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_bm"></imageview>
                 <span class="image-title">背面</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" class="vs-image" ng-if="!images.waiguan_bm_f_detail_images_id">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_bm"></imageview>
+                <span class="image-title">背面</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.waiguan_zc_f_detail_images_id}}" ng-if="images.waiguan_zc_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_zc"></imageview>
                 <span class="image-title">左侧面</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.waiguan_zc_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_zc"></imageview>
+                <span class="image-title">左侧面</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.waiguan_yc_f_detail_images_id}}" ng-if="images.waiguan_yc_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_yc"></imageview>
                 <span class="image-title">右侧面</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.waiguan_yc_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_yc"></imageview>
+                <span class="image-title">右侧面</span>
+            </a>
             <!-- 造型 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_01_f_detail_images_id}}" ng-if="images.zx_01_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_01"></imageview>
                 <span class="image-title">造型1</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.zx_01_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_01"></imageview>
+                <span class="image-title">造型1</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_02_f_detail_images_id}}" ng-if="images.zx_02_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_02"></imageview>
                 <span class="image-title">造型2</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.zx_02_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_02"></imageview>
+                <span class="image-title">造型2</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_03_f_detail_images_id}}" ng-if="images.zx_03_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_03"></imageview>
                 <span class="image-title">造型3</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.zx_03_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_03"></imageview>
+                <span class="image-title">造型3</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_04_f_detail_images_id}}" ng-if="images.zx_04_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_04"></imageview>
                 <span class="image-title">造型4</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.zx_04_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_04"></imageview>
+                <span class="image-title">造型4</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_05_f_detail_images_id}}" ng-if="images.zx_05_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_05"></imageview>
                 <span class="image-title">腿部</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.zx_05_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_05"></imageview>
+                <span class="image-title">腿部</span>
+            </a>
             <!-- 表层细节 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_01_f_detail_images_id}}" ng-if="images.bc_01_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_01"></imageview>
                 <span class="image-title">表层细节1</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.bc_01_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_01"></imageview>
+                <span class="image-title">表层细节1</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_02_f_detail_images_id}}" ng-if="images.bc_02_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_02"></imageview>
                 <span class="image-title">表层细节2</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.bc_02_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_02"></imageview>
+                <span class="image-title">表层细节2</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_03_f_detail_images_id}}" ng-if="images.bc_03_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_03"></imageview>
                 <span class="image-title">表层细节3</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.bc_03_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_03"></imageview>
+                <span class="image-title">表层细节3</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_04_f_detail_images_id}}" ng-if="images.bc_04_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_04"></imageview>
                 <span class="image-title">表层细节4</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.bc_04_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_04"></imageview>
+                <span class="image-title">表层细节4</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_05_f_detail_images_id}}" ng-if="images.bc_05_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_05"></imageview>
                 <span class="image-title">表层细节5</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.bc_05_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_05"></imageview>
+                <span class="image-title">表层细节5</span>
+            </a>
             <!-- 工艺细节 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_01_f_detail_images_id}}" ng-if="images.gy_01_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_01"></imageview>
                 <span class="image-title">工艺细节1</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gy_01_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_01"></imageview>
+                <span class="image-title">工艺细节1</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_02_f_detail_images_id}}" ng-if="images.gy_02_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_02"></imageview>
                 <span class="image-title">工艺细节2</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gy_02_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_02"></imageview>
+                <span class="image-title">工艺细节2</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_03_f_detail_images_id}}" ng-if="images.gy_03_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_03"></imageview>
                 <span class="image-title">工艺细节3</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gy_03_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_03"></imageview>
+                <span class="image-title">工艺细节3</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_04_f_detail_images_id}}" ng-if="images.gy_04_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_04"></imageview>
                 <span class="image-title">工艺细节4</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gy_04_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_04"></imageview>
+                <span class="image-title">工艺细节4</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_05_f_detail_images_id}}" ng-if="images.gy_05_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_05"></imageview>
                 <span class="image-title">工艺细节5</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.gy_05_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_05"></imageview>
+                <span class="image-title">工艺细节5</span>
+            </a>
             <!-- 功能细节 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_01_f_detail_images_id}}" ng-if="images.gn_01_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_01"></imageview>
                 <span class="image-title">功能细节1</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gn_01_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_01"></imageview>
+                <span class="image-title">功能细节1</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_02_f_detail_images_id}}" ng-if="images.gn_02_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_02"></imageview>
                 <span class="image-title">功能细节2</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gn_02_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_02"></imageview>
+                <span class="image-title">功能细节2</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_03_f_detail_images_id}}" ng-if="images.gn_03_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_03"></imageview>
                 <span class="image-title">功能细节3</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gn_03_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_03"></imageview>
+                <span class="image-title">功能细节3</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_04_f_detail_images_id}}" ng-if="images.gn_04_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_04"></imageview>
                 <span class="image-title">功能细节4</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gn_04_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_04"></imageview>
+                <span class="image-title">功能细节4</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_05_f_detail_images_id}}" ng-if="images.gn_05_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_05"></imageview>
                 <span class="image-title">功能细节5</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.gn_05_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_05"></imageview>
+                <span class="image-title">功能细节5</span>
+            </a>
         </div>
         <!-- 第三列 -->
         <div class="col" ng-controller="imageColController">
@@ -180,106 +276,202 @@
                 </select>
             </div>
             <!-- 造型 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.waiguan_zm_f_detail_images_id}}" ng-if="images.waiguan_zm_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_zm"></imageview>
                 <span class="image-title">正面</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.waiguan_zm_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_zm"></imageview>
+                <span class="image-title">正面</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.waiguan_bm_f_detail_images_id}}" ng-if="images.waiguan_bm_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_bm"></imageview>
                 <span class="image-title">背面</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" class="vs-image" ng-if="!images.waiguan_bm_f_detail_images_id">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_bm"></imageview>
+                <span class="image-title">背面</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.waiguan_zc_f_detail_images_id}}" ng-if="images.waiguan_zc_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_zc"></imageview>
                 <span class="image-title">左侧面</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.waiguan_zc_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_zc"></imageview>
+                <span class="image-title">左侧面</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.waiguan_yc_f_detail_images_id}}" ng-if="images.waiguan_yc_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_yc"></imageview>
                 <span class="image-title">右侧面</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.waiguan_yc_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_yc"></imageview>
+                <span class="image-title">右侧面</span>
+            </a>
             <!-- 造型 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_01_f_detail_images_id}}" ng-if="images.zx_01_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_01"></imageview>
                 <span class="image-title">造型1</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.zx_01_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_01"></imageview>
+                <span class="image-title">造型1</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_02_f_detail_images_id}}" ng-if="images.zx_02_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_02"></imageview>
                 <span class="image-title">造型2</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.zx_02_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_02"></imageview>
+                <span class="image-title">造型2</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_03_f_detail_images_id}}" ng-if="images.zx_03_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_03"></imageview>
                 <span class="image-title">造型3</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.zx_03_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_03"></imageview>
+                <span class="image-title">造型3</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_04_f_detail_images_id}}" ng-if="images.zx_04_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_04"></imageview>
                 <span class="image-title">造型4</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.zx_04_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_04"></imageview>
+                <span class="image-title">造型4</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_05_f_detail_images_id}}" ng-if="images.zx_05_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_05"></imageview>
                 <span class="image-title">腿部</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.zx_05_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_05"></imageview>
+                <span class="image-title">腿部</span>
+            </a>
             <!-- 表层细节 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_01_f_detail_images_id}}" ng-if="images.bc_01_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_01"></imageview>
                 <span class="image-title">表层细节1</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.bc_01_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_01"></imageview>
+                <span class="image-title">表层细节1</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_02_f_detail_images_id}}" ng-if="images.bc_02_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_02"></imageview>
                 <span class="image-title">表层细节2</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.bc_02_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_02"></imageview>
+                <span class="image-title">表层细节2</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_03_f_detail_images_id}}" ng-if="images.bc_03_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_03"></imageview>
                 <span class="image-title">表层细节3</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.bc_03_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_03"></imageview>
+                <span class="image-title">表层细节3</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_04_f_detail_images_id}}" ng-if="images.bc_04_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_04"></imageview>
                 <span class="image-title">表层细节4</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.bc_04_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_04"></imageview>
+                <span class="image-title">表层细节4</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_05_f_detail_images_id}}" ng-if="images.bc_05_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_05"></imageview>
                 <span class="image-title">表层细节5</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.bc_05_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_05"></imageview>
+                <span class="image-title">表层细节5</span>
+            </a>
             <!-- 工艺细节 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_01_f_detail_images_id}}" ng-if="images.gy_01_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_01"></imageview>
                 <span class="image-title">工艺细节1</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gy_01_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_01"></imageview>
+                <span class="image-title">工艺细节1</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_02_f_detail_images_id}}" ng-if="images.gy_02_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_02"></imageview>
                 <span class="image-title">工艺细节2</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gy_02_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_02"></imageview>
+                <span class="image-title">工艺细节2</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_03_f_detail_images_id}}" ng-if="images.gy_03_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_03"></imageview>
                 <span class="image-title">工艺细节3</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gy_03_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_03"></imageview>
+                <span class="image-title">工艺细节3</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_04_f_detail_images_id}}" ng-if="images.gy_04_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_04"></imageview>
                 <span class="image-title">工艺细节4</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gy_04_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_04"></imageview>
+                <span class="image-title">工艺细节4</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_05_f_detail_images_id}}" ng-if="images.gy_05_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_05"></imageview>
                 <span class="image-title">工艺细节5</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.gy_05_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_05"></imageview>
+                <span class="image-title">工艺细节5</span>
+            </a>
             <!-- 功能细节 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_01_f_detail_images_id}}" ng-if="images.gn_01_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_01"></imageview>
                 <span class="image-title">功能细节1</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gn_01_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_01"></imageview>
+                <span class="image-title">功能细节1</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_02_f_detail_images_id}}" ng-if="images.gn_02_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_02"></imageview>
                 <span class="image-title">功能细节2</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gn_02_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_02"></imageview>
+                <span class="image-title">功能细节2</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_03_f_detail_images_id}}" ng-if="images.gn_03_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_03"></imageview>
                 <span class="image-title">功能细节3</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gn_03_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_03"></imageview>
+                <span class="image-title">功能细节3</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_04_f_detail_images_id}}" ng-if="images.gn_04_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_04"></imageview>
                 <span class="image-title">功能细节4</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gn_04_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_04"></imageview>
+                <span class="image-title">功能细节4</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_05_f_detail_images_id}}" ng-if="images.gn_05_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_05"></imageview>
                 <span class="image-title">功能细节5</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.gn_05_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_05"></imageview>
+                <span class="image-title">功能细节5</span>
+            </a>
         </div>
         <!-- 第四列 -->
         <div class="col" ng-controller="imageColController">
@@ -307,106 +499,202 @@
                 </select>
             </div>
             <!-- 造型 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.waiguan_zm_f_detail_images_id}}" ng-if="images.waiguan_zm_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_zm"></imageview>
                 <span class="image-title">正面</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.waiguan_zm_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_zm"></imageview>
+                <span class="image-title">正面</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.waiguan_bm_f_detail_images_id}}" ng-if="images.waiguan_bm_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_bm"></imageview>
                 <span class="image-title">背面</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" class="vs-image" ng-if="!images.waiguan_bm_f_detail_images_id">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_bm"></imageview>
+                <span class="image-title">背面</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.waiguan_zc_f_detail_images_id}}" ng-if="images.waiguan_zc_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_zc"></imageview>
                 <span class="image-title">左侧面</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.waiguan_zc_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_zc"></imageview>
+                <span class="image-title">左侧面</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.waiguan_yc_f_detail_images_id}}" ng-if="images.waiguan_yc_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_yc"></imageview>
                 <span class="image-title">右侧面</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.waiguan_yc_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_yc"></imageview>
+                <span class="image-title">右侧面</span>
+            </a>
             <!-- 造型 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_01_f_detail_images_id}}" ng-if="images.zx_01_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_01"></imageview>
                 <span class="image-title">造型1</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.zx_01_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_01"></imageview>
+                <span class="image-title">造型1</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_02_f_detail_images_id}}" ng-if="images.zx_02_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_02"></imageview>
                 <span class="image-title">造型2</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.zx_02_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_02"></imageview>
+                <span class="image-title">造型2</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_03_f_detail_images_id}}" ng-if="images.zx_03_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_03"></imageview>
                 <span class="image-title">造型3</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.zx_03_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_03"></imageview>
+                <span class="image-title">造型3</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_04_f_detail_images_id}}" ng-if="images.zx_04_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_04"></imageview>
                 <span class="image-title">造型4</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.zx_04_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_04"></imageview>
+                <span class="image-title">造型4</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_05_f_detail_images_id}}" ng-if="images.zx_05_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_05"></imageview>
                 <span class="image-title">腿部</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.zx_05_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_05"></imageview>
+                <span class="image-title">腿部</span>
+            </a>
             <!-- 表层细节 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_01_f_detail_images_id}}" ng-if="images.bc_01_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_01"></imageview>
                 <span class="image-title">表层细节1</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.bc_01_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_01"></imageview>
+                <span class="image-title">表层细节1</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_02_f_detail_images_id}}" ng-if="images.bc_02_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_02"></imageview>
                 <span class="image-title">表层细节2</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.bc_02_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_02"></imageview>
+                <span class="image-title">表层细节2</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_03_f_detail_images_id}}" ng-if="images.bc_03_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_03"></imageview>
                 <span class="image-title">表层细节3</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.bc_03_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_03"></imageview>
+                <span class="image-title">表层细节3</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_04_f_detail_images_id}}" ng-if="images.bc_04_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_04"></imageview>
                 <span class="image-title">表层细节4</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.bc_04_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_04"></imageview>
+                <span class="image-title">表层细节4</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_05_f_detail_images_id}}" ng-if="images.bc_05_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_05"></imageview>
                 <span class="image-title">表层细节5</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.bc_05_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_05"></imageview>
+                <span class="image-title">表层细节5</span>
+            </a>
             <!-- 工艺细节 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_01_f_detail_images_id}}" ng-if="images.gy_01_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_01"></imageview>
                 <span class="image-title">工艺细节1</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gy_01_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_01"></imageview>
+                <span class="image-title">工艺细节1</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_02_f_detail_images_id}}" ng-if="images.gy_02_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_02"></imageview>
                 <span class="image-title">工艺细节2</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gy_02_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_02"></imageview>
+                <span class="image-title">工艺细节2</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_03_f_detail_images_id}}" ng-if="images.gy_03_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_03"></imageview>
                 <span class="image-title">工艺细节3</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gy_03_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_03"></imageview>
+                <span class="image-title">工艺细节3</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_04_f_detail_images_id}}" ng-if="images.gy_04_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_04"></imageview>
                 <span class="image-title">工艺细节4</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gy_04_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_04"></imageview>
+                <span class="image-title">工艺细节4</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_05_f_detail_images_id}}" ng-if="images.gy_05_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_05"></imageview>
                 <span class="image-title">工艺细节5</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.gy_05_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_05"></imageview>
+                <span class="image-title">工艺细节5</span>
+            </a>
             <!-- 功能细节 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_01_f_detail_images_id}}" ng-if="images.gn_01_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_01"></imageview>
                 <span class="image-title">功能细节1</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gn_01_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_01"></imageview>
+                <span class="image-title">功能细节1</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_02_f_detail_images_id}}" ng-if="images.gn_02_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_02"></imageview>
                 <span class="image-title">功能细节2</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gn_02_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_02"></imageview>
+                <span class="image-title">功能细节2</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_03_f_detail_images_id}}" ng-if="images.gn_03_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_03"></imageview>
                 <span class="image-title">功能细节3</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gn_03_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_03"></imageview>
+                <span class="image-title">功能细节3</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_04_f_detail_images_id}}" ng-if="images.gn_04_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_04"></imageview>
                 <span class="image-title">功能细节4</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gn_04_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_04"></imageview>
+                <span class="image-title">功能细节4</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_05_f_detail_images_id}}" ng-if="images.gn_05_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_05"></imageview>
                 <span class="image-title">功能细节5</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.gn_05_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_05"></imageview>
+                <span class="image-title">功能细节5</span>
+            </a>
         </div>
         <!-- 第五列 -->
         <div class="col" ng-controller="imageColController">
@@ -434,106 +722,202 @@
                 </select>
             </div>
             <!-- 造型 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.waiguan_zm_f_detail_images_id}}" ng-if="images.waiguan_zm_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_zm"></imageview>
                 <span class="image-title">正面</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.waiguan_zm_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_zm"></imageview>
+                <span class="image-title">正面</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.waiguan_bm_f_detail_images_id}}" ng-if="images.waiguan_bm_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_bm"></imageview>
                 <span class="image-title">背面</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" class="vs-image" ng-if="!images.waiguan_bm_f_detail_images_id">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_bm"></imageview>
+                <span class="image-title">背面</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.waiguan_zc_f_detail_images_id}}" ng-if="images.waiguan_zc_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_zc"></imageview>
                 <span class="image-title">左侧面</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.waiguan_zc_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_zc"></imageview>
+                <span class="image-title">左侧面</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.waiguan_yc_f_detail_images_id}}" ng-if="images.waiguan_yc_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_yc"></imageview>
                 <span class="image-title">右侧面</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.waiguan_yc_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.waiguan_yc"></imageview>
+                <span class="image-title">右侧面</span>
+            </a>
             <!-- 造型 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_01_f_detail_images_id}}" ng-if="images.zx_01_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_01"></imageview>
                 <span class="image-title">造型1</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.zx_01_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_01"></imageview>
+                <span class="image-title">造型1</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_02_f_detail_images_id}}" ng-if="images.zx_02_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_02"></imageview>
                 <span class="image-title">造型2</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.zx_02_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_02"></imageview>
+                <span class="image-title">造型2</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_03_f_detail_images_id}}" ng-if="images.zx_03_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_03"></imageview>
                 <span class="image-title">造型3</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.zx_03_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_03"></imageview>
+                <span class="image-title">造型3</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_04_f_detail_images_id}}" ng-if="images.zx_04_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_04"></imageview>
                 <span class="image-title">造型4</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.zx_04_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_04"></imageview>
+                <span class="image-title">造型4</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.zx_05_f_detail_images_id}}" ng-if="images.zx_05_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_05"></imageview>
                 <span class="image-title">腿部</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.zx_05_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.zx_05"></imageview>
+                <span class="image-title">腿部</span>
+            </a>
             <!-- 表层细节 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_01_f_detail_images_id}}" ng-if="images.bc_01_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_01"></imageview>
                 <span class="image-title">表层细节1</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.bc_01_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_01"></imageview>
+                <span class="image-title">表层细节1</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_02_f_detail_images_id}}" ng-if="images.bc_02_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_02"></imageview>
                 <span class="image-title">表层细节2</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.bc_02_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_02"></imageview>
+                <span class="image-title">表层细节2</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_03_f_detail_images_id}}" ng-if="images.bc_03_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_03"></imageview>
                 <span class="image-title">表层细节3</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.bc_03_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_03"></imageview>
+                <span class="image-title">表层细节3</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_04_f_detail_images_id}}" ng-if="images.bc_04_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_04"></imageview>
                 <span class="image-title">表层细节4</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.bc_04_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_04"></imageview>
+                <span class="image-title">表层细节4</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.bc_05_f_detail_images_id}}" ng-if="images.bc_05_f_detail_images_id" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_05"></imageview>
                 <span class="image-title">表层细节5</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.bc_05_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.bc_05"></imageview>
+                <span class="image-title">表层细节5</span>
+            </a>
             <!-- 工艺细节 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_01_f_detail_images_id}}" ng-if="images.gy_01_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_01"></imageview>
                 <span class="image-title">工艺细节1</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gy_01_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_01"></imageview>
+                <span class="image-title">工艺细节1</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_02_f_detail_images_id}}" ng-if="images.gy_02_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_02"></imageview>
                 <span class="image-title">工艺细节2</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gy_02_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_02"></imageview>
+                <span class="image-title">工艺细节2</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_03_f_detail_images_id}}" ng-if="images.gy_03_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_03"></imageview>
                 <span class="image-title">工艺细节3</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gy_03_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_03"></imageview>
+                <span class="image-title">工艺细节3</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_04_f_detail_images_id}}" ng-if="images.gy_04_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_04"></imageview>
                 <span class="image-title">工艺细节4</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gy_04_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_04"></imageview>
+                <span class="image-title">工艺细节4</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gy_05_f_detail_images_id}}" ng-if="images.gy_05_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_05"></imageview>
                 <span class="image-title">工艺细节5</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.gy_05_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gy_05"></imageview>
+                <span class="image-title">工艺细节5</span>
+            </a>
             <!-- 功能细节 -->
-            <div class="vs-image">
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_01_f_detail_images_id}}" ng-if="images.gn_01_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_01"></imageview>
                 <span class="image-title">功能细节1</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gn_01_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_01"></imageview>
+                <span class="image-title">功能细节1</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_02_f_detail_images_id}}" ng-if="images.gn_02_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_02"></imageview>
                 <span class="image-title">功能细节2</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gn_02_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_02"></imageview>
+                <span class="image-title">功能细节2</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_03_f_detail_images_id}}" ng-if="images.gn_03_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_03"></imageview>
                 <span class="image-title">功能细节3</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gn_03_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_03"></imageview>
+                <span class="image-title">功能细节3</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_04_f_detail_images_id}}" ng-if="images.gn_04_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_04"></imageview>
                 <span class="image-title">功能细节4</span>
-            </div>
-            <div class="vs-image">
+            </a>
+            <a target="_blank" ng-if="!images.gn_04_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_04"></imageview>
+                <span class="image-title">功能细节4</span>
+            </a>
+            <a target="_blank" ng-href="#/image_group?type=2&id={{images.gn_05_f_detail_images_id}}" ng-if="images.gn_05_f_detail_images_id}}" class="vs-image">
                 <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_05"></imageview>
                 <span class="image-title">功能细节5</span>
-            </div>
+            </a>
+            <a target="_blank" ng-if="!images.gn_05_f_detail_images_id" class="vs-image">
+                <imageview data-rate="192/145" default="'../images/vs_image_2.png'" src="staticImageUrl + images.gn_05"></imageview>
+                <span class="image-title">功能细节5</span>
+            </a>
         </div>
     </div>
 </div>

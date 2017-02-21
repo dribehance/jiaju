@@ -1,0 +1,62 @@
+<div class="me-section">
+    <div class="avatar" flow-init="{singleFile:true}" flow-btn ng-controller="uploadAvatarController">
+        <span class="label-btn">点击修改头像</span>
+        <imageview data-rate="1" src="staticImageUrl + user.images_01" center-only ng-if="user.images_01"></imageview>
+        <div class="progress progress-striped" ng-if="$flow.files[0].isUploading()">
+            <div class="progress-bar" ng-style="{width: ($flow.files[0].progress() * 100) + '%'}">
+                <span>{{progress($flow.files[0].progress())+"%"}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="me-nav">
+        <a>个人中心</a>
+        <span class="splash">/</span>
+        <a target="_blank" ng-href="#/index">家具首页</a>
+    </div>
+</div>
+<div class="wrap">
+    <div class="me-account-section">
+        <div class="me-left">
+            <a class="me-left-item active" ng-href="#/basic_info">
+                基本信息
+            </a>
+            <!-- <a class="me-left-item" ng-href="#/setting">
+                绑定设置
+            </a> -->
+            <a class="me-left-item" ng-href="#/modify_password">
+                修改密码
+            </a>
+            <!-- <a class="me-left-item" ng-href="#/update_avatar">
+                 修改头像
+            </a>-->
+            <a class="me-left-item" ng-href="#/me">
+                我的口碑
+            </a>
+        </div>
+        <div class="me-right">
+            <div class="feedback-section">
+                <form class="feedback-form" ng-submit="ajaxForm()" name="infoForm">
+                    <div>
+                        <p>用户手机</p>
+                        <input type="text" readonly ng-model="user.telephone">
+                    </div>
+                    <div>
+                        <p>昵称</p>
+                        <input type="text" ng-model="input.nickname" name="nickname" required placeholder="昵称">
+                    </div>
+                    <div>
+                        <p>邮箱</p>
+                        <input type="email" ng-model="input.email" name="email" required placeholder="邮箱">
+                    </div>
+                    <div>
+                        <p>联系地址</p>
+                        <textarea name="" id="" cols="30" rows="3" ng-model="input.address" name="address" required placeholder="联系地址"></textarea>
+                    </div>
+                    
+                    <button class="consult-btn" type="submit" ng-disabled="infoForm.$invalid">保存</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<dribehance-footer></dribehance-footer>

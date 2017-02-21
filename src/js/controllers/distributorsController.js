@@ -21,7 +21,9 @@ angular.module("Pingce").controller("distributorsController", function($scope, u
 		page_size: 10,
 		province: "",
 		city: "",
-		message: "点击加载更多"
+		message: "点击加载更多",
+		find_jiaju_brand_id: localStorageService.get("brand_id"),
+		find_jiaju_brand_series_id: localStorageService.get("serial_id")
 	}
 	$scope.loadMore = function() {
 		if ($scope.no_more) {

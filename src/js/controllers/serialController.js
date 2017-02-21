@@ -32,7 +32,7 @@ angular.module("Pingce").controller("serialController", function($scope, $rootSc
 			serial_compare_list.push(temp);
 		}
 		localStorageService.set("serial_compare_list", serial_compare_list);
-		errorServices.autoHide("已经加入对比");
+		errorServices.autoHide("已经加入对比，请点击页面右侧的产品对比查看");
 	}
 	$scope.preview = function() {
 		$scope.auto_height = !$scope.auto_height;
