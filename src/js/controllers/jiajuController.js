@@ -80,7 +80,8 @@ angular.module("Pingce").controller("jiajuController", function($scope, $routePa
 	}
 	$scope.query_jiaju_list();
 	$scope.jump_index = function(index) {
-		$location.hash(index);
-		$anchorScroll();
+		$('html, body').animate({
+			scrollTop: $("#" + index).offset().top
+		}, 500);
 	}
 })

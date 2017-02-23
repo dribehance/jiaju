@@ -19,7 +19,13 @@
             <div class="hover btn btn-warning text-center more-text" ng-click="preview()" ng-if="auto_height && query_charater_length(taofang.introduce) > 120">- 收起</div>
         </div>
     </div>
-	<div class="category-section">
+    <div class="category-section">
+        <a ng-repeat="s in taofang.FBlankSingles" class="hover" ng-href="#/product?id={{s.find_jiaju_brand_series_rooms_blank_single_id}}" target="_blank">
+            <span class="category-title">{{s.name}}</span>
+            <imageview data-rate="200/112" center-only src="staticImageUrl + s.images_01"></imageview>
+        </a>
+    </div>
+	<!-- <div class="category-section">
         <a ng-repeat="t in taofang.FindJiajuBrandSeriesRoomsBlankList" class="hover" ng-click="jump_index(t.find_jiaju_brand_series_rooms_blank_id)">
             <span class="category-title">{{t.name}}</span>
             <imageview data-rate="200/112" center-only src="staticImageUrl + t.images_01"></imageview>
@@ -36,6 +42,6 @@
                 <imageview data-rate="200/112" center-only src="staticImageUrl+i.images_01"></imageview>
             </a>
         </div>
-    </div>
+    </div> -->
 </div>
 <dribehance-footer></dribehance-footer>
