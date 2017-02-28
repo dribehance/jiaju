@@ -39,10 +39,14 @@
                 购买地点：
             </div>
             <div class="vs-select">
-                <select name="province" id="province" ng-model="input.province" ng-options="p for p in provinces"></select>
+                <select name="province" id="province" ng-model="input.province" ng-options="p for p in provinces">
+                    <option value="">请选择</option>
+                </select>
             </div>
             <div class="vs-select">
-                <select name="city" id="city" ng-model="input.city" ng-options="c for c in cities"></select>
+                <select name="city" id="city" ng-model="input.city" ng-options="c for c in cities">
+                    <option value="">请选择</option>
+                </select>
             </div>
             <div class="vs-select">
                 <select name="distributor" id="distributor" ng-model="input.distributor" ng-options="d as d.name for d in distributors">

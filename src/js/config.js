@@ -1,6 +1,6 @@
 angular.module("Pingce").constant("config", {
-	url: "http://orsynsystem.com:8080",
-	imageUrl: "http://orsynsystem.com:8080/files/image?name=",
+	url: "http://www.testwork.com.cn",
+	imageUrl: "http://www.testwork.com.cn/files/image?name=",
 	request: {
 		"SUCCESS": "200",
 		"TOKEN_INVALID": "405"

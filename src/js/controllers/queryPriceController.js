@@ -1,5 +1,5 @@
 // by dribehance <dribehance.kksdapp.com>
-angular.module("Pingce").controller("queryPriceController", function($scope, $timeout, $location, userServices, errorServices, toastServices, localStorageService, config) {
+angular.module("Pingce").controller("queryPriceController", function($scope, $routeParams, $timeout, $location, userServices, errorServices, toastServices, localStorageService, config) {
 	$scope.input = {};
 	toastServices.show();
 	userServices.query_brand_list().then(function(data) {
@@ -63,7 +63,7 @@ angular.module("Pingce").controller("queryPriceController", function($scope, $ti
 		}
 	}, true)
 	$scope.provinces = ["北京市", "上海市", "天津市", "重庆市", "河北省", "山西省", "内蒙古自治区", "辽宁省", "吉林省", "黑龙江省", "江苏省", "浙江省", "安徽省", "福建省", "江西省", "山东省", "河南省", "湖北省", "湖南省", "广东省", "广西壮族自治区", "海南省", "四川省", "贵州省", "云南省", "西藏自治区", "陕西省", "甘肃省", "青海省", "宁夏回族自治区", "新疆维吾尔自治区"]
-	$scope.input.province = $scope.provinces[0];
+	$scope.input.province = $routeParams.province || $scope.provinces[0];
 	$scope.query_distributors = function() {
 		userServices.query_distributors({
 			pn: 1,
@@ -74,7 +74,11 @@ angular.module("Pingce").controller("queryPriceController", function($scope, $ti
 		}).then(function(data) {
 			if (data.code == config.request.SUCCESS && data.status == config.response.SUCCESS) {
 				$scope.distributors = data.Result.DealerList.list;
-				$scope.input.distributor = $scope.distributors[0];
+				angular.forEach($scope.distributors, function(d) {
+					if (d.dealer_id == $routeParams.dealer_id) {
+						$scope.input.distributor = d;
+					}
+				})
 			} else {
 				errorServices.autoHide("服务器错误");
 			}
@@ -83,7 +87,7 @@ angular.module("Pingce").controller("queryPriceController", function($scope, $ti
 	$scope.query_cities = function() {
 		userServices.query_cities().then(function(data) {
 			$scope.cities = data[$scope.input.province];
-			$scope.input.city = $scope.cities[0];
+			$scope.input.city = $routeParams.city || $scope.cities[0];
 		})
 	}
 	$scope.$watch("input.province", function(n, o) {
